@@ -1,0 +1,26 @@
+//
+//  firstPBpch.pch
+//  firstproject
+//
+//  Created by 牛新怀 on 2017/5/19.
+//  Copyright © 2017年 牛新怀. All rights reserved.
+//
+
+#ifndef firstPBpch_pch
+#define firstPBpch_pch
+#import "UIBarButtonItem+CustomBarButtonItem.h"
+#import "UIColor+HexColor.h"
+#import "AFNetworking.h"
+#import "NBasiViewController.h"
+#import <GPUImage.h>
+#import "Tool.h"
+#import "DataModels.h"
+#import <MJRefresh.h>
+#import "UIView+Extension.h"
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* firstPBpch_pch */

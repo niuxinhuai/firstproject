@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 
+#import "TotalViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,6 +17,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    TotalViewController * totalVc = [[TotalViewController alloc]init];
+    self.window.rootViewController = totalVc;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
     // Override point for customization after application launch.
     return YES;
 }
