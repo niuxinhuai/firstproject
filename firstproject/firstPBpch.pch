@@ -8,6 +8,19 @@
 
 #ifndef firstPBpch_pch
 #define firstPBpch_pch
+#define WeakSelf(type)  __weak typeof(type) weak##type = type; // weak
+#define StrongSelf(type)  __strong typeof(type) type = weak##type; // strong
+#define DegreesToRadian(x) (M_PI * (x) / 180.0) // 角度转换成弧度
+#define PathDocument [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] // 获取沙盒Document
+#define PathCache [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]// 获取沙盒Cache
+#ifdef DEBUG
+#define NSLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#else
+#define NSLog(...)
+#endif// 自定义NSLog
+#define NOTIF_ADD(n, f)     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(f) name:n object:nil]
+#define NOTIF_POST(n, o)    [[NSNotificationCenter defaultCenter] postNotificationName:n object:o]
+#define NOTIF_REMV()        [[NSNotificationCenter defaultCenter] removeObserver:self]// 通知的几种宏定义
 #import "UIBarButtonItem+CustomBarButtonItem.h"
 #import "UIColor+HexColor.h"
 #import "AFNetworking.h"

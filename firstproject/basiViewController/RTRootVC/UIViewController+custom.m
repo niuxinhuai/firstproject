@@ -26,4 +26,5 @@
     NSLog(@"%@ customViewController",strClass);
     [self nx_viewViewAppear:isAnimation];
 }
+
 @end

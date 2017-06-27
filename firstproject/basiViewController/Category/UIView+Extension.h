@@ -18,5 +18,6 @@
 @property(nonatomic,assign)CGFloat height;
 @property(nonatomic,assign)CGSize size;
 @property(nonatomic,assign)CGPoint origin;
-
+- (NSString *)encodeToBase64String:(UIImage *)image;// UIImage和base64互转
+- (UIImage *)decodeBase64ToImage:(NSString *)strEncodeData;
 @end

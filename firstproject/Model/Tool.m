@@ -218,7 +218,203 @@ static Tool* tool = nil;
     
     
 }
++(NSMutableDictionary *)getAppInformations{
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    CFShow((__bridge CFTypeRef)(infoDictionary));
+    // app名称
+    NSString *app_Name = [infoDictionary objectForKey:@"CFBundleDisplayName"];
+    // app版本
+    NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    // app build版本
+    NSString *app_build = [infoDictionary objectForKey:@"CFBundleVersion"];
+    
+    
+    
+    //手机序列号
+    NSUUID* identifierNumber = [[UIDevice currentDevice] identifierForVendor];
+    NSLog(@"手机序列号: %@",identifierNumber);
+    //手机别名： 用户定义的名称
+    NSString* userPhoneName = [[UIDevice currentDevice] name];
+    NSLog(@"手机别名: %@", userPhoneName);
+    //设备名称
+    NSString* deviceName = [[UIDevice currentDevice] systemName];
+    NSLog(@"设备名称: %@",deviceName );
+    //手机系统版本
+    NSString* phoneVersion = [[UIDevice currentDevice] systemVersion];
+    NSLog(@"手机系统版本: %@", phoneVersion);
+    //手机型号
+    NSString* phoneModel = [Tool iphoneType];
+    NSLog(@"手机型号: %@",phoneModel );
+    //地方型号  （国际化区域名称）
+    NSString* localPhoneModel = [[UIDevice currentDevice] localizedModel];
+    NSLog(@"国际化区域名称: %@",localPhoneModel );
+    
+    [dic setObject:@"app名称" forKey:app_Name];
+    [dic setObject:@"app版本" forKey:app_Version];
+    [dic setObject:@"app_bulid版本" forKey:app_build];
+    [dic setObject:@"手机序列号" forKey:identifierNumber];
+    [dic setObject:@"手机别名" forKey:userPhoneName];
+    [dic setObject:@"设备名称" forKey:deviceName];
+    [dic setObject:@"手机系统版本" forKey:phoneVersion];
+    [dic setObject:@"手机型号" forKey:phoneModel];
+    [dic setObject:@"国际化区域名称" forKey:localPhoneModel];
+//    // 当前应用名称
+//    NSString *appCurName = [infoDictionary objectForKey:@"CFBundleDisplayName"];
+//    NSLog(@"当前应用名称：%@",appCurName);
+//    // 当前应用软件版本  比如：1.0.1
+//    NSString *appCurVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+//    NSLog(@"当前应用软件版本:%@",appCurVersion);
+//    // 当前应用版本号码   int类型
+//    NSString *appCurVersionNum = [infoDictionary objectForKey:@"CFBundleVersion"];
+//    NSLog(@"当前应用版本号码：%@",appCurVersionNum);
+    
+    
+    
+    
+    
+    return dic;
+}
++ (NSDictionary *)parseJSONStringToNSDictionary:(NSString *)JSONString {
+    NSData *JSONData = [JSONString dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *responseJSON = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingMutableLeaves error:nil];
+    return responseJSON;
+}
+- (BOOL)validateIdentityCard {
+//    BOOL flag;
+//    if (self.length <= 0) {
+//        flag = NO;
+//        return flag;
+//    }
+    NSString *regex2 = @"^(\\d{14}|\\d{17})(\\d|[xX])$";
+    NSPredicate *identityCardPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex2];
+    return [identityCardPredicate evaluateWithObject:self];
+}
+- (UIViewController *)getVisibleViewControllerFrom:(UIViewController*)vc {
+    if ([vc isKindOfClass:[UINavigationController class]]) {
+        return [self getVisibleViewControllerFrom:[((UINavigationController*) vc) visibleViewController]];
+    }else if ([vc isKindOfClass:[UITabBarController class]]){
+        return [self getVisibleViewControllerFrom:[((UITabBarController*) vc) selectedViewController]];
+    } else {
+        if (vc.presentedViewController) {
+            return [self getVisibleViewControllerFrom:vc.presentedViewController];
+        } else {
+            return vc;
+        }
+    }
+}
++(void)startMonitoring{
+    
+    // 监听网络状况
+    AFNetworkReachabilityManager *mgr = [AFNetworkReachabilityManager sharedManager];
+    [mgr setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown:
+                break;
+            case AFNetworkReachabilityStatusNotReachable: {
+               // [SVProgressHUD showInfoWithStatus:@"当前设备无网络"];
+            }
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+              //  [SVProgressHUD showInfoWithStatus:@"当前Wi-Fi网络"];
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+               // [SVProgressHUD showInfoWithStatus:@"当前蜂窝移动网络"];
+                break;
+            default:
+                break;
+        }
+    }];
+    [mgr startMonitoring];
+}
++ (NSString *)removeSpaceAndNewline:(NSString *)str {
+    NSString *temp = [str stringByReplacingOccurrencesOfString:@" " withString:@""];
+    temp = [temp stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+    temp = [temp stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    return temp;
+}
++ (BOOL)isBlank:(NSString *)str {
+    NSRange _range = [str rangeOfString:@" "];
+    if (_range.location != NSNotFound) {
+        //有空格
+        return YES;
+    } else {
+        //没有空格
+        return NO;
+    }
+}
++(UIImage *)getAVVideoFirstPictureWithUrl:(NSString *)filePath{
+    
+    NSURL *url = [NSURL URLWithString:filePath];
+    AVURLAsset *asset1 = [[AVURLAsset alloc] initWithURL:url options:nil];
+    AVAssetImageGenerator *generate1 = [[AVAssetImageGenerator alloc] initWithAsset:asset1];
+    generate1.appliesPreferredTrackTransform = YES;
+    NSError *err = NULL;
+    CMTime time = CMTimeMake(1, 2);
+    CGImageRef oneRef = [generate1 copyCGImageAtTime:time actualTime:NULL error:&err];
+    UIImage *one = [[UIImage alloc] initWithCGImage:oneRef];
+    
+    return one;
+    
+}
++ (NSInteger)getVideoTimeByUrlString:(NSString *)urlString {
+    NSURL *videoUrl = [NSURL URLWithString:urlString];
+    AVURLAsset *avUrl = [AVURLAsset assetWithURL:videoUrl];
+    CMTime time = [avUrl duration];
+    int seconds = ceil(time.value/time.timescale);
+    return seconds;
+}
+- (BOOL)time_isTodayWithDate:(NSDate*)date{
+    NSDateComponents *otherDay = [[NSCalendar currentCalendar] components:NSCalendarUnitEra | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:date];
+    NSDateComponents *today = [[NSCalendar currentCalendar] components:NSCalendarUnitEra | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:[NSDate date]];
+    if([today day] == [otherDay day] &&
+       [today month] == [otherDay month] &&
+       [today year] == [otherDay year] &&
+       [today era] == [otherDay era]) {
+        // 是今天
+        return YES;
+    }
+    
+    return NO;
+}
++ (BOOL)JudgeTheillegalCharacter:(NSString *)content{
+    
+    NSString *str =@"^[A-Za-z0-9\\u4e00-\u9fa5]+$";
+    
+    NSPredicate* emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", str];
+    
+    if (![emailTest evaluateWithObject:content]) {
+        
+        return YES;
+        
+    }
+    
+    return NO;
+    
+}
++(NSString *) vaildPassWord : (NSString *)passWd
 
+{
+    
+    NSString *errMsg = nil;
+    
+    if (passWd == nil || passWd.length == 0) {
+        
+        errMsg = @"密码为空";
+        
+    } else if(passWd.length < 6){
+        
+        errMsg = @"密码长度最少6位";
+        
+    } else if([self JudgeTheillegalCharacter:passWd]){
+        
+        errMsg = @"密码中不能包含非法字符";
+        
+    }
+    
+    return errMsg;
+    
+}
 
 
 @end

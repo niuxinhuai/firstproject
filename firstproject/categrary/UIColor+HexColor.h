@@ -11,4 +11,5 @@
 @interface UIColor (HexColor)
 //根据16进制数生成颜色
 + (UIColor *)uiColorFromString:(NSString *) clrString;
++ (UIColor *)RandomColor; // 随机颜色生成
 @end

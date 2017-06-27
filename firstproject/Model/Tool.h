@@ -25,7 +25,21 @@ typedef NS_ENUM(NSInteger, CJKTCheckingType) {
 //验证手机号
 + (BOOL)checkPhoneTypeWithString:(NSString *)string checkingType:(CJKTCheckingType)type;
 //判断手机类型
-+(NSString *)iphoneType;
++ (NSString *)iphoneType;
 //几秒前，几分钟前，几小时前，几天前    时间间隔
-+(NSString *)dateIntervalStr:(NSString *)startDateStr;
++ (NSString *)dateIntervalStr:(NSString *)startDateStr;
++ (NSMutableDictionary *)getAppInformations;// 获取设备基本信息
++ (NSDictionary *)parseJSONStringToNSDictionary:(NSString *)JSONString;// json 字符串转换字典
+- (BOOL)validateIdentityCard;// 身份证号验证
+- (UIViewController *)getVisibleViewControllerFrom:(UIViewController*)vc;
+// 获取到当前正在显示的vc
++ (void)startMonitoring;// 监听网络状态
++ (NSString *)removeSpaceAndNewline:(NSString *)str;// 移除字符串中的空格和换行
++ (BOOL)isBlank:(NSString *)str;// 判断字符串中是否包含有空格
++ (UIImage *)getAVVideoFirstPictureWithUrl:(NSString *)filePath;// 获取一个视频的第一帧图片
++ (NSInteger)getVideoTimeByUrlString:(NSString *)urlString;// 获取视频时常
+- (BOOL)time_isTodayWithDate:(NSDate*)date;// 判断nsdate是不是今天
++ (BOOL)JudgeTheillegalCharacter:(NSString *)content;// 判断字符串中是否包含非法字符
++ (NSString *) vaildPassWord : (NSString *)passWd; // 判断密码有效性
 @end
+

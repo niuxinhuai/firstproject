@@ -65,4 +65,7 @@
 -(CGSize)attrStrSizeWithFont:(UIFont *)font andmaxSize:(CGSize)maxSize lineSpacing:(CGFloat)lineSpacing;
 //时间戳转时间
 -(NSDate *)dateValueWithMillisecondsSince1970;
+// 通过图片data 二进制数据的第一个字节，来获得图片扩展名
+- (NSString *)contentTypeForImageData:(NSData *)data;
+
 @end
