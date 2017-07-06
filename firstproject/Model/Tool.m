@@ -415,6 +415,20 @@ static Tool* tool = nil;
     return errMsg;
     
 }
-
+-(BOOL)checkPayPWD{
+    NSString *validCode = @"^(?:([0-9])\\1{5})$";  //   \\d1{5}$
+    NSPredicate *validCodePredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",validCode];
+    BOOL res = [validCodePredicate evaluateWithObject:self];
+    //自动验证密码是否为6个重复（111111）或连续（123456）的数字
+    
+    if([@"012345678901234" rangeOfString:self].location !=NSNotFound || res  )//_roaldSearchText
+    {
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
+}
 
 @end
