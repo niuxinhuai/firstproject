@@ -41,6 +41,7 @@ typedef NS_ENUM(NSInteger, CJKTCheckingType) {
 - (BOOL)time_isTodayWithDate:(NSDate*)date;// 判断nsdate是不是今天
 + (BOOL)JudgeTheillegalCharacter:(NSString *)content;// 判断字符串中是否包含非法字符
 + (NSString *) vaildPassWord : (NSString *)passWd; // 判断密码有效性
--(BOOL)checkPayPWD;// 验证支付密码，不能重复连续的数字
+- (BOOL)checkPayPWD;// 验证支付密码，不能重复连续的数字
++ (void)createPDFfromUIView:(UIView*)aView saveToDocumentsWithFileName:(NSString*)aFilename;// 将一个view保存为pdf格式
 @end
 

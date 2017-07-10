@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (XFCircle)
-- (UIImage *)circleImage;
+- (UIImage *)circleImage;// 防止离屏渲染为image添加圆角
 + (UIImage *) imageFromURLString: (NSString *) urlstring;
 @end
