@@ -69,6 +69,14 @@
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:color};
     
 }
+-(void)popToSpecifiedControllerWithVC:(UIViewController *)viewController{
+    NSMutableArray * allViewControllers = [NSMutableArray arrayWithArray:[self.navigationController viewControllers]];
+    for (UIViewController * specifiedViewController in allViewControllers) {
+        if ([specifiedViewController isKindOfClass:[viewController class]]) {
+            [self.navigationController popToViewController:specifiedViewController animated:YES];
+        }
+    }
+}
 /*
 #pragma mark - Navigation
 

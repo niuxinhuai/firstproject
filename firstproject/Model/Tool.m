@@ -8,7 +8,7 @@
 
 #import "Tool.h"
 #import <sys/utsname.h>
-
+#import <mach/mach.h>
 @implementation Tool
 static Tool* tool = nil;
 +(instancetype)shareTool{
@@ -20,6 +20,18 @@ static Tool* tool = nil;
     return tool;
     
 }
+/*
+ UIControlEventTouchCancel 取消控件当前触发的事件
+ UIControlEventTouchDown 点按下去的事件
+ UIControlEventTouchDownRepeat 重复的触动事件
+ UIControlEventTouchDragEnter 手指被拖动到控件的边界的事件
+ UIControlEventTouchDragExit 一个手指从控件内拖到外界的事件
+ UIControlEventTouchDragInside 手指在控件的边界内拖动的事件
+ UIControlEventTouchDragOutside 手指在控件边界之外被拖动的事件
+ UIControlEventTouchUpInside 手指处于控制范围内的触摸事件
+ UIControlEventTouchUpOutside 手指超出控制范围的控制中的触摸事件
+ */
+
 
 + (UIImage *)imageViewWithName:(NSString *)imageName
 {
@@ -429,6 +441,34 @@ static Tool* tool = nil;
     {
         return YES;
     }
+}
++ (void)getPhoneRAM{
+    mach_port_t host_port;
+    mach_msg_type_number_t host_size;
+    vm_size_t pagesize;
+    
+    host_port = mach_host_self();
+    host_size = sizeof(vm_statistics_data_t) / sizeof(integer_t);
+    host_page_size(host_port, &pagesize);
+    
+    vm_statistics_data_t vm_stat;
+    
+    if (host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size) != KERN_SUCCESS) {
+        NSLog(@"Failed to fetch vm statistics");
+    }
+    
+    /* Stats in bytes */
+    natural_t mem_used = (vm_stat.active_count +
+                          vm_stat.inactive_count +
+                          vm_stat.wire_count) * pagesize;
+    natural_t mem_free = vm_stat.free_count * pagesize;
+    natural_t mem_total = mem_used + mem_free;
+    NSLog(@"已用: %u 可用: %u 总共: %u", mem_used, mem_free, mem_total);
+}
+- (NSString *)getNumberFromStr:(NSString *)str
+{
+    NSCharacterSet *nonDigitCharacterSet = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
+    return [[str componentsSeparatedByCharactersInSet:nonDigitCharacterSet] componentsJoinedByString:@""];
 }
 
 @end
