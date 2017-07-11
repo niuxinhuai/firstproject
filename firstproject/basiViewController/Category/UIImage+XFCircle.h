@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (XFCircle)
+<<<<<<< HEAD
+- (UIImage *)circleImage;
++ (UIImage *) imageFromURLString: (NSString *) urlstring;// 从链接获取图片
+// 方法一、添加UIImage分类
+- (UIImage *)imageByApplyingAlpha:(CGFloat) alpha;
+// 上传图片中的压缩图片
+-(UIImage *)resizeImage:(UIImage *)image;
+=======
 - (UIImage *)circleImage;// 防止离屏渲染为image添加圆角
 + (UIImage *) imageFromURLString: (NSString *) urlstring;
+>>>>>>> master
 @end
