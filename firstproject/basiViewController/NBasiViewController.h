@@ -20,5 +20,5 @@ typedef NS_ENUM(NSInteger,NavigationTitleColorType) {//导航条title字体颜�
 @interface NBasiViewController : UIViewController
 @property (nonatomic, assign)BarButtonItemTitleColorType colorType;
 @property (nonatomic, assign)NavigationTitleColorType navColorType;
-
+-(void)popToSpecifiedControllerWithVC:(UIViewController *)viewController;// 让导航控制器pop回指定的控制器
 @end

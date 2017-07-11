@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D211DAA1EC80E8B00DA4E6B /* secondViewController in Resources */ = {isa = PBXBuildFile; fileRef = 2D211DA91EC80E8B00DA4E6B /* secondViewController */; };
 		2D211DAE1ECACA8200DA4E6B /* View in Resources */ = {isa = PBXBuildFile; fileRef = 2D211DAD1ECACA8200DA4E6B /* View */; };
 		2D211DB21ECACAD800DA4E6B /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D211DB11ECACAD800DA4E6B /* CircleView.m */; };
+		2D23C46B1F149F1900EDA3AA /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D23C46A1F149F1900EDA3AA /* NotificationCenter.framework */; };
+		2D23C46F1F149F1900EDA3AA /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D23C46E1F149F1900EDA3AA /* TodayViewController.m */; };
+		2D23C4761F149F1900EDA3AA /* WidGetTodayViewController.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2D23C4691F149F1900EDA3AA /* WidGetTodayViewController.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2D23C47C1F14A06000EDA3AA /* m8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D23C47B1F14A06000EDA3AA /* m8.jpg */; };
 		2D53BB761EE7E2690075058E /* VideoRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D53BB751EE7E2690075058E /* VideoRootViewController.m */; };
 		2D53BB791EE7E2950075058E /* CircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D53BB781EE7E2950075058E /* CircleViewController.m */; };
 		2D53BB7C1EE7E2A30075058E /* SpringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D53BB7B1EE7E2A30075058E /* SpringViewController.m */; };
@@ -110,6 +113,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2D23C4741F149F1900EDA3AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2D8B0E7D1EC16716006953B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2D23C4681F149F1900EDA3AA;
+			remoteInfo = WidGetTodayViewController;
+		};
 		2D8B0E9F1EC16716006953B5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2D8B0E7D1EC16716006953B5 /* Project object */;
@@ -126,11 +136,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2D23C47A1F149F1900EDA3AA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2D23C4761F149F1900EDA3AA /* WidGetTodayViewController.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		2D211DA91EC80E8B00DA4E6B /* secondViewController */ = {isa = PBXFileReference; lastKnownFileType = folder; name = secondViewController; path = firstproject/secondViewController; sourceTree = "<group>"; };
 		2D211DAD1ECACA8200DA4E6B /* View */ = {isa = PBXFileReference; lastKnownFileType = folder; path = View; sourceTree = "<group>"; };
 		2D211DB01ECACAD800DA4E6B /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
 		2D211DB11ECACAD800DA4E6B /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
+		2D23C4691F149F1900EDA3AA /* WidGetTodayViewController.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidGetTodayViewController.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D23C46A1F149F1900EDA3AA /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		2D23C46D1F149F1900EDA3AA /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		2D23C46E1F149F1900EDA3AA /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		2D23C4731F149F1900EDA3AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D23C47B1F14A06000EDA3AA /* m8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = m8.jpg; sourceTree = "<group>"; };
 		2D53BB741EE7E2690075058E /* VideoRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRootViewController.h; sourceTree = "<group>"; };
 		2D53BB751EE7E2690075058E /* VideoRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoRootViewController.m; sourceTree = "<group>"; };
 		2D53BB771EE7E2950075058E /* CircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleViewController.h; sourceTree = "<group>"; };
@@ -311,6 +340,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2D23C4661F149F1900EDA3AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D23C46B1F149F1900EDA3AA /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2D8B0E821EC16716006953B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -369,6 +406,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		2D23C46C1F149F1900EDA3AA /* WidGetTodayViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2D23C47B1F14A06000EDA3AA /* m8.jpg */,
+				2D23C46D1F149F1900EDA3AA /* TodayViewController.h */,
+				2D23C46E1F149F1900EDA3AA /* TodayViewController.m */,
+				2D23C4731F149F1900EDA3AA /* Info.plist */,
+			);
+			path = WidGetTodayViewController;
+			sourceTree = "<group>";
+		};
 		2D53BBAF1EEB81720075058E /* childVCView */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,10 +438,10 @@
 		2D8B0E7C1EC16716006953B5 = {
 			isa = PBXGroup;
 			children = (
-				2D211DA91EC80E8B00DA4E6B /* secondViewController */,
 				2D8B0E871EC16716006953B5 /* firstproject */,
 				2D8B0EA11EC16716006953B5 /* firstprojectTests */,
 				2D8B0EAC1EC16716006953B5 /* firstprojectUITests */,
+				2D23C46C1F149F1900EDA3AA /* WidGetTodayViewController */,
 				2D8B0E861EC16716006953B5 /* Products */,
 				2DFD44CC1EC30ED90087822A /* Frameworks */,
 				23C58DDD54A2C3CB4A9BE2E5 /* Pods */,
@@ -406,6 +454,7 @@
 				2D8B0E851EC16716006953B5 /* firstproject.app */,
 				2D8B0E9E1EC16716006953B5 /* firstprojectTests.xctest */,
 				2D8B0EA91EC16716006953B5 /* firstprojectUITests.xctest */,
+				2D23C4691F149F1900EDA3AA /* WidGetTodayViewController.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -831,6 +880,7 @@
 				2DFCB5A31ECEDD630040A60E /* libxml2.tbd */,
 				2DFD44CD1EC30EDA0087822A /* AVFoundation.framework */,
 				C66107815289FE4E0EFEE581 /* libPods-firstproject.a */,
+				2D23C46A1F149F1900EDA3AA /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -838,6 +888,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2D23C4681F149F1900EDA3AA /* WidGetTodayViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D23C4791F149F1900EDA3AA /* Build configuration list for PBXNativeTarget "WidGetTodayViewController" */;
+			buildPhases = (
+				2D23C4651F149F1900EDA3AA /* Sources */,
+				2D23C4661F149F1900EDA3AA /* Frameworks */,
+				2D23C4671F149F1900EDA3AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WidGetTodayViewController;
+			productName = WidGetTodayViewController;
+			productReference = 2D23C4691F149F1900EDA3AA /* WidGetTodayViewController.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		2D8B0E841EC16716006953B5 /* firstproject */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D8B0EB21EC16716006953B5 /* Build configuration list for PBXNativeTarget "firstproject" */;
@@ -848,10 +915,12 @@
 				2D8B0E831EC16716006953B5 /* Resources */,
 				CA75AFD35A2B5D65D8326C7F /* [CP] Embed Pods Frameworks */,
 				98A44197947A780BDDD7F44C /* [CP] Copy Pods Resources */,
+				2D23C47A1F149F1900EDA3AA /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2D23C4751F149F1900EDA3AA /* PBXTargetDependency */,
 			);
 			name = firstproject;
 			productName = firstproject;
@@ -903,6 +972,11 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "牛新怀";
 				TargetAttributes = {
+					2D23C4681F149F1900EDA3AA = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = B2WB8E557H;
+						ProvisioningStyle = Automatic;
+					};
 					2D8B0E841EC16716006953B5 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = B2WB8E557H;
@@ -938,11 +1012,20 @@
 				2D8B0E841EC16716006953B5 /* firstproject */,
 				2D8B0E9D1EC16716006953B5 /* firstprojectTests */,
 				2D8B0EA81EC16716006953B5 /* firstprojectUITests */,
+				2D23C4681F149F1900EDA3AA /* WidGetTodayViewController */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2D23C4671F149F1900EDA3AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D23C47C1F14A06000EDA3AA /* m8.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2D8B0E831EC16716006953B5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -954,7 +1037,6 @@
 				2DFD44D01EC4AB570087822A /* mhtml.html in Resources */,
 				2DFCB58D1ECE87840040A60E /* SecondViewController.xib in Resources */,
 				2DFCB5891ECE87840040A60E /* MainViewController.xib in Resources */,
-				2D211DAA1EC80E8B00DA4E6B /* secondViewController in Resources */,
 				2DFCB5D81ED28AF80040A60E /* VideoViewController.xib in Resources */,
 				2D211DAE1ECACA8200DA4E6B /* View in Resources */,
 			);
@@ -1025,6 +1107,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2D23C4651F149F1900EDA3AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D23C46F1F149F1900EDA3AA /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2D8B0E811EC16716006953B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1123,6 +1213,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2D23C4751F149F1900EDA3AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2D23C4681F149F1900EDA3AA /* WidGetTodayViewController */;
+			targetProxy = 2D23C4741F149F1900EDA3AA /* PBXContainerItemProxy */;
+		};
 		2D8B0EA01EC16716006953B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2D8B0E841EC16716006953B5 /* firstproject */;
@@ -1155,6 +1250,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2D23C4771F149F1900EDA3AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = B2WB8E557H;
+				INFOPLIST_FILE = WidGetTodayViewController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.niuxinhuai.text.firstproject.WidGetTodayViewController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2D23C4781F149F1900EDA3AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = B2WB8E557H;
+				INFOPLIST_FILE = WidGetTodayViewController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.niuxinhuai.text.firstproject.WidGetTodayViewController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		2D8B0EB01EC16716006953B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1360,6 +1479,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2D23C4791F149F1900EDA3AA /* Build configuration list for PBXNativeTarget "WidGetTodayViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D23C4771F149F1900EDA3AA /* Debug */,
+				2D23C4781F149F1900EDA3AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		2D8B0E801EC16716006953B5 /* Build configuration list for PBXProject "firstproject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

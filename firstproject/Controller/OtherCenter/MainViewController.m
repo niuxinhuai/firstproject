@@ -94,10 +94,10 @@
     return returnImage;
 }
 -(void)viewWillAppear:(BOOL)animated{
-   // self.verticalScroll.backgroundColor = [UIColor whiteColor];
+    self.verticalScroll.backgroundColor = [UIColor whiteColor];
 
-    //_myTimer = [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(changeScrollContentOffSetY) userInfo:nil repeats:YES];
-   // [[NSRunLoop currentRunLoop] addTimer:_myTimer forMode:NSRunLoopCommonModes];
+    _myTimer = [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(changeScrollContentOffSetY) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:_myTimer forMode:NSRunLoopCommonModes];
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [_myTimer invalidate];
