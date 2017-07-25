@@ -454,6 +454,8 @@ static Tool* tool = nil;
 //    natural_t mem_total = mem_used + mem_free;
 //    NSLog(@"已用: %u 可用: %u 总共: %u", mem_used, mem_free, mem_total);
 //}
+
+
 - (NSString *)getNumberFromStr:(NSString *)str
 {
     NSCharacterSet *nonDigitCharacterSet = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
