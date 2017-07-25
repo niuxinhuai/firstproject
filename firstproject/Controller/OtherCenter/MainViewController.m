@@ -5,7 +5,7 @@
 //  Created by 牛新怀 on 2017/5/17.
 //  Copyright © 2017年 牛新怀. All rights reserved.
 //
-
+#import <CoreMotion/CoreMotion.h>
 #import "MainViewController.h"
 #import "VideoViewController.h"
 #import "LLView.h"
@@ -16,9 +16,14 @@
 @property (strong, nonatomic) UIScrollView * verticalScroll;
 @property (strong, nonatomic) NSArray * titleArrays;
 @property (strong, nonatomic) NSTimer * myTimer;
+@property (strong, nonatomic) UILabel * countLabel;
+@property (strong, nonatomic) CMPedometer * step;// 计步器
+@property (strong, nonatomic) CMMotionManager * CMmanager;
 @end
 
 @implementation MainViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,13 +49,105 @@
 //  
 //    [self.view addSubview:visual];
     
+    UIButton * pushButtons = [UIButton buttonWithType:UIButtonTypeCustom];
+    pushButtons.center = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2-64);
+    pushButtons.bounds = CGRectMake(0, 0, 100, 100);
+    pushButtons.backgroundColor = [UIColor whiteColor];
+    [pushButtons setTitle:@"PUSH" forState:UIControlStateNormal];
+    [pushButtons setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [pushButtons addTarget:self action:@selector(pushViewControllers) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:pushButtons];
     
+    self.countLabel = [[UILabel alloc]init];
+    self.countLabel.center = CGPointMake(SCREEN_WIDTH/2, CGRectGetMaxY(pushButtons.frame)+20);
+    self.countLabel.bounds = CGRectMake(0, 0, SCREEN_WIDTH, 30);
+    self.countLabel.textAlignment = NSTextAlignmentCenter;
+    self.countLabel.backgroundColor = [UIColor whiteColor];
+    self.countLabel.textColor = [UIColor redColor];
+    [self.view addSubview:self.countLabel];
+    self.step = [CMPedometer new];
+    if (![CMPedometer isStepCountingAvailable ]) {
+        NSLog(@"不可用");
+        return;
+    }
+    //开始计步
     
+    [self.step startPedometerUpdatesFromDate:[NSDate date] withHandler:^(CMPedometerData * _Nullable pedometerData, NSError * _Nullable error) {
+        NSLog(@"%@",pedometerData.numberOfSteps);
+        self.countLabel.text =[NSString stringWithFormat:@"%@",pedometerData.numberOfSteps];
+    }];
     
+
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithImageNamed:nil target:self action:@selector(pushOtherViewController)];
+    [UIDevice currentDevice].proximityMonitoringEnabled = YES;
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changed:) name:UIDeviceProximityStateDidChangeNotification object:nil];
+    self.CMmanager = [CMMotionManager new];
+//    if ([self .CMmanager isAccessibilityElement]) {
+    self.CMmanager.accelerometerUpdateInterval=1.0;
+        [self.CMmanager startAccelerometerUpdates];
+  //  }
+    //开始采集
+    [self.CMmanager startAccelerometerUpdatesToQueue:[NSOperationQueue new] withHandler:^(CMAccelerometerData * _Nullable accelerometerData, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"出错 %@",error);
+        }else{
+            CGFloat X=accelerometerData.acceleration.x;
+            CGFloat Y=accelerometerData.acceleration.y;
+            CGFloat Z=accelerometerData.acceleration.z;
+           // NSLog(@"x轴:%f y轴:%f z轴:%f",X,Y,Z);
+        }
+    }];
+
+    
+    
+    
    
 }
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    CMAccelerometerData* data= self.CMmanager.accelerometerData;
+    CGFloat X=data.acceleration.x;
+    CGFloat Y=data.acceleration.y;
+    CGFloat Z=data.acceleration.z;
+   // NSLog(@"x轴:%f y轴:%f z轴:%f",X,Y,Z);
+}
+
+
+-(void)changed:(NSNotification *)notifier{
+    if ([UIDevice currentDevice].proximityState) {
+        NSLog(@"//////////////靠近了");
+    }else{
+        
+        NSLog(@"------------离开了");
+    }
+    
+}
+-(BOOL)canBecomeFirstResponder{
+    return YES;// 将当前vc作为第一响应者
+}
+
+//开始摇一摇
+-(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{
+    
+    NSLog(@"用户摇一摇");
+}
+-(void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event{
+    
+    //摇一摇被打断(比如摇的过程中来电话)
+    NSLog(@"摇一摇被打断(比如摇的过程中来电话)");
+    
+}
+
+-(void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event{
+    //摇一摇结束的时候操作
+    NSLog(@"摇一摇结束的时候操作");
+    
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
+
 +(UIImage *)boxblurImage:(UIImage *)image withBlurNumber:(CGFloat)blur
 {
     if (blur < 0.f || blur > 1.f) {
@@ -94,10 +191,10 @@
     return returnImage;
 }
 -(void)viewWillAppear:(BOOL)animated{
-    self.verticalScroll.backgroundColor = [UIColor whiteColor];
-
-    _myTimer = [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(changeScrollContentOffSetY) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer:_myTimer forMode:NSRunLoopCommonModes];
+//    self.verticalScroll.backgroundColor = [UIColor whiteColor];
+//
+//    _myTimer = [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(changeScrollContentOffSetY) userInfo:nil repeats:YES];
+//    [[NSRunLoop currentRunLoop] addTimer:_myTimer forMode:NSRunLoopCommonModes];
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [_myTimer invalidate];
@@ -118,7 +215,11 @@
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
-
+-(void)pushViewControllers{
+    LLView * vc = [[LLView alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

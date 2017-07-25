@@ -26,7 +26,7 @@ static const NSInteger minT = 1000;
     // Do any additional setup after loading the view.
  
     _maxCount = maxT/minT;
-    [self.view addSubview:self.pickerViews];
+  //  [self.view addSubview:self.pickerViews];
     label = [[UILabel alloc]init];
     label.center = CGPointMake(SCREEN_WIDTH/2, CGRectGetMaxY(self.pickerViews.frame)+30);
     label.bounds = CGRectMake(0, 0, SCREEN_WIDTH, 30);

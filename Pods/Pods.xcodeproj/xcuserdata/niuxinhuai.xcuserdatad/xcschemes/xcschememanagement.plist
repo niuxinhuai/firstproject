@@ -8,43 +8,36 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 		<key>GPUImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
+		</dict>
+		<key>IGListKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>MJRefresh.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
 		</dict>
 		<key>Pods-firstproject.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>SDCycleScrollView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>6</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -54,7 +47,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>449BF52C195255EE73D6DF7D9AFC79D8</key>
+		<key>2848DDCC1A61DC5FB9048E73E35CF299</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>494172E55B65F52AEBC2C6093D1E90F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -64,17 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>705C4A8447D8733CB32A8136E581CE46</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>931AA31A36D0F952DBBE2368619467AF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9E033EDB5EC0819481B0546434FA577B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AD48C194A0B4FC890E97722FD15C3014</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E5347C4FEF677C5AB8C5E0EC85164695</key>
 		<dict>
 			<key>primary</key>
 			<true/>

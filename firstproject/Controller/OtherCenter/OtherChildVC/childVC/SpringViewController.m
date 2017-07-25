@@ -35,7 +35,7 @@
     label.textAlignment = NSTextAlignmentCenter;
     label.text = NSStringFromClass([self class]);
     [self.view addSubview:label];
-    self.videoTableView.backgroundColor = [UIColor whiteColor];
+   // self.videoTableView.backgroundColor = [UIColor whiteColor];
 }
 -(UITableView *)videoTableView{
     if (!_videoTableView) {

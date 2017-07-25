@@ -233,6 +233,7 @@ static sqlite3 * db = nil;
     [operation3 addDependency:operation2];
     NSOperationQueue * queue = [[NSOperationQueue alloc]init];
     [queue addOperations:@[operation1,operation2,operation3] waitUntilFinished:NO];
+    NSLog(@"我加载完了可以刷新了");
     /*
      关于信号量
      信号量：就是一种可用来控制访问资源的数量的标识，设定了一个信号量，在线程访问之前，加上信号量的处理，则可告知系统按照我们指定的信号量数量来执行多个线程。

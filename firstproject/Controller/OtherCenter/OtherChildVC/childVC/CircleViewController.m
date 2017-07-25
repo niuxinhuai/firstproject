@@ -26,12 +26,17 @@
     label.textAlignment = NSTextAlignmentCenter;
     label.text = NSStringFromClass([self class]);
     [self.view addSubview:label];
+    
+   
+    
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
 
 /*
 #pragma mark - Navigation
