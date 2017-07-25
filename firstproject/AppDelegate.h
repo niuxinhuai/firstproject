@@ -8,7 +8,7 @@
 @protocol ChouseAliPayDelegate <NSObject>
 
 - (void)alipaydidSuccess;
-- (void)ailipaydidFaild;
+- (void)ailipaydidFaildWithAliPayFaildIdentifier:(int)identifier;
 
 @end
 #import <UIKit/UIKit.h>

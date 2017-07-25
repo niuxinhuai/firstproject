@@ -35,13 +35,14 @@
 }
 -(void)alipayUrlAction:(NSURL *)url{
     [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+        int status = [[resultDic valueForKey:@"resultStatus"] intValue];
         if ([[resultDic valueForKey:@"resultStatus"] intValue] == 9000) {
             if ([_aliDelegate respondsToSelector:@selector(alipaydidSuccess)]) {
                 [_aliDelegate alipaydidSuccess];
             }
         }else{
-            if ([_aliDelegate respondsToSelector:@selector(ailipaydidFaild)]) {
-                [_aliDelegate ailipaydidFaild];
+            if ([_aliDelegate respondsToSelector:@selector(ailipaydidFaildWithAliPayFaildIdentifier:)]) {
+                [_aliDelegate ailipaydidFaildWithAliPayFaildIdentifier:status];
             }
         }
     }];
