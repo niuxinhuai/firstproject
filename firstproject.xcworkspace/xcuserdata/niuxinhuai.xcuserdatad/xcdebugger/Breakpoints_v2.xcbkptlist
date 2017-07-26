@@ -36,7 +36,7 @@
                   moduleName = "firstproject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/niuxinhuai/Desktop/myFirstObj/firstproject/Controller/OtherCenter/MainViewController.m"
-                  timestampString = "522667390.065622"
+                  timestampString = "522727639.522309"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "75"
@@ -51,7 +51,7 @@
                   moduleName = "firstproject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/niuxinhuai/Desktop/myFirstObj/firstproject/Controller/OtherCenter/MainViewController.m"
-                  timestampString = "522667390.067182"
+                  timestampString = "522727639.524319"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "75"
@@ -74,6 +74,38 @@
             startingLineNumber = "85"
             endingLineNumber = "85"
             landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "firstproject/AppDelegate.m"
+            timestampString = "522727638.30264"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "-application:handleOpenURL:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "firstproject/AppDelegate.m"
+            timestampString = "522727638.30264"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "-application:openURL:options:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

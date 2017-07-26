@@ -54,7 +54,7 @@
     
 }
 -(void)setUpNavigationView{
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithItemTitle:@"支付" target:self action:@selector(leftTap)];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithItemTitle:@"支付宝" target:self action:@selector(leftTap)];
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithItemTitle:@"右侧" target:self action:@selector(rightTap)];
     // 设置导航条为透明

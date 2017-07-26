@@ -128,6 +128,7 @@
 		2DFDDF421F2726E000150B20 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFDDF411F2726E000150B20 /* SystemConfiguration.framework */; };
 		2DFDDF441F2726FA00150B20 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFDDF431F2726FA00150B20 /* CoreTelephony.framework */; };
 		2DFDDF461F27271000150B20 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFDDF451F27271000150B20 /* CoreText.framework */; };
+		2DFDDF4C1F28297D00150B20 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFDDF481F28297D00150B20 /* libWeChatSDK.a */; };
 		DCC1CBBECD28CD4A9E00F9D2 /* libPods-firstproject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C66107815289FE4E0EFEE581 /* libPods-firstproject.a */; };
 /* End PBXBuildFile section */
 
@@ -457,6 +458,10 @@
 		2DFDDF411F2726E000150B20 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2DFDDF431F2726FA00150B20 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		2DFDDF451F27271000150B20 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		2DFDDF481F28297D00150B20 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		2DFDDF491F28297D00150B20 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		2DFDDF4A1F28297D00150B20 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		2DFDDF4B1F28297D00150B20 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		C66107815289FE4E0EFEE581 /* libPods-firstproject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-firstproject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6205359FDCE8AB93F673170 /* Pods-firstproject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firstproject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firstproject/Pods-firstproject.debug.xcconfig"; sourceTree = "<group>"; };
 		E970019A2E6E2A71335B8F11 /* Pods-firstproject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firstproject.release.xcconfig"; path = "Pods/Target Support Files/Pods-firstproject/Pods-firstproject.release.xcconfig"; sourceTree = "<group>"; };
@@ -495,6 +500,7 @@
 				2DFCB6021ED5559E0040A60E /* libbz2.tbd in Frameworks */,
 				2DFCB6001ED5558E0040A60E /* CoreVideo.framework in Frameworks */,
 				2DFCB5FE1ED555840040A60E /* CoreMedia.framework in Frameworks */,
+				2DFDDF4C1F28297D00150B20 /* libWeChatSDK.a in Frameworks */,
 				2DFCB5FC1ED555710040A60E /* AudioToolbox.framework in Frameworks */,
 				2DFCB5A41ECEDD630040A60E /* libxml2.tbd in Frameworks */,
 				2DFD44CE1EC30EDA0087822A /* AVFoundation.framework in Frameworks */,
@@ -595,6 +601,7 @@
 		2D8B0E871EC16716006953B5 /* firstproject */ = {
 			isa = PBXGroup;
 			children = (
+				2DFDDF471F28297D00150B20 /* OpenSDK1.7.9 */,
 				2DFDDEC91F27266C00150B20 /* alipayFiles */,
 				2DFCB5231ECBDDE10040A60E /* basiViewController */,
 				2D8B0E8B1EC16716006953B5 /* AppDelegate.h */,
@@ -1146,6 +1153,17 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		2DFDDF471F28297D00150B20 /* OpenSDK1.7.9 */ = {
+			isa = PBXGroup;
+			children = (
+				2DFDDF481F28297D00150B20 /* libWeChatSDK.a */,
+				2DFDDF491F28297D00150B20 /* WechatAuthSDK.h */,
+				2DFDDF4A1F28297D00150B20 /* WXApi.h */,
+				2DFDDF4B1F28297D00150B20 /* WXApiObject.h */,
+			);
+			path = OpenSDK1.7.9;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1644,6 +1662,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = B2WB8E557H;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/firstproject",
@@ -1665,6 +1684,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/firstproject/alipayFiles",
+					"$(PROJECT_DIR)/firstproject/OpenSDK1.7.9",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.niuxinhuai.text.firstproject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1680,6 +1700,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = B2WB8E557H;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/firstproject",
@@ -1701,6 +1722,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/firstproject/alipayFiles",
+					"$(PROJECT_DIR)/firstproject/OpenSDK1.7.9",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.niuxinhuai.text.firstproject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
