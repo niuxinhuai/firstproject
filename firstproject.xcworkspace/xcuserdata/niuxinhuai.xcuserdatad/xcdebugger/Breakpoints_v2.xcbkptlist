@@ -36,7 +36,7 @@
                   moduleName = "firstproject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/niuxinhuai/Desktop/myFirstObj/firstproject/Controller/OtherCenter/MainViewController.m"
-                  timestampString = "522727639.522309"
+                  timestampString = "522739987.006979"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "75"
@@ -51,7 +51,7 @@
                   moduleName = "firstproject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/niuxinhuai/Desktop/myFirstObj/firstproject/Controller/OtherCenter/MainViewController.m"
-                  timestampString = "522727639.524319"
+                  timestampString = "522739987.009004"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "75"
@@ -106,6 +106,54 @@
             startingLineNumber = "40"
             endingLineNumber = "40"
             landmarkName = "-application:openURL:options:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WidGetTodayViewController/TodayViewController.m"
+            timestampString = "522732374.01533"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WidGetTodayViewController/TodayViewController.m"
+            timestampString = "522732407.447351"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WidGetTodayViewController/TodayViewController.m"
+            timestampString = "522739779.300148"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-widgetPerformUpdateWithCompletionHandler:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

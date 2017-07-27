@@ -16,6 +16,7 @@
 #import "NBasiViewController.h"
 #import "RootNavViewController.h"
 #import "AppDelegate.h"
+#import "UITabBar+baseTabBar.h"
 @interface TotalViewController ()
 @property (nonatomic, strong) NSMutableArray<UIImage*>* nomalImageArray;
 @property (nonatomic, strong) NSMutableArray<UIImage*>* selectImageArray;
@@ -29,6 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setUpUI];
+    [self.tabBar showBadgeOnItmIndex:4];
 }
 
 -(void)setUpUI{
