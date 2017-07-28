@@ -130,6 +130,7 @@
 		2DFDDF461F27271000150B20 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFDDF451F27271000150B20 /* CoreText.framework */; };
 		2DFDDF4C1F28297D00150B20 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFDDF481F28297D00150B20 /* libWeChatSDK.a */; };
 		2DFDDF4F1F298EC100150B20 /* UITabBar+baseTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFDDF4E1F298EC100150B20 /* UITabBar+baseTabBar.m */; };
+		2DFDDF561F2B121A00150B20 /* NSObject+DebugDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFDDF551F2B121A00150B20 /* NSObject+DebugDescription.m */; };
 		DCC1CBBECD28CD4A9E00F9D2 /* libPods-firstproject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C66107815289FE4E0EFEE581 /* libPods-firstproject.a */; };
 /* End PBXBuildFile section */
 
@@ -465,6 +466,8 @@
 		2DFDDF4B1F28297D00150B20 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		2DFDDF4D1F298EC100150B20 /* UITabBar+baseTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+baseTabBar.h"; sourceTree = "<group>"; };
 		2DFDDF4E1F298EC100150B20 /* UITabBar+baseTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+baseTabBar.m"; sourceTree = "<group>"; };
+		2DFDDF541F2B121A00150B20 /* NSObject+DebugDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DebugDescription.h"; sourceTree = "<group>"; };
+		2DFDDF551F2B121A00150B20 /* NSObject+DebugDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DebugDescription.m"; sourceTree = "<group>"; };
 		C66107815289FE4E0EFEE581 /* libPods-firstproject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-firstproject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6205359FDCE8AB93F673170 /* Pods-firstproject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firstproject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firstproject/Pods-firstproject.debug.xcconfig"; sourceTree = "<group>"; };
 		E970019A2E6E2A71335B8F11 /* Pods-firstproject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firstproject.release.xcconfig"; path = "Pods/Target Support Files/Pods-firstproject/Pods-firstproject.release.xcconfig"; sourceTree = "<group>"; };
@@ -725,6 +728,8 @@
 			children = (
 				2DFCB52A1ECBEA7C0040A60E /* Tool.h */,
 				2DFCB52B1ECBEA7C0040A60E /* Tool.m */,
+				2DFDDF541F2B121A00150B20 /* NSObject+DebugDescription.h */,
+				2DFDDF551F2B121A00150B20 /* NSObject+DebugDescription.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1455,6 +1460,7 @@
 				2DA815FF1ED7BA51003AE3A4 /* YLbaseC.m in Sources */,
 				2DFCB6341ED5B4290040A60E /* VideoTopView.m in Sources */,
 				2DFCB52F1ECC13F30040A60E /* RootTableViewController.m in Sources */,
+				2DFDDF561F2B121A00150B20 /* NSObject+DebugDescription.m in Sources */,
 				2DFDDF361F27266C00150B20 /* MD5DataSigner.m in Sources */,
 				2DFCB52C1ECBEA7C0040A60E /* Tool.m in Sources */,
 				2DFCB5A01ECEDD2D0040A60E /* TFHpple.m in Sources */,

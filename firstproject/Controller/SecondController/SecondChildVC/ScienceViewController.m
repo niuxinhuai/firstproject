@@ -71,7 +71,7 @@
 
             });
             dispatch_async(q_concurrent, ^{
-                [weakSelf strokeEndAniationWithStroke:0.001 withLayer:_bottomLayer];
+                [weakSelf strokeEndAniationWithStroke:0 withLayer:_bottomLayer];
                     dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC));
                     dispatch_after(delayTime, dispatch_get_main_queue(), ^{
                         dispatch_async(q_concurrent, ^{
@@ -271,9 +271,10 @@
 -(UIBezierPath *)rightVerticalBezierPath{// 绘制右侧垂直线条路径
     UIBezierPath * path = [UIBezierPath bezierPath];
     [path moveToPoint:CGPointMake(_viewWidth, _viewCenterHeight)];
-   
+    [path addLineToPoint:CGPointMake(_viewWidth, 0)];
     [path addLineToPoint:CGPointMake(_viewWidth, _viewCenterHeight*2)];
- [path addLineToPoint:CGPointMake(_viewWidth, 0)];
+    [path addLineToPoint:CGPointMake(_viewWidth, 0)];
+
     
     return path;
 }
