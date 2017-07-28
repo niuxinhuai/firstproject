@@ -37,111 +37,169 @@
 
 -(void)beginAnimationWithStart{
 
-    dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC));
-    dispatch_after(delayTime, dispatch_get_main_queue(), ^{
-        
-        _leftVerLayer = [self huizhiShapeLayer];
-        
-        _leftVerLayer.path = [self leftVerticalBezierPath].CGPath;
-        // _leftVerLayer.strokeColor = [UIColor purpleColor].CGColor;
-        
-            
-            [self.layer addSublayer:_leftVerLayer];
-        
-        [self animationWthLayer:_leftVerLayer];
-        
-        _rightVerLayer = [self huizhiShapeLayer];
-        _rightVerLayer.path = [self rightVerticalBezierPath].CGPath;
-        [self.layer addSublayer:_rightVerLayer];
-        [self animationWthLayer:_rightVerLayer];
-    });
+
     
 
 
-    
+    __weak typeof (self)weakSelf =self;
     dispatch_queue_t q_concurrent = dispatch_queue_create("my_concurrent_queues", DISPATCH_QUEUE_CONCURRENT);
     
-   // dispatch_async(q_concurrent, ^{
+
         dispatch_async(q_concurrent, ^{
-            dispatch_async(dispatch_get_main_queue(), ^{
+            dispatch_async(q_concurrent, ^{
+                [weakSelf strokeEndAniationWithStroke:0.01 withLayer:_sanjiaoLayer];
                 
-                [UIView animateWithDuration:2 animations:^{
-                    _sanjiaoLayer.strokeEnd = 0.01;
-                    _bottomLayer.strokeEnd = 0.00001;
-                    _bottomLayer.strokeColor = [UIColor clearColor].CGColor;
+                dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC));
+                dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+                dispatch_async(q_concurrent, ^{
                     
-                } completion:^(BOOL finished) {
-                    // [_bottomLayer removeFromSuperlayer];
-                    if (finished) {
-                        //_bottomLayer.strokeColor = [UIColor clearColor].CGColor;
+                    _rightVerLayer = [self huizhiShapeLayer];
+                    _rightVerLayer.path = [weakSelf rightVerticalBezierPath].CGPath;
+                    dispatch_async(dispatch_get_main_queue(), ^{
                         
-                    }
+                        [weakSelf.layer addSublayer:_rightVerLayer];
+                        
+                         });
+                        [weakSelf strokeEndAnimationWithLayer:_rightVerLayer];
+                });
+
                     
                     
-                }];
-                
+                    
+                    
+                });
 
             });
+            dispatch_async(q_concurrent, ^{
+                [weakSelf strokeEndAniationWithStroke:0.001 withLayer:_bottomLayer];
+                    dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC));
+                    dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+                        dispatch_async(q_concurrent, ^{
+                            
+                            _leftVerLayer = [self huizhiShapeLayer];
+                            
+                            _leftVerLayer.path = [weakSelf leftVerticalBezierPath].CGPath;
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                
+                                [weakSelf.layer addSublayer:_leftVerLayer];
+                                [weakSelf strokeEndAnimationWithLayer:_leftVerLayer];
+                            });
+                            
+                            
+                            
+                        });
+                
+                    });
+                
+                
+            });
+
             
         });
- 
-        
-   // });
 
 }
 - (void)endAnimationVithStop{
     //结束，暂停动画
-    dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC));
-    dispatch_after(delayTime, dispatch_get_main_queue(), ^{
-        _sanjiaoLayer = [self huizhiShapeLayer];
-        _sanjiaoLayer.path = [self sanjiaoBezierPath].CGPath;
-        //_sanjiaoLayer.strokeColor = [UIColor purpleColor].CGColor;
-        [self.layer addSublayer:_sanjiaoLayer];
-        _bottomLayer = [self huizhiShapeLayer];
-        _bottomLayer.path = [self bottomBezierPath].CGPath;
-        [self.layer addSublayer:_bottomLayer];
-        [self animationWthLayer:_sanjiaoLayer];
-        [self animationWthLayer:_bottomLayer];
-    });
+//    dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC));
+//    dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+//
+//
+//    });
  
 
         
         
 
-    
+    __weak typeof (self)weakSelf =self;
+
     dispatch_queue_t q_concurrent = dispatch_queue_create("my_concurrent_queuess", DISPATCH_QUEUE_CONCURRENT);
     
     // dispatch_async(q_concurrent, ^{
     dispatch_async(q_concurrent, ^{
-        dispatch_async(dispatch_get_main_queue(), ^{
+
+        dispatch_async(q_concurrent, ^{
+            [weakSelf strokeEndAniationWithStroke:0.01 withLayer:_leftVerLayer];
             
-            [UIView animateWithDuration:2 animations:^{
-                _leftVerLayer.strokeEnd = 0.1;
-                _rightVerLayer.strokeEnd = 0.1;
-                _rightVerLayer.strokeColor = [UIColor clearColor].CGColor;
-                
-            } completion:^(BOOL finished) {
-                // [_bottomLayer removeFromSuperlayer];
-                if (finished) {
-                    //_bottomLayer.strokeColor = [UIColor clearColor].CGColor;
-                    
-                }
-                
-                
-            }];
+                dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC));
+                dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+                    dispatch_async(q_concurrent, ^{
+                        _sanjiaoLayer = [weakSelf huizhiShapeLayer];
+                        _sanjiaoLayer.path = [weakSelf sanjiaoBezierPath].CGPath;
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            
+                            [weakSelf.layer addSublayer:_sanjiaoLayer];
+                            
+                        });
+                        [weakSelf animationWthLayer:_sanjiaoLayer];
+                        
+                        
+                    });
+
             
+                });
             
         });
+        dispatch_async(q_concurrent, ^{
+            [weakSelf strokeEndAniationWithStroke:0.01 withLayer:_rightVerLayer];
+                dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC));
+                dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+                    dispatch_async(q_concurrent, ^{
+                        _bottomLayer = [weakSelf huizhiShapeLayer];
+                        _bottomLayer.path = [weakSelf bottomBezierPath].CGPath;
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            
+                            [weakSelf.layer addSublayer:_bottomLayer];
+                            
+                        });
+                        [weakSelf animationWthLayer:_bottomLayer];
+                        
+                    });
+
+            
+                });
+            
+        });
+
         
     });
     
 }
 
-
+- (void)strokeEndAniationWithStroke:(CGFloat)strokeValues withLayer:(CAShapeLayer *)layer{
+    
+    CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    //pathAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    pathAnimation.duration = 0.5;
+    pathAnimation.removedOnCompletion = NO;
+    pathAnimation.fillMode = kCAFillModeForwards;
+    pathAnimation.toValue = @(strokeValues);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [layer addAnimation:pathAnimation forKey:@"strokeEnd"];
+        
+        
+    });
+    
+    
+}
+#pragma mark - 左右垂直线条抖动动画
+- (void)strokeEndAnimationWithLayer:(CAShapeLayer *)layer{
+    CAKeyframeAnimation * keyAnimation = [CAKeyframeAnimation animationWithKeyPath:@"strokeEnd"];
+    keyAnimation.values = @[@0.3,@0.5,@0.7,@.9,@1.0,@0.9,@0.8,@0.9,@1.0];
+    keyAnimation.removedOnCompletion = NO;
+    keyAnimation.fillMode = kCAFillModeForwards;
+    keyAnimation.duration = 1.3;
+    keyAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [layer addAnimation:keyAnimation forKey:@"moveKeyAnimations"];
+    });
+}
+#pragma mark - 起始界面绘制三角形动画
 -(void)animationWthLayer:(CAShapeLayer *)layer{// 根据strokeEnd做动画
     CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     pathAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     pathAnimation.duration = 1.0;
+    
     pathAnimation.fromValue = [NSNumber numberWithFloat:0.0f];
     pathAnimation.toValue = [NSNumber numberWithFloat:1.0f];
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -150,22 +208,7 @@
         
     });
 }
-- (void)animationWithPosition:(CAShapeLayer *)layer withPath:(UIBezierPath *)path{
-    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
-    // 设置动画的路径为心形路径
-    animation.path = path.CGPath;
-    // 动画时间间隔
-    animation.duration = 1.0f;
-    // 重复次数为最大值
-    animation.repeatCount = 1;
-    animation.removedOnCompletion = NO;
-    animation.fillMode = kCAFillModeForwards;
-    // 将动画添加到动画视图上
-    [layer addAnimation:animation forKey:@"animationPositon"];
-    
-    
-}
-
+#pragma mark - 根据路径做动画， 未用到
 - (void)animationWithPathLayer:(CAShapeLayer *)layer wittFromPath:(UIBezierPath *)path1 withEndPath:(UIBezierPath *)path2{
     CABasicAnimation *fillAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
     fillAnimation.duration = 1;
@@ -179,10 +222,11 @@
 
     });
 }
+
 - (CAShapeLayer *)huizhiShapeLayer{
     CAShapeLayer * shapeLayer = [CAShapeLayer layer];
     shapeLayer.frame = _myFrame;
-    shapeLayer.lineWidth = 5.0f;
+    shapeLayer.lineWidth = 2.0f;
     shapeLayer.lineCap = kCALineCapRound;
     shapeLayer.lineJoin = kCALineJoinRound;
     shapeLayer.strokeColor = [UIColor whiteColor].CGColor;
@@ -218,41 +262,20 @@
     return bezierPath;
 }
 
-- (UIBezierPath *)leftVerticalBezierPath{
+- (UIBezierPath *)leftVerticalBezierPath{// 绘制左侧垂直线条路径
     UIBezierPath * path = [UIBezierPath bezierPath];
     [path moveToPoint:CGPointMake(0, 0)];
     [path addLineToPoint:CGPointMake(0, _viewCenterHeight*2)];
     return path;
 }
--(UIBezierPath *)rightVerticalBezierPath{
+-(UIBezierPath *)rightVerticalBezierPath{// 绘制右侧垂直线条路径
     UIBezierPath * path = [UIBezierPath bezierPath];
     [path moveToPoint:CGPointMake(_viewWidth, _viewCenterHeight)];
-    [path addLineToPoint:CGPointMake(_viewWidth, 0)];
+   
     [path addLineToPoint:CGPointMake(_viewWidth, _viewCenterHeight*2)];
-
+ [path addLineToPoint:CGPointMake(_viewWidth, 0)];
     
     return path;
-}
--(UIBezierPath *)bigLeftAnimationBezierPath{
-    UIBezierPath * path = [UIBezierPath bezierPath];
-    CGPoint topPoint = CGPointMake(0, 0);
-    CGPoint rightCenterPoint = CGPointMake(_viewWidth, _viewCenterHeight);//第二个点
-    [path moveToPoint:rightCenterPoint];
-    [path addLineToPoint:topPoint];
-    [path addLineToPoint:CGPointMake(0, _viewCenterHeight*2)];
-    return path;
-}
--(UIBezierPath *)bigRightAnimationBeizerPath{
-    UIBezierPath * path = [UIBezierPath bezierPath];
-     CGPoint topEndPoint = CGPointMake(0, _viewCenterHeight*2/5);
-    
-    [path moveToPoint:topEndPoint];
-    [path addLineToPoint:CGPointMake(0, _viewCenterHeight*2)];
-    [path addLineToPoint:CGPointMake(_viewWidth*2/3, _viewCenterHeight*2)];
-    [path addLineToPoint:CGPointMake(_viewWidth*2/3, 0)];
-
-    return path;
-    
 }
 
 @end
@@ -285,7 +308,7 @@
     if (!_purse_startView) {
         _purse_startView = [[AnimationButtonView alloc]init];
         _purse_startView.center = CGPointMake(SCREEN_WIDTH/2, (SCREEN_HEIGHT-64)/2);
-        _purse_startView.bounds = CGRectMake(0, 0, 30, 40);
+        _purse_startView.bounds = CGRectMake(0, 0, 20, 25);
         _purse_startView.backgroundColor = [UIColor clearColor];
         _purse_startView.userInteractionEnabled = YES;
         UITapGestureRecognizer * tap  = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(changeAnimatio)];
