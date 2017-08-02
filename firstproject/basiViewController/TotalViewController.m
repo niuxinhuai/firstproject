@@ -97,7 +97,7 @@
     UIImage * selectImage = self.selectImageArray[tag];
     NSString * text = self.titleArray[tag];
      NBasiViewController* childVC;
-    if ([class isEqualToString:@"ViewController"] ) {
+    if ([class isEqualToString:@"ViewController"]) {
         ViewController * vc = [[ViewController alloc]init];
         
         childVC = vc;

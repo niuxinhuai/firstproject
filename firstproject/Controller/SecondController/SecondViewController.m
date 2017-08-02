@@ -56,7 +56,7 @@
 -(void)setUpNavigationView{
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithItemTitle:@"支付宝" target:self action:@selector(leftTap)];
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithItemTitle:@"右侧" target:self action:@selector(rightTap)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithItemTitle:@"高德地图" target:self action:@selector(rightTap)];
     // 设置导航条为透明
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     // 去除导航条底部黑线
@@ -172,15 +172,15 @@
 }
 
 #pragma mark - 支付成功？失败回掉
--(void)alipaydidSuccess{
+- (void)alipaydidSuccess{
     //成功
 }
--(void)ailipaydidFaild{
+-(void)ailipaydidFaildWithAliPayFaildIdentifier:(int)identifier{
     // 失败
 }
 
 
-#pragma mark - 右侧点击
+#pragma mark - 右侧点击  高德地图
 -(void)rightTap{
     
 }

@@ -16,6 +16,7 @@
 #import "WebViewJavascriptBridge.h"
 #import <objc/runtime.h>
 #import <sqlite3.h>
+#import "TenCentProgressView.h"
 @interface ViewController ()<AVSpeechSynthesizerDelegate,UIWebViewDelegate>{
     NSString * filePath;
     AVAudioRecorder * recorde;
@@ -33,6 +34,7 @@
 @property (nonatomic, strong) UIButton * topButton;
 @property (nonatomic, strong) CircleView * views;
 @property (nonatomic, strong) UIActivityIndicatorView * indicator;
+@property (nonatomic, strong) TenCentProgressView * circleView;
 @end
 static sqlite3 * db = nil;
 @implementation ViewController
@@ -41,6 +43,7 @@ static sqlite3 * db = nil;
     [super viewDidLoad];
     isSelect = NO;
     [self createSqlite];
+
    // self.bridge = [WebViewJavascriptBridge bridgeForWebView:webView];
     
     
@@ -145,6 +148,8 @@ static sqlite3 * db = nil;
     UIImageView * imagev = [[UIImageView alloc]initWithImage:images];
     imagev.contentMode = UIViewContentModeScaleAspectFill;
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:images]];
+    [self.view addSubview:self.circleView];
+
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -194,6 +199,7 @@ static sqlite3 * db = nil;
 }
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     self.indicator.backgroundColor = [UIColor cyanColor];
+    [self.circleView tencentStartAnimation];
     isSelect = !isSelect;
     if (isSelect) {
         [self.indicator startAnimating];
@@ -409,7 +415,16 @@ static sqlite3 * db = nil;
     
     return _views;
 }
-
+- (TenCentProgressView *)circleView{
+    if (!_circleView) {
+        _circleView = [[TenCentProgressView alloc]init];
+        _circleView.frame = CGRectMake(140, 100, 30, 30);
+        _circleView.backgroundColor = [UIColor redColor];
+    }
+    
+    
+    return _circleView;
+}
 
 -(UIButton *)button{
     if (!_button) {

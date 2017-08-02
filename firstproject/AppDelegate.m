@@ -5,13 +5,14 @@
 //  Created by 牛新怀 on 2017/5/9.
 //  Copyright © 2017年 牛新怀. All rights reserved.
 //
-
+#define LBSMAPKEY @"feaddf64a473c866213d342e680287ac"
 #import "AppDelegate.h"
 #import <AlipaySDK/AlipaySDK.h>
 #import "Order.h"
 #import "DataSigner.h"
 #import "WXApi.h"
 #import "TotalViewController.h"
+#import <AMapFoundationKit/AMapFoundationKit.h>
 @interface AppDelegate ()<WXApiDelegate>
 
 @end
@@ -24,7 +25,7 @@
      *  向微信终端注册ID，这里的APPID一般建议写成宏,容易维护。@“测试demo”不需用管。这里的id是假的，需要改这里还有target里面的URL Type
      */
     [WXApi registerApp:@"wx519424286509f4aa"];
-    
+    [[AMapServices sharedServices] setApiKey:LBSMAPKEY];
 
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     TotalViewController * totalVc = [[TotalViewController alloc]init];

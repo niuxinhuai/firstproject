@@ -36,7 +36,7 @@
                   moduleName = "firstproject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/niuxinhuai/Desktop/myFirstObj/firstproject/Controller/OtherCenter/MainViewController.m"
-                  timestampString = "522840097.004325"
+                  timestampString = "523032312.654789"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "75"
@@ -51,7 +51,7 @@
                   moduleName = "firstproject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/niuxinhuai/Desktop/myFirstObj/firstproject/Controller/OtherCenter/MainViewController.m"
-                  timestampString = "522840097.006567"
+                  timestampString = "523032312.656281"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "75"
@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "firstproject/AppDelegate.m"
-            timestampString = "522727638.30264"
+            timestampString = "523264063.983012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "-application:handleOpenURL:"
             landmarkType = "7">
          </BreakpointContent>
@@ -100,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "firstproject/AppDelegate.m"
-            timestampString = "522727638.30264"
+            timestampString = "523264063.983012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "-application:openURL:options:"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,6 +154,22 @@
             startingLineNumber = "43"
             endingLineNumber = "43"
             landmarkName = "-widgetPerformUpdateWithCompletionHandler:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "firstproject/Controller/SecondController/SecondChildVC/ScienceViewController.m"
+            timestampString = "523184460.15594"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "334"
+            endingLineNumber = "334"
+            landmarkName = "-touchesBegan:withEvent:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

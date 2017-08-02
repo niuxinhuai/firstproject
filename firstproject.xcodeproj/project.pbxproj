@@ -131,6 +131,8 @@
 		2DFDDF4C1F28297D00150B20 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFDDF481F28297D00150B20 /* libWeChatSDK.a */; };
 		2DFDDF4F1F298EC100150B20 /* UITabBar+baseTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFDDF4E1F298EC100150B20 /* UITabBar+baseTabBar.m */; };
 		2DFDDF561F2B121A00150B20 /* NSObject+DebugDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFDDF551F2B121A00150B20 /* NSObject+DebugDescription.m */; };
+		2DFDDF5F1F2F1E8C00150B20 /* ThermometerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFDDF5E1F2F1E8C00150B20 /* ThermometerView.m */; };
+		2DFDDF621F300FAC00150B20 /* TenCentProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFDDF611F300FAC00150B20 /* TenCentProgressView.m */; };
 		DCC1CBBECD28CD4A9E00F9D2 /* libPods-firstproject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C66107815289FE4E0EFEE581 /* libPods-firstproject.a */; };
 /* End PBXBuildFile section */
 
@@ -468,6 +470,10 @@
 		2DFDDF4E1F298EC100150B20 /* UITabBar+baseTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+baseTabBar.m"; sourceTree = "<group>"; };
 		2DFDDF541F2B121A00150B20 /* NSObject+DebugDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DebugDescription.h"; sourceTree = "<group>"; };
 		2DFDDF551F2B121A00150B20 /* NSObject+DebugDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DebugDescription.m"; sourceTree = "<group>"; };
+		2DFDDF5D1F2F1E8C00150B20 /* ThermometerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThermometerView.h; sourceTree = "<group>"; };
+		2DFDDF5E1F2F1E8C00150B20 /* ThermometerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThermometerView.m; sourceTree = "<group>"; };
+		2DFDDF601F300FAC00150B20 /* TenCentProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TenCentProgressView.h; path = firstproject/Controller/SecondController/view/TenCentProgressView.h; sourceTree = SOURCE_ROOT; };
+		2DFDDF611F300FAC00150B20 /* TenCentProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TenCentProgressView.m; path = firstproject/Controller/SecondController/view/TenCentProgressView.m; sourceTree = SOURCE_ROOT; };
 		C66107815289FE4E0EFEE581 /* libPods-firstproject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-firstproject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6205359FDCE8AB93F673170 /* Pods-firstproject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firstproject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-firstproject/Pods-firstproject.debug.xcconfig"; sourceTree = "<group>"; };
 		E970019A2E6E2A71335B8F11 /* Pods-firstproject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firstproject.release.xcconfig"; path = "Pods/Target Support Files/Pods-firstproject/Pods-firstproject.release.xcconfig"; sourceTree = "<group>"; };
@@ -816,6 +822,8 @@
 		2DFCB5911ECE88810040A60E /* IndexChildVC */ = {
 			isa = PBXGroup;
 			children = (
+				2DFDDF601F300FAC00150B20 /* TenCentProgressView.h */,
+				2DFDDF611F300FAC00150B20 /* TenCentProgressView.m */,
 			);
 			path = IndexChildVC;
 			sourceTree = "<group>";
@@ -965,6 +973,8 @@
 				2DFCB6281ED569130040A60E /* VideoTableViewCell.m */,
 				2DFCB62A1ED585610040A60E /* TopVIewScrollView.h */,
 				2DFCB62B1ED585610040A60E /* TopVIewScrollView.m */,
+				2DFDDF5D1F2F1E8C00150B20 /* ThermometerView.h */,
+				2DFDDF5E1F2F1E8C00150B20 /* ThermometerView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1441,6 +1451,7 @@
 				2D53BB761EE7E2690075058E /* VideoRootViewController.m in Sources */,
 				2DA816101ED95CF2003AE3A4 /* ShareView.m in Sources */,
 				2DFDDF341F27266C00150B20 /* DataSigner.m in Sources */,
+				2DFDDF621F300FAC00150B20 /* TenCentProgressView.m in Sources */,
 				2DFCB5DE1ED28E400040A60E /* RTRootNavigationController.m in Sources */,
 				2D53BB791EE7E2950075058E /* CircleViewController.m in Sources */,
 				2DFCB63E1ED6A10A0040A60E /* BannerWebViewController.m in Sources */,
@@ -1491,6 +1502,7 @@
 				2DFCB5CB1ED01D2D0040A60E /* NSString+XFTime.m in Sources */,
 				2D8B0E8A1EC16716006953B5 /* main.m in Sources */,
 				2DFDDF351F27266C00150B20 /* DataVerifier.m in Sources */,
+				2DFDDF5F1F2F1E8C00150B20 /* ThermometerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

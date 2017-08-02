@@ -7,6 +7,14 @@
 //
 
 #import "ScienceViewController.h"
+#import "ThermometerView.h"
+@interface motionView : UIView
+@property (nonatomic, strong)CAShapeLayer * motionLayer;
+
+@end
+
+
+
 @interface AnimationButtonView : UIView
 @property (nonatomic, assign)CGFloat viewWidth;
 @property (nonatomic, assign)CGFloat viewCenterHeight;
@@ -286,6 +294,8 @@
     BOOL is_select;
 }
 @property (nonatomic, strong)AnimationButtonView * purse_startView;
+@property (nonatomic, strong)UIView * animation_xAnimationView;
+@property (nonatomic, strong)ThermometerView * rmometerView;
 @end
 
 @implementation ScienceViewController
@@ -296,6 +306,8 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor uiColorFromString:@"#1997eb"];
     [self.view addSubview:self.purse_startView];
+   // [self.view addSubview:self.animation_xAnimationView];
+    [self.view addSubview:self.rmometerView];
 }
 -(void)viewWillAppear:(BOOL)animated{
     NSLog(@"123");
@@ -304,6 +316,42 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (UIView *)animation_xAnimationView{
+    if (!_animation_xAnimationView) {
+        _animation_xAnimationView = [[UIView alloc]init];
+        _animation_xAnimationView.center = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT-200);
+        _animation_xAnimationView.bounds = CGRectMake(0, 0, 100, 20);
+        _animation_xAnimationView.layer.cornerRadius = 10;
+        _animation_xAnimationView.clipsToBounds = YES;
+        _animation_xAnimationView.backgroundColor = [UIColor orangeColor];
+        
+    }
+    
+    return _animation_xAnimationView;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self strokeEndAniationWithStroke:0.8 withLayer:self.animation_xAnimationView.layer];
+
+}
+- (void)strokeEndAniationWithStroke:(CGFloat)strokeValues withLayer:(CALayer *)layer{
+    
+    CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    //pathAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    pathAnimation.duration = 0.5;
+    pathAnimation.removedOnCompletion = NO;
+    pathAnimation.fillMode = kCAFillModeForwards;
+    pathAnimation.toValue = @(strokeValues);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [layer addAnimation:pathAnimation forKey:@"strokeEnd"];
+        
+        
+    });
+    
+    
+}
+
+
 - (AnimationButtonView *)purse_startView
 {
     if (!_purse_startView) {
@@ -326,6 +374,22 @@
         [self.purse_startView endAnimationVithStop];
     }
 }
+
+- (ThermometerView *)rmometerView{
+    if (!_rmometerView) {
+        _rmometerView = [[ThermometerView alloc]init];
+        _rmometerView.frame = CGRectMake(50, 60, 100, 20);
+        _rmometerView.fillColors = [UIColor redColor];
+       // _rmometerView.strokeColors = [UIColor lightGrayColor];
+        _rmometerView.strokeEndBissniss = 0.7;
+        _rmometerView.backgroundColor = [UIColor clearColor];
+    }
+    
+    return _rmometerView;
+}
+
+
+
 /*
 #pragma mark - Navigation
 
