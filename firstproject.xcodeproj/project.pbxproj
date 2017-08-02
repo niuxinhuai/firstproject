@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D1A688E1F3164C20079BFD4 /* SingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A688D1F3164C20079BFD4 /* SingButton.m */; };
+		2D1A68911F3168750079BFD4 /* VideoTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68901F3168750079BFD4 /* VideoTime.m */; };
+		2D1A68941F3177C10079BFD4 /* NbPurseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68931F3177C10079BFD4 /* NbPurseView.m */; };
+		2D1A689C1F319F350079BFD4 /* BLSubstituteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68971F319F350079BFD4 /* BLSubstituteObject.m */; };
+		2D1A689D1F319F350079BFD4 /* UIView+BLLandscape.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68991F319F350079BFD4 /* UIView+BLLandscape.m */; };
+		2D1A689E1F319F350079BFD4 /* UIViewController+Landscape.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A689B1F319F350079BFD4 /* UIViewController+Landscape.m */; };
 		2D211DB21ECACAD800DA4E6B /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D211DB11ECACAD800DA4E6B /* CircleView.m */; };
 		2D23C46B1F149F1900EDA3AA /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D23C46A1F149F1900EDA3AA /* NotificationCenter.framework */; };
 		2D23C46F1F149F1900EDA3AA /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D23C46E1F149F1900EDA3AA /* TodayViewController.m */; };
@@ -175,6 +181,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2D1A688C1F3164C20079BFD4 /* SingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingButton.h; sourceTree = "<group>"; };
+		2D1A688D1F3164C20079BFD4 /* SingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingButton.m; sourceTree = "<group>"; };
+		2D1A688F1F3168750079BFD4 /* VideoTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTime.h; sourceTree = "<group>"; };
+		2D1A68901F3168750079BFD4 /* VideoTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoTime.m; sourceTree = "<group>"; };
+		2D1A68921F3177C10079BFD4 /* NbPurseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NbPurseView.h; sourceTree = "<group>"; };
+		2D1A68931F3177C10079BFD4 /* NbPurseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NbPurseView.m; sourceTree = "<group>"; };
+		2D1A68961F319F350079BFD4 /* BLSubstituteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLSubstituteObject.h; sourceTree = "<group>"; };
+		2D1A68971F319F350079BFD4 /* BLSubstituteObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLSubstituteObject.m; sourceTree = "<group>"; };
+		2D1A68981F319F350079BFD4 /* UIView+BLLandscape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BLLandscape.h"; sourceTree = "<group>"; };
+		2D1A68991F319F350079BFD4 /* UIView+BLLandscape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BLLandscape.m"; sourceTree = "<group>"; };
+		2D1A689A1F319F350079BFD4 /* UIViewController+Landscape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Landscape.h"; sourceTree = "<group>"; };
+		2D1A689B1F319F350079BFD4 /* UIViewController+Landscape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Landscape.m"; sourceTree = "<group>"; };
 		2D211DB01ECACAD800DA4E6B /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
 		2D211DB11ECACAD800DA4E6B /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 		2D23C4691F149F1900EDA3AA /* WidGetTodayViewController.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidGetTodayViewController.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -546,6 +564,40 @@
 				E970019A2E6E2A71335B8F11 /* Pods-firstproject.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		2D1A688A1F3164920079BFD4 /* play_video_view */ = {
+			isa = PBXGroup;
+			children = (
+				2D1A68951F319F350079BFD4 /* BLLandscape */,
+				2D1A688C1F3164C20079BFD4 /* SingButton.h */,
+				2D1A688D1F3164C20079BFD4 /* SingButton.m */,
+				2D1A68921F3177C10079BFD4 /* NbPurseView.h */,
+				2D1A68931F3177C10079BFD4 /* NbPurseView.m */,
+			);
+			path = play_video_view;
+			sourceTree = "<group>";
+		};
+		2D1A688B1F31649E0079BFD4 /* play_video_model */ = {
+			isa = PBXGroup;
+			children = (
+				2D1A688F1F3168750079BFD4 /* VideoTime.h */,
+				2D1A68901F3168750079BFD4 /* VideoTime.m */,
+			);
+			path = play_video_model;
+			sourceTree = "<group>";
+		};
+		2D1A68951F319F350079BFD4 /* BLLandscape */ = {
+			isa = PBXGroup;
+			children = (
+				2D1A68961F319F350079BFD4 /* BLSubstituteObject.h */,
+				2D1A68971F319F350079BFD4 /* BLSubstituteObject.m */,
+				2D1A68981F319F350079BFD4 /* UIView+BLLandscape.h */,
+				2D1A68991F319F350079BFD4 /* UIView+BLLandscape.m */,
+				2D1A689A1F319F350079BFD4 /* UIViewController+Landscape.h */,
+				2D1A689B1F319F350079BFD4 /* UIViewController+Landscape.m */,
+			);
+			path = BLLandscape;
 			sourceTree = "<group>";
 		};
 		2D211DAF1ECACABA00DA4E6B /* View */ = {
@@ -938,6 +990,7 @@
 		2DFCB6111ED5622A0040A60E /* model */ = {
 			isa = PBXGroup;
 			children = (
+				2D1A688B1F31649E0079BFD4 /* play_video_model */,
 				2DA815FA1ED7BA51003AE3A4 /* videoScrollData */,
 				2DFCB6351ED6879A0040A60E /* Banner */,
 				2DFCB6121ED5624A0040A60E /* ShowVideo */,
@@ -969,6 +1022,7 @@
 		2DFCB6261ED568ED0040A60E /* view */ = {
 			isa = PBXGroup;
 			children = (
+				2D1A688A1F3164920079BFD4 /* play_video_view */,
 				2DFCB6271ED569130040A60E /* VideoTableViewCell.h */,
 				2DFCB6281ED569130040A60E /* VideoTableViewCell.m */,
 				2DFCB62A1ED585610040A60E /* TopVIewScrollView.h */,
@@ -1418,6 +1472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D1A689E1F319F350079BFD4 /* UIViewController+Landscape.m in Sources */,
 				2DFCB5A11ECEDD2D0040A60E /* TFHppleElement.m in Sources */,
 				2DFCB6291ED569130040A60E /* VideoTableViewCell.m in Sources */,
 				2DFDDF391F27266C00150B20 /* RSADataSigner.m in Sources */,
@@ -1428,6 +1483,7 @@
 				2DFCB5F51ED519430040A60E /* HaveFunViewController.m in Sources */,
 				2DFCB6301ED5911A0040A60E /* IJKVideoViewController.m in Sources */,
 				2DFCB5CE1ED01D2D0040A60E /* UIView+Extension.m in Sources */,
+				2D1A688E1F3164C20079BFD4 /* SingButton.m in Sources */,
 				2DFCB5AE1ECF22350040A60E /* WebViewJavascriptBridge.m in Sources */,
 				2DFCB5EC1ED518CD0040A60E /* ScienceViewController.m in Sources */,
 				2D8883C31EF3B96400E90CBD /* UIView+ZYDraggable.m in Sources */,
@@ -1459,6 +1515,8 @@
 				2DFCB5E91ED518B80040A60E /* VideoShowViewController.m in Sources */,
 				2DFCB5881ECE87840040A60E /* MainViewController.m in Sources */,
 				2DA816A61EE29C4C003AE3A4 /* EmojiCollectionViewCell.m in Sources */,
+				2D1A68941F3177C10079BFD4 /* NbPurseView.m in Sources */,
+				2D1A689C1F319F350079BFD4 /* BLSubstituteObject.m in Sources */,
 				2DFDDF331F27266C00150B20 /* base64.m in Sources */,
 				2D211DB21ECACAD800DA4E6B /* CircleView.m in Sources */,
 				2DFCB5E21ED294050040A60E /* MainTabbarViewController.m in Sources */,
@@ -1478,6 +1536,7 @@
 				2D53BB821EE7E2E20075058E /* PictureViewController.m in Sources */,
 				2DFCB5901ECE87AB0040A60E /* TotalViewController.m in Sources */,
 				2DFCB5291ECBE9940040A60E /* RootNavViewController.m in Sources */,
+				2D1A68911F3168750079BFD4 /* VideoTime.m in Sources */,
 				2DFCB5F21ED519320040A60E /* PracticesViewController.m in Sources */,
 				2DFCB6251ED5624A0040A60E /* YKLives.m in Sources */,
 				2DFCB5B11ECF22350040A60E /* WKWebViewJavascriptBridge.m in Sources */,
@@ -1492,6 +1551,7 @@
 				2DFCB5DF1ED28E400040A60E /* UIViewController+RTRootNavigationController.m in Sources */,
 				2DFCB5CD1ED01D2D0040A60E /* UIImageView+Header.m in Sources */,
 				2DFCB5E61ED518720040A60E /* HYPageView.m in Sources */,
+				2D1A689D1F319F350079BFD4 /* UIView+BLLandscape.m in Sources */,
 				2DA388111EFCB07B0095F14F /* UIViewController+custom.m in Sources */,
 				2D8B0E8D1EC16716006953B5 /* AppDelegate.m in Sources */,
 				2DFCB6201ED5624A0040A60E /* YKBasic.m in Sources */,

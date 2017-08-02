@@ -69,6 +69,11 @@
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:color};
     
 }
+// 修改状态栏颜色为白色
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 -(void)popToSpecifiedControllerWithVC:(UIViewController *)viewController{
     NSMutableArray * allViewControllers = [NSMutableArray arrayWithArray:[self.navigationController viewControllers]];
     for (UIViewController * specifiedViewController in allViewControllers) {

@@ -36,6 +36,9 @@
     // Override point for customization after application launch.
     return YES;
 }
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
+    return self.window.rootViewController.supportedInterfaceOrientations;
+}
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
     NSLog(@"%@",url.scheme);
     if ([url.scheme isEqualToString:@"scheme"]) {

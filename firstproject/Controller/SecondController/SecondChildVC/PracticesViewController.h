@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef NS_ENUM(NSUInteger, Direction) {
+    DirectionLeftOrRight,
+    DirectionUpOrDown,
+    DirectionNone
+    
+};
+typedef NS_ENUM(NSUInteger,UserChouseButtonTag){
+    UserChouseButtonTagWithFillScreen     =100,// 全屏
+    UserChouseButtonTagWithVoice          =101,// 声音
+    UserChouseButtonTagWithBegin          =102,// 开始暂停
+    
+};
 @interface PracticesViewController : NBasiViewController
 
 @end

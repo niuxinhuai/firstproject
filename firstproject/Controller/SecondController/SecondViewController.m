@@ -178,6 +178,16 @@
 -(void)ailipaydidFaildWithAliPayFaildIdentifier:(int)identifier{
     // 失败
 }
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;  // Light content, for use on dark backgrounds
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return NO; // 是否隐藏状态栏
+}
+
 
 
 #pragma mark - 右侧点击  高德地图
@@ -204,7 +214,7 @@
 
 -(NSArray *)titleArray{
     if (!_titleArray) {
-        _titleArray = [NSArray arrayWithObjects:@"科学",@"直播间",@"新闻资讯",@"自练习",@"快乐的事",@"自定义", nil];
+        _titleArray = [NSArray arrayWithObjects:@"科学",@"直播间",@"新闻资讯",@"视频播放",@"快乐的事",@"自定义", nil];
     }
     
     return _titleArray;

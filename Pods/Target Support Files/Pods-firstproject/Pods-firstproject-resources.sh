@@ -87,6 +87,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "GPUImage/framework/Resources/lookup_miss_etikate.png"
   install_resource "GPUImage/framework/Resources/lookup_soft_elegance_1.png"
   install_resource "GPUImage/framework/Resources/lookup_soft_elegance_2.png"
+  install_resource "JPNavigationController/JPNavigationController/JPNavigationController.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -97,6 +98,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "GPUImage/framework/Resources/lookup_miss_etikate.png"
   install_resource "GPUImage/framework/Resources/lookup_soft_elegance_1.png"
   install_resource "GPUImage/framework/Resources/lookup_soft_elegance_2.png"
+  install_resource "JPNavigationController/JPNavigationController/JPNavigationController.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
 fi
 

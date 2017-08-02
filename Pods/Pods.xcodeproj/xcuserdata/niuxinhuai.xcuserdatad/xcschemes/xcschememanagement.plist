@@ -19,7 +19,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JPNavigationController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JRSwizzle.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,12 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2848DDCC1A61DC5FB9048E73E35CF299</key>
+		<key>0606AE1E7696CCFE3E1400A92489A474</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>494172E55B65F52AEBC2C6093D1E90F9</key>
+		<key>1862734025F274E2FD4AE3C929178BB4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2378D59197A1710B35D404A627F58142</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,12 +82,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>705C4A8447D8733CB32A8136E581CE46</key>
+		<key>915E8FEADDA0644106187EA8CE7B2E00</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>91A7EE5763EE9CD3855FE3BD71C387C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>931AA31A36D0F952DBBE2368619467AF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9DC8D9E02903E93BD0B2FEC9D846EA20</key>
 		<dict>
 			<key>primary</key>
 			<true/>
