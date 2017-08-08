@@ -12,4 +12,5 @@
 // 获取时间
 + (NSString *)convertTime:(CGFloat)second;
 +(UIButton *)createButtonWithImageName:(NSString *)imageName withTag:(NSInteger)tag;
++ (UIImage*) thumbnailImageForVideo:(NSURL *)videoURL atTime:(NSTimeInterval)time;
 @end

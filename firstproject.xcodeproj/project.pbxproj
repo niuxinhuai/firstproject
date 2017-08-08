@@ -13,6 +13,47 @@
 		2D1A689C1F319F350079BFD4 /* BLSubstituteObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68971F319F350079BFD4 /* BLSubstituteObject.m */; };
 		2D1A689D1F319F350079BFD4 /* UIView+BLLandscape.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68991F319F350079BFD4 /* UIView+BLLandscape.m */; };
 		2D1A689E1F319F350079BFD4 /* UIViewController+Landscape.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A689B1F319F350079BFD4 /* UIViewController+Landscape.m */; };
+		2D1A68A11F331B570079BFD4 /* NetWorkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68A01F331B570079BFD4 /* NetWorkTool.m */; };
+		2D1A68A51F3406E30079BFD4 /* BaiduAIPictureIdentifyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68A41F3406E30079BFD4 /* BaiduAIPictureIdentifyView.m */; };
+		2D1A68A71F34519B0079BFD4 /* AipBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D1A68A61F34519B0079BFD4 /* AipBase.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		2D1A68AE1F3462600079BFD4 /* aip.license in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68AD1F3462600079BFD4 /* aip.license */; };
+		2D1A68B01F37FB920079BFD4 /* IdcardQuality.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D1A68AF1F37FB920079BFD4 /* IdcardQuality.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		2D1A68F11F37FC040079BFD4 /* AipOcrSdk.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68B21F37FC040079BFD4 /* AipOcrSdk.storyboard */; };
+		2D1A68F31F37FC040079BFD4 /* guan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68B61F37FC040079BFD4 /* guan@2x.png */; };
+		2D1A68F41F37FC040079BFD4 /* guan@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68B71F37FC040079BFD4 /* guan@3x.png */; };
+		2D1A68F51F37FC040079BFD4 /* queding@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68B81F37FC040079BFD4 /* queding@2x.png */; };
+		2D1A68F61F37FC040079BFD4 /* queding@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68B91F37FC040079BFD4 /* queding@3x.png */; };
+		2D1A68F71F37FC040079BFD4 /* xuanzhuan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68BA1F37FC040079BFD4 /* xuanzhuan@2x.png */; };
+		2D1A68F81F37FC040079BFD4 /* xuanzhuan@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68BB1F37FC040079BFD4 /* xuanzhuan@3x.png */; };
+		2D1A68F91F37FC040079BFD4 /* dengpao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68BD1F37FC040079BFD4 /* dengpao@2x.png */; };
+		2D1A68FA1F37FC040079BFD4 /* dengpao@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68BE1F37FC040079BFD4 /* dengpao@3x.png */; };
+		2D1A68FB1F37FC040079BFD4 /* dengpao_dianjihou@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68BF1F37FC040079BFD4 /* dengpao_dianjihou@2x.png */; };
+		2D1A68FC1F37FC040079BFD4 /* dengpao_dianjihou@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68C01F37FC040079BFD4 /* dengpao_dianjihou@3x.png */; };
+		2D1A68FD1F37FC040079BFD4 /* guanbi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68C11F37FC040079BFD4 /* guanbi@2x.png */; };
+		2D1A68FE1F37FC040079BFD4 /* guanbi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68C21F37FC040079BFD4 /* guanbi@3x.png */; };
+		2D1A68FF1F37FC040079BFD4 /* paizhaoanniu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68C31F37FC040079BFD4 /* paizhaoanniu@2x.png */; };
+		2D1A69001F37FC040079BFD4 /* paizhaoanniu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68C41F37FC040079BFD4 /* paizhaoanniu@3x.png */; };
+		2D1A69011F37FC040079BFD4 /* paizhaoanniu_dianjihou@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68C51F37FC040079BFD4 /* paizhaoanniu_dianjihou@2x.png */; };
+		2D1A69021F37FC040079BFD4 /* paizhaoanniu_dianjihou@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68C61F37FC040079BFD4 /* paizhaoanniu_dianjihou@3x.png */; };
+		2D1A69031F37FC040079BFD4 /* tuku@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68C71F37FC040079BFD4 /* tuku@2x.png */; };
+		2D1A69041F37FC040079BFD4 /* tuku@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68C81F37FC040079BFD4 /* tuku@3x.png */; };
+		2D1A69051F37FC040079BFD4 /* xuxian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68C91F37FC040079BFD4 /* xuxian@2x.png */; };
+		2D1A69061F37FC040079BFD4 /* xuxian@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68CA1F37FC040079BFD4 /* xuxian@3x.png */; };
+		2D1A69071F37FC040079BFD4 /* Page 1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68CC1F37FC040079BFD4 /* Page 1@2x.png */; };
+		2D1A69081F37FC040079BFD4 /* Page 1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1A68CD1F37FC040079BFD4 /* Page 1@3x.png */; };
+		2D1A69091F37FC040079BFD4 /* AipOcrService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68D21F37FC040079BFD4 /* AipOcrService.m */; };
+		2D1A690A1F37FC040079BFD4 /* AipDisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68D61F37FC040079BFD4 /* AipDisplayLink.m */; };
+		2D1A690B1F37FC040079BFD4 /* IOSpeScaleLayoutButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68D81F37FC040079BFD4 /* IOSpeScaleLayoutButton.m */; };
+		2D1A690C1F37FC040079BFD4 /* IOSpeScaleLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68DA1F37FC040079BFD4 /* IOSpeScaleLayoutConstraint.m */; };
+		2D1A690D1F37FC040079BFD4 /* IOSpeScaleLayoutLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68DC1F37FC040079BFD4 /* IOSpeScaleLayoutLabel.m */; };
+		2D1A690E1F37FC040079BFD4 /* UIImage+AipCameraAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68DE1F37FC040079BFD4 /* UIImage+AipCameraAddition.m */; };
+		2D1A69101F37FC040079BFD4 /* AipCameraPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68E31F37FC040079BFD4 /* AipCameraPreviewView.m */; };
+		2D1A69111F37FC040079BFD4 /* AipCutImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68E51F37FC040079BFD4 /* AipCutImageView.m */; };
+		2D1A69121F37FC040079BFD4 /* AipImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68E71F37FC040079BFD4 /* AipImageView.m */; };
+		2D1A69131F37FC040079BFD4 /* AipCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68EA1F37FC040079BFD4 /* AipCameraController.m */; };
+		2D1A69141F37FC040079BFD4 /* AipCaptureCardVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68EC1F37FC040079BFD4 /* AipCaptureCardVC.mm */; };
+		2D1A69151F37FC040079BFD4 /* AipGeneralVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68EE1F37FC040079BFD4 /* AipGeneralVC.m */; };
+		2D1A69161F37FC040079BFD4 /* AipNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68F01F37FC040079BFD4 /* AipNavigationController.m */; };
 		2D211DB21ECACAD800DA4E6B /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D211DB11ECACAD800DA4E6B /* CircleView.m */; };
 		2D23C46B1F149F1900EDA3AA /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D23C46A1F149F1900EDA3AA /* NotificationCenter.framework */; };
 		2D23C46F1F149F1900EDA3AA /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D23C46E1F149F1900EDA3AA /* TodayViewController.m */; };
@@ -193,6 +234,64 @@
 		2D1A68991F319F350079BFD4 /* UIView+BLLandscape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BLLandscape.m"; sourceTree = "<group>"; };
 		2D1A689A1F319F350079BFD4 /* UIViewController+Landscape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Landscape.h"; sourceTree = "<group>"; };
 		2D1A689B1F319F350079BFD4 /* UIViewController+Landscape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Landscape.m"; sourceTree = "<group>"; };
+		2D1A689F1F331B570079BFD4 /* NetWorkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkTool.h; sourceTree = "<group>"; };
+		2D1A68A01F331B570079BFD4 /* NetWorkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkTool.m; sourceTree = "<group>"; };
+		2D1A68A31F3406E30079BFD4 /* BaiduAIPictureIdentifyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduAIPictureIdentifyView.h; sourceTree = "<group>"; };
+		2D1A68A41F3406E30079BFD4 /* BaiduAIPictureIdentifyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiduAIPictureIdentifyView.m; sourceTree = "<group>"; };
+		2D1A68A61F34519B0079BFD4 /* AipBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AipBase.framework; path = ../../../AipBase.framework; sourceTree = "<group>"; };
+		2D1A68AD1F3462600079BFD4 /* aip.license */ = {isa = PBXFileReference; lastKnownFileType = file; path = aip.license; sourceTree = "<group>"; };
+		2D1A68AF1F37FB920079BFD4 /* IdcardQuality.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IdcardQuality.framework; sourceTree = "<group>"; };
+		2D1A68B21F37FC040079BFD4 /* AipOcrSdk.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AipOcrSdk.storyboard; sourceTree = "<group>"; };
+		2D1A68B61F37FC040079BFD4 /* guan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guan@2x.png"; sourceTree = "<group>"; };
+		2D1A68B71F37FC040079BFD4 /* guan@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guan@3x.png"; sourceTree = "<group>"; };
+		2D1A68B81F37FC040079BFD4 /* queding@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "queding@2x.png"; sourceTree = "<group>"; };
+		2D1A68B91F37FC040079BFD4 /* queding@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "queding@3x.png"; sourceTree = "<group>"; };
+		2D1A68BA1F37FC040079BFD4 /* xuanzhuan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xuanzhuan@2x.png"; sourceTree = "<group>"; };
+		2D1A68BB1F37FC040079BFD4 /* xuanzhuan@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xuanzhuan@3x.png"; sourceTree = "<group>"; };
+		2D1A68BD1F37FC040079BFD4 /* dengpao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dengpao@2x.png"; sourceTree = "<group>"; };
+		2D1A68BE1F37FC040079BFD4 /* dengpao@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dengpao@3x.png"; sourceTree = "<group>"; };
+		2D1A68BF1F37FC040079BFD4 /* dengpao_dianjihou@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dengpao_dianjihou@2x.png"; sourceTree = "<group>"; };
+		2D1A68C01F37FC040079BFD4 /* dengpao_dianjihou@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dengpao_dianjihou@3x.png"; sourceTree = "<group>"; };
+		2D1A68C11F37FC040079BFD4 /* guanbi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guanbi@2x.png"; sourceTree = "<group>"; };
+		2D1A68C21F37FC040079BFD4 /* guanbi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guanbi@3x.png"; sourceTree = "<group>"; };
+		2D1A68C31F37FC040079BFD4 /* paizhaoanniu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paizhaoanniu@2x.png"; sourceTree = "<group>"; };
+		2D1A68C41F37FC040079BFD4 /* paizhaoanniu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paizhaoanniu@3x.png"; sourceTree = "<group>"; };
+		2D1A68C51F37FC040079BFD4 /* paizhaoanniu_dianjihou@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paizhaoanniu_dianjihou@2x.png"; sourceTree = "<group>"; };
+		2D1A68C61F37FC040079BFD4 /* paizhaoanniu_dianjihou@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paizhaoanniu_dianjihou@3x.png"; sourceTree = "<group>"; };
+		2D1A68C71F37FC040079BFD4 /* tuku@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tuku@2x.png"; sourceTree = "<group>"; };
+		2D1A68C81F37FC040079BFD4 /* tuku@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tuku@3x.png"; sourceTree = "<group>"; };
+		2D1A68C91F37FC040079BFD4 /* xuxian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xuxian@2x.png"; sourceTree = "<group>"; };
+		2D1A68CA1F37FC040079BFD4 /* xuxian@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xuxian@3x.png"; sourceTree = "<group>"; };
+		2D1A68CC1F37FC040079BFD4 /* Page 1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Page 1@2x.png"; sourceTree = "<group>"; };
+		2D1A68CD1F37FC040079BFD4 /* Page 1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Page 1@3x.png"; sourceTree = "<group>"; };
+		2D1A68CF1F37FC040079BFD4 /* AipOcrDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AipOcrDelegate.h; sourceTree = "<group>"; };
+		2D1A68D01F37FC040079BFD4 /* AipOcrSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AipOcrSdk.h; sourceTree = "<group>"; };
+		2D1A68D11F37FC040079BFD4 /* AipOcrService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AipOcrService.h; sourceTree = "<group>"; };
+		2D1A68D21F37FC040079BFD4 /* AipOcrService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AipOcrService.m; sourceTree = "<group>"; };
+		2D1A68D51F37FC040079BFD4 /* AipDisplayLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AipDisplayLink.h; sourceTree = "<group>"; };
+		2D1A68D61F37FC040079BFD4 /* AipDisplayLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AipDisplayLink.m; sourceTree = "<group>"; };
+		2D1A68D71F37FC040079BFD4 /* IOSpeScaleLayoutButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSpeScaleLayoutButton.h; sourceTree = "<group>"; };
+		2D1A68D81F37FC040079BFD4 /* IOSpeScaleLayoutButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOSpeScaleLayoutButton.m; sourceTree = "<group>"; };
+		2D1A68D91F37FC040079BFD4 /* IOSpeScaleLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSpeScaleLayoutConstraint.h; sourceTree = "<group>"; };
+		2D1A68DA1F37FC040079BFD4 /* IOSpeScaleLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOSpeScaleLayoutConstraint.m; sourceTree = "<group>"; };
+		2D1A68DB1F37FC040079BFD4 /* IOSpeScaleLayoutLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSpeScaleLayoutLabel.h; sourceTree = "<group>"; };
+		2D1A68DC1F37FC040079BFD4 /* IOSpeScaleLayoutLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOSpeScaleLayoutLabel.m; sourceTree = "<group>"; };
+		2D1A68DD1F37FC040079BFD4 /* UIImage+AipCameraAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AipCameraAddition.h"; sourceTree = "<group>"; };
+		2D1A68DE1F37FC040079BFD4 /* UIImage+AipCameraAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AipCameraAddition.m"; sourceTree = "<group>"; };
+		2D1A68E21F37FC040079BFD4 /* AipCameraPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AipCameraPreviewView.h; sourceTree = "<group>"; };
+		2D1A68E31F37FC040079BFD4 /* AipCameraPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AipCameraPreviewView.m; sourceTree = "<group>"; };
+		2D1A68E41F37FC040079BFD4 /* AipCutImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AipCutImageView.h; sourceTree = "<group>"; };
+		2D1A68E51F37FC040079BFD4 /* AipCutImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AipCutImageView.m; sourceTree = "<group>"; };
+		2D1A68E61F37FC040079BFD4 /* AipImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AipImageView.h; sourceTree = "<group>"; };
+		2D1A68E71F37FC040079BFD4 /* AipImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AipImageView.m; sourceTree = "<group>"; };
+		2D1A68E91F37FC040079BFD4 /* AipCameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AipCameraController.h; sourceTree = "<group>"; };
+		2D1A68EA1F37FC040079BFD4 /* AipCameraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AipCameraController.m; sourceTree = "<group>"; };
+		2D1A68EB1F37FC040079BFD4 /* AipCaptureCardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AipCaptureCardVC.h; sourceTree = "<group>"; };
+		2D1A68EC1F37FC040079BFD4 /* AipCaptureCardVC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AipCaptureCardVC.mm; sourceTree = "<group>"; };
+		2D1A68ED1F37FC040079BFD4 /* AipGeneralVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AipGeneralVC.h; sourceTree = "<group>"; };
+		2D1A68EE1F37FC040079BFD4 /* AipGeneralVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AipGeneralVC.m; sourceTree = "<group>"; };
+		2D1A68EF1F37FC040079BFD4 /* AipNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AipNavigationController.h; sourceTree = "<group>"; };
+		2D1A68F01F37FC040079BFD4 /* AipNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AipNavigationController.m; sourceTree = "<group>"; };
 		2D211DB01ECACAD800DA4E6B /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
 		2D211DB11ECACAD800DA4E6B /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 		2D23C4691F149F1900EDA3AA /* WidGetTodayViewController.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidGetTodayViewController.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -510,6 +609,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D1A68B01F37FB920079BFD4 /* IdcardQuality.framework in Frameworks */,
+				2D1A68A71F34519B0079BFD4 /* AipBase.framework in Frameworks */,
 				2DFDDF301F27266C00150B20 /* libcrypto.a in Frameworks */,
 				2DFDDF311F27266C00150B20 /* libssl.a in Frameworks */,
 				2DFDDF461F27271000150B20 /* CoreText.framework in Frameworks */,
@@ -600,6 +701,138 @@
 			path = BLLandscape;
 			sourceTree = "<group>";
 		};
+		2D1A68A21F3406940079BFD4 /* BaiduAIView */ = {
+			isa = PBXGroup;
+			children = (
+				2D1A68B11F37FC040079BFD4 /* AipOcrBundle */,
+				2D1A68CE1F37FC040079BFD4 /* AipOcrSdk */,
+				2D1A68A31F3406E30079BFD4 /* BaiduAIPictureIdentifyView.h */,
+				2D1A68A41F3406E30079BFD4 /* BaiduAIPictureIdentifyView.m */,
+			);
+			path = BaiduAIView;
+			sourceTree = "<group>";
+		};
+		2D1A68B11F37FC040079BFD4 /* AipOcrBundle */ = {
+			isa = PBXGroup;
+			children = (
+				2D1A68B21F37FC040079BFD4 /* AipOcrSdk.storyboard */,
+				2D1A68B41F37FC040079BFD4 /* 切图 */,
+			);
+			path = AipOcrBundle;
+			sourceTree = "<group>";
+		};
+		2D1A68B41F37FC040079BFD4 /* 切图 */ = {
+			isa = PBXGroup;
+			children = (
+				2D1A68B51F37FC040079BFD4 /* 裁剪页 */,
+				2D1A68BC1F37FC040079BFD4 /* 身份证-正面 */,
+				2D1A68CB1F37FC040079BFD4 /* 身份证-背面 */,
+			);
+			path = "切图";
+			sourceTree = "<group>";
+		};
+		2D1A68B51F37FC040079BFD4 /* 裁剪页 */ = {
+			isa = PBXGroup;
+			children = (
+				2D1A68B61F37FC040079BFD4 /* guan@2x.png */,
+				2D1A68B71F37FC040079BFD4 /* guan@3x.png */,
+				2D1A68B81F37FC040079BFD4 /* queding@2x.png */,
+				2D1A68B91F37FC040079BFD4 /* queding@3x.png */,
+				2D1A68BA1F37FC040079BFD4 /* xuanzhuan@2x.png */,
+				2D1A68BB1F37FC040079BFD4 /* xuanzhuan@3x.png */,
+			);
+			path = "裁剪页";
+			sourceTree = "<group>";
+		};
+		2D1A68BC1F37FC040079BFD4 /* 身份证-正面 */ = {
+			isa = PBXGroup;
+			children = (
+				2D1A68BD1F37FC040079BFD4 /* dengpao@2x.png */,
+				2D1A68BE1F37FC040079BFD4 /* dengpao@3x.png */,
+				2D1A68BF1F37FC040079BFD4 /* dengpao_dianjihou@2x.png */,
+				2D1A68C01F37FC040079BFD4 /* dengpao_dianjihou@3x.png */,
+				2D1A68C11F37FC040079BFD4 /* guanbi@2x.png */,
+				2D1A68C21F37FC040079BFD4 /* guanbi@3x.png */,
+				2D1A68C31F37FC040079BFD4 /* paizhaoanniu@2x.png */,
+				2D1A68C41F37FC040079BFD4 /* paizhaoanniu@3x.png */,
+				2D1A68C51F37FC040079BFD4 /* paizhaoanniu_dianjihou@2x.png */,
+				2D1A68C61F37FC040079BFD4 /* paizhaoanniu_dianjihou@3x.png */,
+				2D1A68C71F37FC040079BFD4 /* tuku@2x.png */,
+				2D1A68C81F37FC040079BFD4 /* tuku@3x.png */,
+				2D1A68C91F37FC040079BFD4 /* xuxian@2x.png */,
+				2D1A68CA1F37FC040079BFD4 /* xuxian@3x.png */,
+			);
+			path = "身份证-正面";
+			sourceTree = "<group>";
+		};
+		2D1A68CB1F37FC040079BFD4 /* 身份证-背面 */ = {
+			isa = PBXGroup;
+			children = (
+				2D1A68CC1F37FC040079BFD4 /* Page 1@2x.png */,
+				2D1A68CD1F37FC040079BFD4 /* Page 1@3x.png */,
+			);
+			path = "身份证-背面";
+			sourceTree = "<group>";
+		};
+		2D1A68CE1F37FC040079BFD4 /* AipOcrSdk */ = {
+			isa = PBXGroup;
+			children = (
+				2D1A68CF1F37FC040079BFD4 /* AipOcrDelegate.h */,
+				2D1A68D01F37FC040079BFD4 /* AipOcrSdk.h */,
+				2D1A68D11F37FC040079BFD4 /* AipOcrService.h */,
+				2D1A68D21F37FC040079BFD4 /* AipOcrService.m */,
+				2D1A68D41F37FC040079BFD4 /* Category */,
+				2D1A68E11F37FC040079BFD4 /* View */,
+				2D1A68E81F37FC040079BFD4 /* ViewController */,
+			);
+			path = AipOcrSdk;
+			sourceTree = "<group>";
+		};
+		2D1A68D41F37FC040079BFD4 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				2D1A68D51F37FC040079BFD4 /* AipDisplayLink.h */,
+				2D1A68D61F37FC040079BFD4 /* AipDisplayLink.m */,
+				2D1A68D71F37FC040079BFD4 /* IOSpeScaleLayoutButton.h */,
+				2D1A68D81F37FC040079BFD4 /* IOSpeScaleLayoutButton.m */,
+				2D1A68D91F37FC040079BFD4 /* IOSpeScaleLayoutConstraint.h */,
+				2D1A68DA1F37FC040079BFD4 /* IOSpeScaleLayoutConstraint.m */,
+				2D1A68DB1F37FC040079BFD4 /* IOSpeScaleLayoutLabel.h */,
+				2D1A68DC1F37FC040079BFD4 /* IOSpeScaleLayoutLabel.m */,
+				2D1A68DD1F37FC040079BFD4 /* UIImage+AipCameraAddition.h */,
+				2D1A68DE1F37FC040079BFD4 /* UIImage+AipCameraAddition.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		2D1A68E11F37FC040079BFD4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2D1A68E21F37FC040079BFD4 /* AipCameraPreviewView.h */,
+				2D1A68E31F37FC040079BFD4 /* AipCameraPreviewView.m */,
+				2D1A68E41F37FC040079BFD4 /* AipCutImageView.h */,
+				2D1A68E51F37FC040079BFD4 /* AipCutImageView.m */,
+				2D1A68E61F37FC040079BFD4 /* AipImageView.h */,
+				2D1A68E71F37FC040079BFD4 /* AipImageView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2D1A68E81F37FC040079BFD4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2D1A68E91F37FC040079BFD4 /* AipCameraController.h */,
+				2D1A68EA1F37FC040079BFD4 /* AipCameraController.m */,
+				2D1A68EB1F37FC040079BFD4 /* AipCaptureCardVC.h */,
+				2D1A68EC1F37FC040079BFD4 /* AipCaptureCardVC.mm */,
+				2D1A68ED1F37FC040079BFD4 /* AipGeneralVC.h */,
+				2D1A68EE1F37FC040079BFD4 /* AipGeneralVC.m */,
+				2D1A68EF1F37FC040079BFD4 /* AipNavigationController.h */,
+				2D1A68F01F37FC040079BFD4 /* AipNavigationController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		2D211DAF1ECACABA00DA4E6B /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -641,6 +874,7 @@
 		2D8B0E7C1EC16716006953B5 = {
 			isa = PBXGroup;
 			children = (
+				2D1A68AD1F3462600079BFD4 /* aip.license */,
 				2D8B0E871EC16716006953B5 /* firstproject */,
 				2D8B0EA11EC16716006953B5 /* firstprojectTests */,
 				2D8B0EAC1EC16716006953B5 /* firstprojectUITests */,
@@ -788,6 +1022,8 @@
 				2DFCB52B1ECBEA7C0040A60E /* Tool.m */,
 				2DFDDF541F2B121A00150B20 /* NSObject+DebugDescription.h */,
 				2DFDDF551F2B121A00150B20 /* NSObject+DebugDescription.m */,
+				2D1A689F1F331B570079BFD4 /* NetWorkTool.h */,
+				2D1A68A01F331B570079BFD4 /* NetWorkTool.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -867,6 +1103,8 @@
 				2DFCB5841ECE87840040A60E /* SecondViewController.h */,
 				2DFCB5851ECE87840040A60E /* SecondViewController.m */,
 				2DFCB5861ECE87840040A60E /* SecondViewController.xib */,
+				2D1A68AF1F37FB920079BFD4 /* IdcardQuality.framework */,
+				2D1A68A61F34519B0079BFD4 /* AipBase.framework */,
 			);
 			path = SecondController;
 			sourceTree = "<group>";
@@ -1022,6 +1260,7 @@
 		2DFCB6261ED568ED0040A60E /* view */ = {
 			isa = PBXGroup;
 			children = (
+				2D1A68A21F3406940079BFD4 /* BaiduAIView */,
 				2D1A688A1F3164920079BFD4 /* play_video_view */,
 				2DFCB6271ED569130040A60E /* VideoTableViewCell.h */,
 				2DFCB6281ED569130040A60E /* VideoTableViewCell.m */,
@@ -1383,14 +1622,38 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D1A68F71F37FC040079BFD4 /* xuanzhuan@2x.png in Resources */,
+				2D1A68FE1F37FC040079BFD4 /* guanbi@3x.png in Resources */,
+				2D1A68AE1F3462600079BFD4 /* aip.license in Resources */,
 				2DFDDF2E1F27266C00150B20 /* AlipaySDK.bundle in Resources */,
+				2D1A68F11F37FC040079BFD4 /* AipOcrSdk.storyboard in Resources */,
+				2D1A68F91F37FC040079BFD4 /* dengpao@2x.png in Resources */,
+				2D1A69001F37FC040079BFD4 /* paizhaoanniu@3x.png in Resources */,
+				2D1A68FD1F37FC040079BFD4 /* guanbi@2x.png in Resources */,
+				2D1A69061F37FC040079BFD4 /* xuxian@3x.png in Resources */,
 				2D8B0E981EC16716006953B5 /* LaunchScreen.storyboard in Resources */,
+				2D1A68F31F37FC040079BFD4 /* guan@2x.png in Resources */,
+				2D1A69011F37FC040079BFD4 /* paizhaoanniu_dianjihou@2x.png in Resources */,
 				2D8B0E951EC16716006953B5 /* Assets.xcassets in Resources */,
+				2D1A69071F37FC040079BFD4 /* Page 1@2x.png in Resources */,
+				2D1A68F41F37FC040079BFD4 /* guan@3x.png in Resources */,
 				2DFCB58B1ECE87840040A60E /* OwnerViewController.xib in Resources */,
+				2D1A69051F37FC040079BFD4 /* xuxian@2x.png in Resources */,
 				2D8B0E931EC16716006953B5 /* Main.storyboard in Resources */,
+				2D1A68F61F37FC040079BFD4 /* queding@3x.png in Resources */,
+				2D1A69021F37FC040079BFD4 /* paizhaoanniu_dianjihou@3x.png in Resources */,
 				2DFD44D01EC4AB570087822A /* mhtml.html in Resources */,
+				2D1A69041F37FC040079BFD4 /* tuku@3x.png in Resources */,
+				2D1A68FB1F37FC040079BFD4 /* dengpao_dianjihou@2x.png in Resources */,
+				2D1A69081F37FC040079BFD4 /* Page 1@3x.png in Resources */,
 				2DFCB58D1ECE87840040A60E /* SecondViewController.xib in Resources */,
+				2D1A68FF1F37FC040079BFD4 /* paizhaoanniu@2x.png in Resources */,
+				2D1A69031F37FC040079BFD4 /* tuku@2x.png in Resources */,
+				2D1A68F81F37FC040079BFD4 /* xuanzhuan@3x.png in Resources */,
 				2DFCB5891ECE87840040A60E /* MainViewController.xib in Resources */,
+				2D1A68F51F37FC040079BFD4 /* queding@2x.png in Resources */,
+				2D1A68FA1F37FC040079BFD4 /* dengpao@3x.png in Resources */,
+				2D1A68FC1F37FC040079BFD4 /* dengpao_dianjihou@3x.png in Resources */,
 				2DFCB5D81ED28AF80040A60E /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1483,38 +1746,48 @@
 				2DFCB5F51ED519430040A60E /* HaveFunViewController.m in Sources */,
 				2DFCB6301ED5911A0040A60E /* IJKVideoViewController.m in Sources */,
 				2DFCB5CE1ED01D2D0040A60E /* UIView+Extension.m in Sources */,
+				2D1A690B1F37FC040079BFD4 /* IOSpeScaleLayoutButton.m in Sources */,
 				2D1A688E1F3164C20079BFD4 /* SingButton.m in Sources */,
 				2DFCB5AE1ECF22350040A60E /* WebViewJavascriptBridge.m in Sources */,
 				2DFCB5EC1ED518CD0040A60E /* ScienceViewController.m in Sources */,
 				2D8883C31EF3B96400E90CBD /* UIView+ZYDraggable.m in Sources */,
 				2DFDDF3A1F27266C00150B20 /* RSADataVerifier.m in Sources */,
+				2D1A69141F37FC040079BFD4 /* AipCaptureCardVC.mm in Sources */,
 				2DA815F91ED6C083003AE3A4 /* NSString+Project.m in Sources */,
 				2DFCB58C1ECE87840040A60E /* SecondViewController.m in Sources */,
 				2DA816131ED96A3F003AE3A4 /* ButtonView.m in Sources */,
 				2DFCB58A1ECE87840040A60E /* OwnerViewController.m in Sources */,
+				2D1A68A11F331B570079BFD4 /* NetWorkTool.m in Sources */,
 				2DFDDF4F1F298EC100150B20 /* UITabBar+baseTabBar.m in Sources */,
+				2D1A69161F37FC040079BFD4 /* AipNavigationController.m in Sources */,
 				2DFCB5B01ECF22350040A60E /* WebViewJavascriptBridgeBase.m in Sources */,
 				2DFDDF371F27266C00150B20 /* NSDataEx.m in Sources */,
 				2D53BB851EE7E2F20075058E /* HotsViewController.m in Sources */,
 				2DFCB5AF1ECF22350040A60E /* WebViewJavascriptBridge_JS.m in Sources */,
 				2DFCB63B1ED6879A0040A60E /* BNTicker.m in Sources */,
 				2DA816A01EE2934B003AE3A4 /* EmojiLayout.m in Sources */,
+				2D1A69151F37FC040079BFD4 /* AipGeneralVC.m in Sources */,
 				2DA8160D1ED91D60003AE3A4 /* UIImage+ImageEffects.m in Sources */,
 				2DFCB5731ECD6F0D0040A60E /* UIColor+HexColor.m in Sources */,
 				2DA816A31EE298DC003AE3A4 /* EmojiModel.m in Sources */,
 				2DFCB6221ED5624A0040A60E /* YKExtra.m in Sources */,
 				2DFDDF381F27266C00150B20 /* openssl_wrapper.m in Sources */,
+				2D1A690D1F37FC040079BFD4 /* IOSpeScaleLayoutLabel.m in Sources */,
 				2D53BB761EE7E2690075058E /* VideoRootViewController.m in Sources */,
 				2DA816101ED95CF2003AE3A4 /* ShareView.m in Sources */,
 				2DFDDF341F27266C00150B20 /* DataSigner.m in Sources */,
 				2DFDDF621F300FAC00150B20 /* TenCentProgressView.m in Sources */,
+				2D1A69131F37FC040079BFD4 /* AipCameraController.m in Sources */,
 				2DFCB5DE1ED28E400040A60E /* RTRootNavigationController.m in Sources */,
 				2D53BB791EE7E2950075058E /* CircleViewController.m in Sources */,
+				2D1A69091F37FC040079BFD4 /* AipOcrService.m in Sources */,
+				2D1A69111F37FC040079BFD4 /* AipCutImageView.m in Sources */,
 				2DFCB63E1ED6A10A0040A60E /* BannerWebViewController.m in Sources */,
 				2DFCB5A21ECEDD2D0040A60E /* XPathQuery.m in Sources */,
 				2DFCB5E91ED518B80040A60E /* VideoShowViewController.m in Sources */,
 				2DFCB5881ECE87840040A60E /* MainViewController.m in Sources */,
 				2DA816A61EE29C4C003AE3A4 /* EmojiCollectionViewCell.m in Sources */,
+				2D1A690C1F37FC040079BFD4 /* IOSpeScaleLayoutConstraint.m in Sources */,
 				2D1A68941F3177C10079BFD4 /* NbPurseView.m in Sources */,
 				2D1A689C1F319F350079BFD4 /* BLSubstituteObject.m in Sources */,
 				2DFDDF331F27266C00150B20 /* base64.m in Sources */,
@@ -1532,17 +1805,20 @@
 				2DFDDF561F2B121A00150B20 /* NSObject+DebugDescription.m in Sources */,
 				2DFDDF361F27266C00150B20 /* MD5DataSigner.m in Sources */,
 				2DFCB52C1ECBEA7C0040A60E /* Tool.m in Sources */,
+				2D1A690E1F37FC040079BFD4 /* UIImage+AipCameraAddition.m in Sources */,
 				2DFCB5A01ECEDD2D0040A60E /* TFHpple.m in Sources */,
 				2D53BB821EE7E2E20075058E /* PictureViewController.m in Sources */,
 				2DFCB5901ECE87AB0040A60E /* TotalViewController.m in Sources */,
 				2DFCB5291ECBE9940040A60E /* RootNavViewController.m in Sources */,
 				2D1A68911F3168750079BFD4 /* VideoTime.m in Sources */,
+				2D1A69121F37FC040079BFD4 /* AipImageView.m in Sources */,
 				2DFCB5F21ED519320040A60E /* PracticesViewController.m in Sources */,
 				2DFCB6251ED5624A0040A60E /* YKLives.m in Sources */,
 				2DFCB5B11ECF22350040A60E /* WKWebViewJavascriptBridge.m in Sources */,
 				2DFCB5871ECE87840040A60E /* ViewController.m in Sources */,
 				2DFCB5971ECE899B0040A60E /* UIBarButtonItem+CustomBarButtonItem.m in Sources */,
 				2DFCB5D71ED28AF80040A60E /* VideoViewController.m in Sources */,
+				2D1A690A1F37FC040079BFD4 /* AipDisplayLink.m in Sources */,
 				2DFCB6231ED5624A0040A60E /* YKLabel.m in Sources */,
 				2DA816091ED818EA003AE3A4 /* ThumbAnimationView.m in Sources */,
 				2D53BBB21EEB818C0075058E /* SpringTableViewCell.m in Sources */,
@@ -1555,11 +1831,13 @@
 				2DA388111EFCB07B0095F14F /* UIViewController+custom.m in Sources */,
 				2D8B0E8D1EC16716006953B5 /* AppDelegate.m in Sources */,
 				2DFCB6201ED5624A0040A60E /* YKBasic.m in Sources */,
+				2D1A69101F37FC040079BFD4 /* AipCameraPreviewView.m in Sources */,
 				2D53BB881EE7E48F0075058E /* LLView.m in Sources */,
 				2DA816001ED7BA51003AE3A4 /* YLUsers.m in Sources */,
 				2DFCB6211ED5624A0040A60E /* YKCreator.m in Sources */,
 				2DFCB62C1ED585610040A60E /* TopVIewScrollView.m in Sources */,
 				2DFCB5CB1ED01D2D0040A60E /* NSString+XFTime.m in Sources */,
+				2D1A68A51F3406E30079BFD4 /* BaiduAIPictureIdentifyView.m in Sources */,
 				2D8B0E8A1EC16716006953B5 /* main.m in Sources */,
 				2DFDDF351F27266C00150B20 /* DataVerifier.m in Sources */,
 				2DFDDF5F1F2F1E8C00150B20 /* ThermometerView.m in Sources */,
@@ -1751,6 +2029,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/firstproject",
 					"$(PROJECT_DIR)/firstproject/alipayFiles",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/firstproject/Controller/SecondController",
+					"$(PROJECT_DIR)/firstproject/Controller/SecondController/view/BaiduAIView",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/firstproject/firstPBpch.pch";
@@ -1769,6 +2050,64 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/firstproject/alipayFiles",
 					"$(PROJECT_DIR)/firstproject/OpenSDK1.7.9",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"GPUImage\"",
+					"-l\"IGListKit\"",
+					"-l\"JPNavigationController\"",
+					"-l\"JRSwizzle\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"c++\"",
+					"-l\"stdc++.6.0.9\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AMapLocationKit\"",
+					"-framework",
+					"\"AMapNaviKit\"",
+					"-framework",
+					"\"AMapSearchKit\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"JavaScriptCore\"",
+					"-framework",
+					"\"MAMapKit\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.niuxinhuai.text.firstproject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1789,6 +2128,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/firstproject",
 					"$(PROJECT_DIR)/firstproject/alipayFiles",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/firstproject/Controller/SecondController",
+					"$(PROJECT_DIR)/firstproject/Controller/SecondController/view/BaiduAIView",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/firstproject/firstPBpch.pch";
@@ -1807,6 +2149,64 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/firstproject/alipayFiles",
 					"$(PROJECT_DIR)/firstproject/OpenSDK1.7.9",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"GPUImage\"",
+					"-l\"IGListKit\"",
+					"-l\"JPNavigationController\"",
+					"-l\"JRSwizzle\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"c++\"",
+					"-l\"stdc++.6.0.9\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AMapFoundationKit\"",
+					"-framework",
+					"\"AMapLocationKit\"",
+					"-framework",
+					"\"AMapNaviKit\"",
+					"-framework",
+					"\"AMapSearchKit\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"JavaScriptCore\"",
+					"-framework",
+					"\"MAMapKit\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.niuxinhuai.text.firstproject;
 				PRODUCT_NAME = "$(TARGET_NAME)";

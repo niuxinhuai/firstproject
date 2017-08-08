@@ -12,4 +12,5 @@
 @property (nonatomic, strong)UIColor * fillColors;
 @property (nonatomic, strong)UIColor * strokeColors;
 @property (nonatomic, assign)CGFloat strokeEndBissniss;
+- (void)start;
 @end

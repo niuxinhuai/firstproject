@@ -38,6 +38,7 @@
 @property (strong, nonatomic)          NbPurseView * stop_beginButton; // 开始暂停按钮
 @property (strong, nonatomic)          UIView * purse_playView;
 @property (assign, nonatomic)          BOOL is_start;
+@property (strong, nonatomic)          UIImageView * videoFrameImageV;
 
 @end
 
@@ -72,10 +73,12 @@
     // [self upLoadPlayerWithUrl:url];
     // [_myPlayer play];
     [_playerItems addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
+   
     self.button = [[SingButton alloc]initWithFrame:self.playerCustomView.bounds];
     //self.button.backgroundColor = [UIColor cyanColor];
     self.button.delegate = self;
     [self.playerCustomView addSubview:self.button];
+     [self.playerCustomView addSubview:self.videoFrameImageV];
     self.backView.hidden = NO;
     self.volumeView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height*9.0/16.0);
     _is_start = NO;
@@ -206,14 +209,23 @@
     }else if (self.direction == DirectionLeftOrRight){
         // 进度
         CGFloat rate = self.startVideoRate+(panPoint.x/30.0/20.0);
+        
+        
         if (rate >1) {
             rate =1;
         }else if (rate <0){
             rate =0;
         }
+        self.videoFrameImageV.hidden = NO;
+        UIImage * getImage = [VideoTime thumbnailImageForVideo:[NSURL URLWithString:@"http://baobab.wdjcdn.com/1456665467509qingshu.mp4"] atTime:rate];
+        self.videoFrameImageV.image = getImage;
+        [self performSelector:@selector(issMissImageV) withObject:nil afterDelay:1];
         self.currentRate = rate;
     }
     
+}
+-(void)issMissImageV{
+    self.videoFrameImageV.hidden = YES;
 }
 -(void)touchEndWithPoint:(CGPoint)point{
     if (self.direction == DirectionLeftOrRight) {
@@ -394,6 +406,20 @@
     
     return _allScreenButton;
 }
+
+- (UIImageView *)videoFrameImageV{
+    if (!_videoFrameImageV) {
+        _videoFrameImageV = [[UIImageView alloc]init];
+        _videoFrameImageV.center = CGPointMake(SCREEN_WIDTH/2, CGRectGetHeight(self.playerCustomView.frame)/2);
+        _videoFrameImageV.bounds = CGRectMake(0, 0, 80, 80);
+        _videoFrameImageV.contentMode = UIViewContentModeScaleAspectFill;
+        _videoFrameImageV.hidden = YES;
+        
+    }
+    
+    return _videoFrameImageV;
+}
+
 -(void)doAnythingWithTag:(UIButton*)sender{
     sender.hidden = NO;
     sender.selected = !sender.selected;

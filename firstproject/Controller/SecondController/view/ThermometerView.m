@@ -35,10 +35,12 @@
 - (void)setStrokeEndBissniss:(CGFloat)strokeEndBissniss{
     _strokeEndBissniss = strokeEndBissniss;
 
-    [self customBezierPath];
     
 }
+- (void)start{
+    [self customBezierPath];
 
+}
 
 #pragma mark - 获得路径
 
@@ -50,22 +52,28 @@
          bezierPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, self.frame.size.width*_strokeEndBissniss, self.frame.size.height) byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(self.frame.size.height/2, self.frame.size.height/2)];
         
     }
-    
+
     
     self.thermometerLayer.path = bezierPath.CGPath;
     self.thermometerLayer.fillColor = _fillColors.CGColor;
-    //self.thermometerLayer.strokeEnd = _strokeEndBissniss;
-        CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-        pathAnimation.duration = 2;
-        pathAnimation.repeatCount = MAXFLOAT;
-        pathAnimation.removedOnCompletion = NO;
-        pathAnimation.fillMode = kCAFillModeForwards;
-        //pathAnimation.fromValue = @(0);
-        pathAnimation.toValue = @(_strokeEndBissniss);
-        [self.thermometerLayer addAnimation:pathAnimation forKey:@""];
+    self.thermometerLayer.strokeEnd = _strokeEndBissniss;
+
+    
+
+    
+
     [self.layer addSublayer:self.thermometerLayer];
 
-
+    CABasicAnimation *endAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    endAnimation.fromValue = @(0);
+    endAnimation.toValue = @(1);
+    
+    CAAnimationGroup *step2 = [CAAnimationGroup animation];
+    step2.animations = @[endAnimation];
+    step2.duration = 10;
+    step2.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+    
+    [self.thermometerLayer addAnimation:step2 forKey:@"changenimationLayer"];
    
 }
 

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef NS_ENUM(NSInteger,UIImagePickerSourceType){
+    UIImagePickerSourceTypePhotoLibrary,//相册
+    UIImagePickerSourceTypeCamera
+};
 @interface HaveFunViewController : NBasiViewController
-
+@property (nonatomic, assign)UIImagePickerSourceType imagePickerType;
 @end

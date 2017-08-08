@@ -331,7 +331,8 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self strokeEndAniationWithStroke:0.8 withLayer:self.animation_xAnimationView.layer];
+   // [self strokeEndAniationWithStroke:0.8 withLayer:self.animation_xAnimationView.layer];
+    [self.rmometerView start];
 
 }
 - (void)strokeEndAniationWithStroke:(CGFloat)strokeValues withLayer:(CALayer *)layer{

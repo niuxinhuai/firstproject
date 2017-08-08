@@ -6,6 +6,7 @@
 //  Copyright © 2017年 牛新怀. All rights reserved.
 //
 #define LBSMAPKEY @"feaddf64a473c866213d342e680287ac"
+#define BaiduAIURL @"https://aip.baidubce.com/oauth/2.0/token"
 #import "AppDelegate.h"
 #import <AlipaySDK/AlipaySDK.h>
 #import "Order.h"
@@ -13,9 +14,13 @@
 #import "WXApi.h"
 #import "TotalViewController.h"
 #import <AMapFoundationKit/AMapFoundationKit.h>
+#import "AipOcrService.h"
 @interface AppDelegate ()<WXApiDelegate>
 
 @end
+static const NSString * BaiduAppID = @"9966378";
+static const NSString * BaiduApiKey = @"sLdWP9rGQ7iu63Pi4hvUP3qw";
+static const NSString * BaiduSecretKey = @"WF2fWKb8lQ2bfGB5MAAsixIGXCUzWipX";
 
 @implementation AppDelegate
 
@@ -32,9 +37,67 @@
     self.window.rootViewController = totalVc;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    [self getBaiduAIAccessToken];
     
     // Override point for customization after application launch.
     return YES;
+}
+#pragma mark - 获取百度AIAccess Token。有效期为30天
+- (void)getBaiduAIAccessToken{
+    /*
+     请求URL数据格式
+     
+     向授权服务地址https://aip.baidubce.com/oauth/2.0/token发送请求（推荐使用POST），并在URL中带上以下参数：
+     
+     grant_type： 必须参数，固定为client_credentials；
+     client_id： 必须参数，应用的API Key；
+     client_secret： 必须参数，应用的Secret Key；
+
+     https://aip.baidubce.com/oauth/2.0/token?
+     grant_type=client_credentials&
+     client_id=Va5yQRHlA4Fq4eR3LT0vuXV4&
+     client_secret= 0rDSjzQ20XUj5itV7WRtznPQSzr5pVw2&
+     
+     
+     */
+//    [[AipOcrService shardService] authWithAK:@"sLdWP9rGQ7iu63Pi4hvUP3qw" andSK:@"WF2fWKb8lQ2bfGB5MAAsixIGXCUzWipX"];
+
+    
+    
+    NSMutableDictionary * dictionary = [[NSMutableDictionary alloc]init];
+    [dictionary setObject:@"client_credentials" forKey:@"grant_type"];
+    [dictionary setObject:BaiduApiKey forKey:@"client_id"];
+    [dictionary setObject:BaiduSecretKey forKey:@"client_secret"];
+    
+    
+    [NetWorkTool postNetWorkWithURL:BaiduAIURL paramaters:dictionary success:^(id object) {
+        NSLog(@"%@",object);
+        NSString * access_token = [object objectForKey:@"access_token"];
+        NSString * expiresHaveTime = [NSString stringWithFormat:@"%@",[object objectForKey:@"expires_in"]];
+        [[NSUserDefaults standardUserDefaults] setObject:access_token forKey:AccessTokenKey];
+        [[NSUserDefaults standardUserDefaults] setObject:expiresHaveTime forKey:TokenValidity];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        NSInteger validityTime = [expiresHaveTime integerValue];
+        if (validityTime <=0 || !validityTime) {
+            UIAlertController * alertC = [UIAlertController alertControllerWithTitle:@"Warring" message:@"您使用的百度AI识别功能Access_Token已失效，请重新获取" preferredStyle:UIAlertControllerStyleActionSheet];
+            UIAlertAction * confirmAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [self.window.rootViewController dismissViewControllerAnimated:YES completion:^{
+                    
+                    
+                }];
+                
+            }];
+            
+            [alertC addAction:confirmAction];
+            [self.window.rootViewController presentViewController:alertC animated:YES completion:nil];
+            
+            
+        }
+        
+    } failure:^(id failure) {
+        
+        NSLog(@"%@",failure);
+    }];
 }
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
     return self.window.rootViewController.supportedInterfaceOrientations;
