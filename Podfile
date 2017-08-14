@@ -14,4 +14,5 @@ pod 'AMapNavi'
 pod  'Masonry'
 pod 'JPNavigationController'
 pod 'JRSwizzle'
+pod 'FMDB'
 end

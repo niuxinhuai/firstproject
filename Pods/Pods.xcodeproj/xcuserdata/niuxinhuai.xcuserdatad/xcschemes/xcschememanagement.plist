@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FMDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GPUImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,17 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1862734025F274E2FD4AE3C929178BB4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2378D59197A1710B35D404A627F58142</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>4F69F82C1EEBC0A05686A3B0FECD2FDB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6B240B586921416A593954BF3B0C1FF6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8642CC820CE8C5B88C113D7F47AF4BC3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,12 +92,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>91A7EE5763EE9CD3855FE3BD71C387C0</key>
+		<key>931AA31A36D0F952DBBE2368619467AF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>931AA31A36D0F952DBBE2368619467AF</key>
+		<key>96FD0ECD9886751D492DAB5E5738F39F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -103,6 +108,11 @@
 			<true/>
 		</dict>
 		<key>9E033EDB5EC0819481B0546434FA577B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C991FE3EBB0D23C54F471D30F1AFDB48</key>
 		<dict>
 			<key>primary</key>
 			<true/>

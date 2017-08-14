@@ -14,13 +14,19 @@
 #import <AipBase/AipBase.h>
 #import "AipOcrDelegate.h"
 #import "AipCaptureCardVC.h"
+#import <sqlite3.h>
 @interface HaveFunViewController ()<PictureIdentifyDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,NSURLSessionTaskDelegate,AipOcrDelegate>
+{
+    FMDatabase * _db;
+}
 @property (nonatomic, strong)BaiduAIPictureIdentifyView * pictureIdentifyView;
 @property (nonatomic, strong)UIImage * finalImage;
 @property (assign, nonatomic) UIImageOrientation imageOrientation;
 
 @end
 static NSString * id_cord_url = @"https://aip.baidubce.com/rest/2.0/ocr/v1/idcard";
+static sqlite3 * db = nil;
+
 @implementation HaveFunViewController
 
 - (void)viewDidLoad {
@@ -51,6 +57,8 @@ static NSString * id_cord_url = @"https://aip.baidubce.com/rest/2.0/ocr/v1/idcar
 
         
     }];
+    [self createSqlite];
+    [self createBankSqlite];
     
 
 }
@@ -279,14 +287,55 @@ static NSString * id_cord_url = @"https://aip.baidubce.com/rest/2.0/ocr/v1/idcar
     NSMutableString *message = [NSMutableString string];
     title = @"银行卡信息";
     //    [message appendFormat:@"%@", result[@"result"]];
-    [message appendFormat:@"卡号：%@\n", result[@"result"][@"bank_card_number"]];
-    [message appendFormat:@"类型：%@\n", result[@"result"][@"bank_card_type"]];
-    [message appendFormat:@"发卡行：%@\n", result[@"result"][@"bank_name"]];
+    NSString * card_number =result[@"result"][@"bank_card_number"];
+    NSString * card_type =result[@"result"][@"bank_card_type"];
+    NSString * bank_name = result[@"result"][@"bank_name"];
+    
+    NSString * sql = [NSString stringWithFormat:@"insert into bank_list(bank_card_type,bank_name,bank_card_number) values('%@','%@','%@');",card_type,bank_name,card_number];
+    char * errorMsg;
+    sqlite3_exec(db, sql.UTF8String, NULL, NULL, &errorMsg);
+    
+    if (errorMsg) {
+        NSLog(@"失败原因 -%s",errorMsg);
+    }else{
+        NSLog(@"OK");
+    }
+    
+    
+    [message appendFormat:@"卡号：%@\n", card_number];
+    [message appendFormat:@"类型：%@\n", card_type];
+    [message appendFormat:@"发卡行：%@\n",bank_name];
     
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        
         [alertView show];
-    }];
+        
+        }];
+    
+        NSString * sqls = @"select * from bank_list;";
+    
+        //查询的句柄,游标
+        sqlite3_stmt * stmt;
+    
+        if (sqlite3_prepare(db, sqls.UTF8String, -1, &stmt, NULL) == SQLITE_OK) {
+    
+            //查询数据
+            while (sqlite3_step(stmt) == SQLITE_ROW) {
+    
+                //获取表数据的内容
+                //sqlite3_column_text('句柄'，字段索引值)
+    
+                NSString * name = [NSString stringWithCString:(const char *)sqlite3_column_text(stmt, 1) encoding:NSUTF8StringEncoding];
+    
+                NSLog(@"name = %@",name);
+    
+            }
+        }
+    
+
+
+
 }
 
 - (void)ocrOnFail:(id)error {
@@ -315,5 +364,94 @@ static NSString * id_cord_url = @"https://aip.baidubce.com/rest/2.0/ocr/v1/idcar
         [alertView show];
     }];
 }
+
+-(void)createSqlite{
+    NSString * path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+    NSString * fileName = [path stringByAppendingPathComponent:@"Sqlite.sqlite"];
+    NSLog(@"%@",fileName);
+    if ((sqlite3_open(fileName.UTF8String, &db )== SQLITE_OK)) {
+        NSLog(@"打开数据库成功");
+        NSString * sql = @"create table if not exists t_text (id integer primary key autoincrement,name text);";
+        char * errmsg;
+        sqlite3_exec(db, sql.UTF8String, NULL, NULL, &errmsg);
+        if (errmsg) {
+            NSLog(@"建表失败 -- %s",errmsg);
+        }else{
+            NSLog(@"建表成功");
+        }
+    }else{
+        NSLog(@"失败");
+    }
+}
+
+- (void)createBankSqlite{
+    
+    NSString * path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+    NSString * fileName = [path stringByAppendingPathComponent:@"Sqlite.sqlite"];
+    NSLog(@"%@",fileName);
+    if ((sqlite3_open(fileName.UTF8String, &db )== SQLITE_OK)) {
+        NSLog(@"打开数据库成功");
+        NSString * sql = @"create table if not exists bank_list (id integer primary key autoincrement,bank_card_type text NOT NULL,bank_name text NOT NULL,bank_card_number text NOT NULL);";
+        char * errmsg;
+        sqlite3_exec(db, sql.UTF8String, NULL, NULL, &errmsg);
+        if (errmsg) {
+            NSLog(@"建表失败 -- %s",errmsg);
+        }else{
+            NSLog(@"建表成功");
+        }
+    }else{
+        NSLog(@"失败");
+    }
+    
+    
+}
+
+#pragma mark - 数据库增加数据
+//    NSString * sql = [NSString stringWithFormat:@"insert into t_text(name) values('%@');",[NSString stringWithFormat:@"小丸子--%d",arc4random_uniform(20)]];
+//    char * errorMsg;
+//    sqlite3_exec(db, sql.UTF8String, NULL, NULL, &errorMsg);
+//    if (errorMsg) {
+//        NSLog(@"失败原因 -%s",errorMsg);
+//    }else{
+//        NSLog(@"OK");
+//    }
+#pragma mark - 数据库删除数据操作
+//    NSString * sql = @"delete from t_text where id > 3 and id < 6;";
+//    char * errmsg;
+//    sqlite3_exec(db, sql.UTF8String, NULL, NULL, &errmsg);
+//    if (errmsg) {
+//        NSLog(@"删除失败--%s",errmsg);
+//    }else{
+//        NSLog(@"删除成功");
+//    }
+#pragma mark - 数据库更新数据操作
+//    NSString * sql = @"update t_text set name = 'hello-world' where id = 9;";
+//    char * errmsg;
+//    sqlite3_exec(db, sql.UTF8String, NULL, NULL, &errmsg);
+//    if (errmsg) {
+//        NSLog(@"修改失败--%s",errmsg);
+//    }else{
+//        NSLog(@"修改成功");
+//    }
+#pragma mark - 数据库查询操作
+//    NSString * sql = @"select * from t_text;";
+//
+//    //查询的句柄,游标
+//    sqlite3_stmt * stmt;
+//
+//    if (sqlite3_prepare(db, sql.UTF8String, -1, &stmt, NULL) == SQLITE_OK) {
+//
+//        //查询数据
+//        while (sqlite3_step(stmt) == SQLITE_ROW) {
+//
+//            //获取表数据的内容
+//            //sqlite3_column_text('句柄'，字段索引值)
+//
+//            NSString * name = [NSString stringWithCString:(const char *)sqlite3_column_text(stmt, 1) encoding:NSUTF8StringEncoding];
+//
+//            NSLog(@"name = %@",name);
+//
+//        }
+//    }
 
 @end

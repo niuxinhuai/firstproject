@@ -54,6 +54,7 @@
 		2D1A69141F37FC040079BFD4 /* AipCaptureCardVC.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68EC1F37FC040079BFD4 /* AipCaptureCardVC.mm */; };
 		2D1A69151F37FC040079BFD4 /* AipGeneralVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68EE1F37FC040079BFD4 /* AipGeneralVC.m */; };
 		2D1A69161F37FC040079BFD4 /* AipNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68F01F37FC040079BFD4 /* AipNavigationController.m */; };
+		2D1A6A141F3D9F470079BFD4 /* XHPOIMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A6A131F3D9F470079BFD4 /* XHPOIMapView.m */; };
 		2D211DB21ECACAD800DA4E6B /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D211DB11ECACAD800DA4E6B /* CircleView.m */; };
 		2D23C46B1F149F1900EDA3AA /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D23C46A1F149F1900EDA3AA /* NotificationCenter.framework */; };
 		2D23C46F1F149F1900EDA3AA /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D23C46E1F149F1900EDA3AA /* TodayViewController.m */; };
@@ -77,6 +78,7 @@
 		2D8B0E981EC16716006953B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D8B0E961EC16716006953B5 /* LaunchScreen.storyboard */; };
 		2D8B0EA31EC16716006953B5 /* firstprojectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8B0EA21EC16716006953B5 /* firstprojectTests.m */; };
 		2D8B0EAE1EC16716006953B5 /* firstprojectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8B0EAD1EC16716006953B5 /* firstprojectUITests.m */; };
+		2D9240961F41778A004A62C4 /* POICustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9240951F41778A004A62C4 /* POICustomTableViewCell.m */; };
 		2DA388111EFCB07B0095F14F /* UIViewController+custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA388101EFCB07B0095F14F /* UIViewController+custom.m */; };
 		2DA388181EFD0A870095F14F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA388171EFD0A870095F14F /* libsqlite3.tbd */; };
 		2DA815F91ED6C083003AE3A4 /* NSString+Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA815F81ED6C083003AE3A4 /* NSString+Project.m */; };
@@ -292,6 +294,8 @@
 		2D1A68EE1F37FC040079BFD4 /* AipGeneralVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AipGeneralVC.m; sourceTree = "<group>"; };
 		2D1A68EF1F37FC040079BFD4 /* AipNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AipNavigationController.h; sourceTree = "<group>"; };
 		2D1A68F01F37FC040079BFD4 /* AipNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AipNavigationController.m; sourceTree = "<group>"; };
+		2D1A6A121F3D9F470079BFD4 /* XHPOIMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPOIMapView.h; sourceTree = "<group>"; };
+		2D1A6A131F3D9F470079BFD4 /* XHPOIMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPOIMapView.m; sourceTree = "<group>"; };
 		2D211DB01ECACAD800DA4E6B /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
 		2D211DB11ECACAD800DA4E6B /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 		2D23C4691F149F1900EDA3AA /* WidGetTodayViewController.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidGetTodayViewController.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -335,6 +339,8 @@
 		2D8B0EA91EC16716006953B5 /* firstprojectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = firstprojectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D8B0EAD1EC16716006953B5 /* firstprojectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = firstprojectUITests.m; sourceTree = "<group>"; };
 		2D8B0EAF1EC16716006953B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D9240941F41778A004A62C4 /* POICustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POICustomTableViewCell.h; sourceTree = "<group>"; };
+		2D9240951F41778A004A62C4 /* POICustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POICustomTableViewCell.m; sourceTree = "<group>"; };
 		2DA3880F1EFCB07B0095F14F /* UIViewController+custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+custom.h"; sourceTree = "<group>"; };
 		2DA388101EFCB07B0095F14F /* UIViewController+custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+custom.m"; sourceTree = "<group>"; };
 		2DA388171EFD0A870095F14F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -833,6 +839,17 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		2D1A6A111F3D9F190079BFD4 /* XHMapView */ = {
+			isa = PBXGroup;
+			children = (
+				2D1A6A121F3D9F470079BFD4 /* XHPOIMapView.h */,
+				2D1A6A131F3D9F470079BFD4 /* XHPOIMapView.m */,
+				2D9240941F41778A004A62C4 /* POICustomTableViewCell.h */,
+				2D9240951F41778A004A62C4 /* POICustomTableViewCell.m */,
+			);
+			path = XHMapView;
+			sourceTree = "<group>";
+		};
 		2D211DAF1ECACABA00DA4E6B /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1260,6 +1277,7 @@
 		2DFCB6261ED568ED0040A60E /* view */ = {
 			isa = PBXGroup;
 			children = (
+				2D1A6A111F3D9F190079BFD4 /* XHMapView */,
 				2D1A68A21F3406940079BFD4 /* BaiduAIView */,
 				2D1A688A1F3164920079BFD4 /* play_video_view */,
 				2DFCB6271ED569130040A60E /* VideoTableViewCell.h */,
@@ -1573,6 +1591,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = B2WB8E557H;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					2D8B0E9D1EC16716006953B5 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -1771,6 +1794,7 @@
 				2DFCB5731ECD6F0D0040A60E /* UIColor+HexColor.m in Sources */,
 				2DA816A31EE298DC003AE3A4 /* EmojiModel.m in Sources */,
 				2DFCB6221ED5624A0040A60E /* YKExtra.m in Sources */,
+				2D1A6A141F3D9F470079BFD4 /* XHPOIMapView.m in Sources */,
 				2DFDDF381F27266C00150B20 /* openssl_wrapper.m in Sources */,
 				2D1A690D1F37FC040079BFD4 /* IOSpeScaleLayoutLabel.m in Sources */,
 				2D53BB761EE7E2690075058E /* VideoRootViewController.m in Sources */,
@@ -1795,6 +1819,7 @@
 				2DFCB5E21ED294050040A60E /* MainTabbarViewController.m in Sources */,
 				2DA816031ED7D913003AE3A4 /* FoucesView.m in Sources */,
 				2DFCB5EF1ED5190B0040A60E /* NewInformationsViewController.m in Sources */,
+				2D9240961F41778A004A62C4 /* POICustomTableViewCell.m in Sources */,
 				2D53BB7C1EE7E2A30075058E /* SpringViewController.m in Sources */,
 				2D53BB7F1EE7E2BC0075058E /* CalcutViewController.m in Sources */,
 				2DFDDF321F27266C00150B20 /* Order.m in Sources */,
@@ -2045,6 +2070,7 @@
 					"\"$(SRCROOT)/firstproject/alipayFiles\"",
 				);
 				INFOPLIST_FILE = firstproject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2144,6 +2170,7 @@
 					"\"$(SRCROOT)/firstproject/alipayFiles\"",
 				);
 				INFOPLIST_FILE = firstproject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

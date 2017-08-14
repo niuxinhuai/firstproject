@@ -42,6 +42,15 @@
 
 + (void)postNetWorkWithImage:(UIImage *)image types:(CardType)types withURL:(NSString *)url paramaters:(NSMutableDictionary *)paramaters success:(void(^)(id object))success failure:(void(^)(id failure))failure{
 
+    /*
+     NSDataBase64Encoding64CharacterLineLength其作用是将生成的Base64字符串按照64个字符长度进行等分换行
+     NSDataBase64Encoding76CharacterLineLength其作用是将生成的Base64字符串按照76个字符长度进行等分换行
+     NSDataBase64EncodingEndLineWithCarriageReturn其作用是将生成的Base64字符串以回车结束
+     NSDataBase64EncodingEndLineWithLineFeed其作用是将生成的Base64字符串以换行结束。
+     
+     
+     
+     */
 
     NSData* data = UIImagePNGRepresentation(image);
     NSString *imageStr = [data base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithCarriageReturn];

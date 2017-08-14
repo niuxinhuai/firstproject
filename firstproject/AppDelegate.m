@@ -15,6 +15,7 @@
 #import "TotalViewController.h"
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import "AipOcrService.h"
+
 @interface AppDelegate ()<WXApiDelegate>
 
 @end
