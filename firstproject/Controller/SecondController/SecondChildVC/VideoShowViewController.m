@@ -239,6 +239,7 @@
         _videoTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-135) style:UITableViewStylePlain];
         _videoTableView.delegate = self;
         _videoTableView.dataSource = self;
+        
         _videoTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [self.view addSubview:_videoTableView];
         MJRefreshGifHeader * header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
@@ -252,8 +253,8 @@
 
         //[header setImages:self.normalImages forState:MJRefreshStateIdle];
        // [header setImages:self.refreshImages forState:MJRefreshStatePulling];
-        header.lastUpdatedTimeLabel.hidden = YES;
-        header.stateLabel.hidden = YES;
+        header.lastUpdatedTimeLabel.hidden = NO;
+        header.stateLabel.hidden = NO;
         _videoTableView.mj_header = header;
         _videoTableView.tableHeaderView = self.bannerScrollView;
         

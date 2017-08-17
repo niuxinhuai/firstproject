@@ -68,6 +68,7 @@
     [super viewWillDisappear:animated];
     [_player pause];
     [_player stop];
+    _player = nil;
 }
 
 -(void)setVideoLives:(YKLives *)videoLives{
