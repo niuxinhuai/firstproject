@@ -26,6 +26,7 @@
 #import "AFNetworking.h"
 #import "NBasiViewController.h"
 #import <GPUImage.h>
+#import <MBProgressHUD.h>
 #import "Tool.h"
 #import "DataModels.h"
 #import <MJRefresh.h>

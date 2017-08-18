@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D0169A61F46772F0022B232 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0169A51F46772F0022B232 /* CoreBluetooth.framework */; };
+		2D0169A91F467B530022B232 /* UIView+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0169A81F467B530022B232 /* UIView+HUD.m */; };
+		2D0169AC1F46808C0022B232 /* MBProgressHUD+GR.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0169AB1F46808C0022B232 /* MBProgressHUD+GR.m */; };
 		2D1A688E1F3164C20079BFD4 /* SingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A688D1F3164C20079BFD4 /* SingButton.m */; };
 		2D1A68911F3168750079BFD4 /* VideoTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68901F3168750079BFD4 /* VideoTime.m */; };
 		2D1A68941F3177C10079BFD4 /* NbPurseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68931F3177C10079BFD4 /* NbPurseView.m */; };
@@ -224,6 +227,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2D0169A51F46772F0022B232 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		2D0169A71F467B530022B232 /* UIView+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HUD.h"; sourceTree = "<group>"; };
+		2D0169A81F467B530022B232 /* UIView+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HUD.m"; sourceTree = "<group>"; };
+		2D0169AA1F4680840022B232 /* MBProgressHUD+GR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+GR.h"; sourceTree = "<group>"; };
+		2D0169AB1F46808C0022B232 /* MBProgressHUD+GR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+GR.m"; sourceTree = "<group>"; };
 		2D1A688C1F3164C20079BFD4 /* SingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingButton.h; sourceTree = "<group>"; };
 		2D1A688D1F3164C20079BFD4 /* SingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingButton.m; sourceTree = "<group>"; };
 		2D1A688F1F3168750079BFD4 /* VideoTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTime.h; sourceTree = "<group>"; };
@@ -615,6 +623,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D0169A61F46772F0022B232 /* CoreBluetooth.framework in Frameworks */,
 				2D1A68B01F37FB920079BFD4 /* IdcardQuality.framework in Frameworks */,
 				2D1A68A71F34519B0079BFD4 /* AipBase.framework in Frameworks */,
 				2DFDDF301F27266C00150B20 /* libcrypto.a in Frameworks */,
@@ -1205,6 +1214,8 @@
 		2DFCB5B81ED01D2D0040A60E /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				2D0169AA1F4680840022B232 /* MBProgressHUD+GR.h */,
+				2D0169AB1F46808C0022B232 /* MBProgressHUD+GR.m */,
 				2DA8160A1ED91D60003AE3A4 /* EffecImage */,
 				2DFCB5B91ED01D2D0040A60E /* NSString+XFTime.h */,
 				2DFCB5BA1ED01D2D0040A60E /* NSString+XFTime.m */,
@@ -1216,6 +1227,8 @@
 				2DFCB5BE1ED01D2D0040A60E /* UIImageView+Header.m */,
 				2DFCB5BF1ED01D2D0040A60E /* UIView+Extension.h */,
 				2DFCB5C01ED01D2D0040A60E /* UIView+Extension.m */,
+				2D0169A71F467B530022B232 /* UIView+HUD.h */,
+				2D0169A81F467B530022B232 /* UIView+HUD.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1336,6 +1349,7 @@
 		2DFD44CC1EC30ED90087822A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2D0169A51F46772F0022B232 /* CoreBluetooth.framework */,
 				2DFDDF451F27271000150B20 /* CoreText.framework */,
 				2DFDDF431F2726FA00150B20 /* CoreTelephony.framework */,
 				2DFDDF411F2726E000150B20 /* SystemConfiguration.framework */,
@@ -1784,6 +1798,7 @@
 				2DFDDF4F1F298EC100150B20 /* UITabBar+baseTabBar.m in Sources */,
 				2D1A69161F37FC040079BFD4 /* AipNavigationController.m in Sources */,
 				2DFCB5B01ECF22350040A60E /* WebViewJavascriptBridgeBase.m in Sources */,
+				2D0169AC1F46808C0022B232 /* MBProgressHUD+GR.m in Sources */,
 				2DFDDF371F27266C00150B20 /* NSDataEx.m in Sources */,
 				2D53BB851EE7E2F20075058E /* HotsViewController.m in Sources */,
 				2DFCB5AF1ECF22350040A60E /* WebViewJavascriptBridge_JS.m in Sources */,
@@ -1837,6 +1852,7 @@
 				2DFCB5291ECBE9940040A60E /* RootNavViewController.m in Sources */,
 				2D1A68911F3168750079BFD4 /* VideoTime.m in Sources */,
 				2D1A69121F37FC040079BFD4 /* AipImageView.m in Sources */,
+				2D0169A91F467B530022B232 /* UIView+HUD.m in Sources */,
 				2DFCB5F21ED519320040A60E /* PracticesViewController.m in Sources */,
 				2DFCB6251ED5624A0040A60E /* YKLives.m in Sources */,
 				2DFCB5B11ECF22350040A60E /* WKWebViewJavascriptBridge.m in Sources */,

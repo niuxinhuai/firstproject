@@ -15,4 +15,5 @@ pod  'Masonry'
 pod 'JPNavigationController'
 pod 'JRSwizzle'
 pod 'FMDB'
+pod ‘MBProgressHUD’
 end

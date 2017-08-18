@@ -46,7 +46,7 @@ typedef NS_ENUM(NSInteger, CJKTCheckingType) {
 -(BOOL)checkPayPWD;// 验证支付密码，不能重复连续的数字
 + (void)getPhoneRAM;// 获取手机容量
 + (NSString *)getNumberFromStr:(NSString *)str;// 获取字符串中的全部数字
-
++(void)openCameraPermissions;// 打开系统设置权限
 
 @end
 
