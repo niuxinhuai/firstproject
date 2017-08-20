@@ -9,6 +9,8 @@
 #import "CustomViewController.h"
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "MBProgressHUD+GR.h"
+#define SERVICE_UUID @"CDD1"
+#define CHARACTERISTIC_UUID @"CDD2"
 @interface CustomViewController ()<CBCentralManagerDelegate,UIAlertViewDelegate,CBPeripheralDelegate,UITableViewDelegate,UITableViewDataSource>
 {
     NSInteger timerCount;
@@ -20,6 +22,9 @@
 @property (strong, nonatomic) NSMutableArray   * blueMutableAttay;
 @property (strong, nonatomic) NSTimer          * myTimer;
 @property (strong, nonatomic) MBProgressHUD    * hud;
+@property (nonatomic, strong) UITextField      * my_textField;
+@property (nonatomic, strong) UIButton         * senderButton;
+@property (strong, nonatomic) UIButton         * getDataButton;
 @end
 
 @implementation CustomViewController
@@ -28,6 +33,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     timerCount =0;
+    [self.view addSubview:self.my_textField];
+    [self.view addSubview:self.senderButton];
+    [self.view addSubview:self.getDataButton];
     
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -59,7 +67,7 @@
 }
 - (CBCentralManager *)BLEManager{
     if (!_BLEManager) {
-        _BLEManager = [[CBCentralManager alloc]initWithDelegate:self queue:nil];
+        _BLEManager = [[CBCentralManager alloc]initWithDelegate:self queue:dispatch_get_main_queue()];
     }
     
     return _BLEManager;
@@ -99,16 +107,17 @@
             break;
             
     }
+    
     HUD = [MBProgressHUD showMessage:message toView:self.view];
     if (self.BLEManager.state != CBCentralManagerStatePoweredOn) {// 如果没有开启设备
-        UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:@"开启蓝牙" message:nil delegate:self cancelButtonTitle:@"不开启" otherButtonTitles:@"开启", nil];
-        alertView.tag = 1000;
-        alertView.delegate = self;
-        [alertView show];
+//        UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:@"开启蓝牙" message:nil delegate:self cancelButtonTitle:@"不开启" otherButtonTitles:@"开启", nil];
+//        alertView.tag = 1000;
+//        alertView.delegate = self;
+//        [alertView show];
 
     }else{
         // 开始扫描
-        [self.BLEManager scanForPeripheralsWithServices:nil options:nil];
+        [self.BLEManager scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:SERVICE_UUID]] options:nil];
     }
     
     
@@ -123,24 +132,28 @@
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary<NSString *, id> *)advertisementData RSSI:(NSNumber *)RSSI{
   //  NSLog(@"发现蓝牙设备:%@\n%@",peripheral,advertisementData);//
     NSMutableArray * array = [[NSMutableArray alloc]init];
-    
-    if (peripheral) {
-        if (peripheral.name && ![peripheral.name isEqualToString:@"(null)"]) {
-            [array addObject:peripheral];
-            
-            for (CBPeripheral * per in array) {
-                if (![self.blueMutableAttay containsObject:per]) {
-                    if (self.blueMutableAttay.count >=20) {
-                        return;
-                    }
-                    [self.blueMutableAttay addObject:per];
-                    [self.bluetoothTableView reloadData];
-                    
-                }
-            }
-        }
-     
-    }
+    // 连接外设
+   // [central connectPeripheral:peripheral options:nil];
+    peripheral.delegate =self;
+    self.BLperipheral = peripheral;
+    [self.BLEManager connectPeripheral:self.BLperipheral options:nil];//如果是自己要连接的蓝牙硬件，那么进行连接
+//    if (peripheral) {
+//        if (peripheral.name && ![peripheral.name isEqualToString:@"(null)"]) {
+//            [array addObject:peripheral];
+//            
+//            for (CBPeripheral * per in array) {
+//                if (![self.blueMutableAttay containsObject:per]) {
+//                    if (self.blueMutableAttay.count >=20) {
+//                        return;
+//                    }
+//                    [self.blueMutableAttay addObject:per];
+//                   // [self.bluetoothTableView reloadData];
+//                    
+//                }
+//            }
+//        }
+//     
+//    }
 
 //    
 
@@ -153,6 +166,7 @@
     [MBProgressHUD hideHUDForView:self.view];
     _hud = [MBProgressHUD showMessage:@"链接成功" toView:self.view];
 
+    [self.BLEManager stopScan];
     NSLog(@"%s, line = %d, %@=连接成功", __FUNCTION__, __LINE__, peripheral.name);
     // 连接成功之后,可以进行服务和特征的发现
     
@@ -161,11 +175,21 @@
     
     // 外设发现服务,传nil代表不过滤
     // 这里会触发外设的代理方法 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error
-    [self.BLperipheral discoverServices:nil];
+    [self.BLperipheral discoverServices:@[[CBUUID UUIDWithString:SERVICE_UUID]]];
 }
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(nullable NSError *)error
 {
     
+    // 遍历出外设中所有的服务
+    for (CBService *service in peripheral.services) {
+        NSLog(@"所有的服务：%@",service);
+    }
+    
+    // 这里仅有一个服务，所以直接获取
+    CBService *service = peripheral.services.lastObject;
+    // 根据UUID寻找服务中的特征
+    [peripheral discoverCharacteristics:@[[CBUUID UUIDWithString:CHARACTERISTIC_UUID]] forService:service];
+
     NSLog(@"链接成功的设备为：%@",peripheral);
     
 }
@@ -194,6 +218,24 @@
     for (CBCharacteristic *cha in service.characteristics) {
         //NSLog(@"%s, line = %d, char = %@", __FUNCTION__, __LINE__, cha);
         _characteristic = cha;
+        [peripheral readValueForCharacteristic:self.characteristic];
+        
+        // 订阅通知
+        [peripheral setNotifyValue:YES forCharacteristic:self.characteristic];
+        
+
+    }
+}
+/** 订阅状态的改变 */
+-(void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
+    if (error) {
+        NSLog(@"订阅失败");
+        NSLog(@"%@",error);
+    }
+    if (characteristic.isNotifying) {
+        NSLog(@"订阅成功");
+    } else {
+        NSLog(@"取消订阅");
     }
 }
 
@@ -205,15 +247,39 @@
     NSLog(@"已经收到蓝牙发过来的数据:%@",characteristic.value);
     NSString * bydeString = [self hexadecimalString:characteristic.value];
     NSLog(@"解析二进制出来的数据为:%@",bydeString);
+    
+    // 另一种解析方法
+    NSData * data = characteristic.value;
+    NSString * dataStr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"当前接收到的数据为 : %@",dataStr);
+    self.my_textField.text = dataStr;
+    
     if ([characteristic  isEqual: @"你要的特征的UUID或者是你已经找到的特征"]) {
         //characteristic.value就是你要的数据
     }
+}
+/** 写入数据 */
+#pragma mark - 写入数据
+- (void)sendAnithingWithDate{
+    // 用NSData类型来写入
+    NSData *data = [self.my_textField.text dataUsingEncoding:NSUTF8StringEncoding];
+    // 根据上面的特征self.characteristic来写入数据
+    [self.BLperipheral writeValue:data forCharacteristic:self.characteristic type:CBCharacteristicWriteWithResponse];
+}
+/** 读取数据 */
+- (void)getAnithingWithDate {
+    [self.BLperipheral readValueForCharacteristic:self.characteristic];
+}
+
+/** 写入数据回调 */
+- (void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(nonnull CBCharacteristic *)characteristic error:(nullable NSError *)error {
+    NSLog(@"写入成功");
 }
 
 
 - (UITableView *)bluetoothTableView{
     if (!_bluetoothTableView) {
-        _bluetoothTableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        _bluetoothTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200*OffHeight) style:UITableViewStylePlain];
         _bluetoothTableView.backgroundColor = [UIColor whiteColor];
         _bluetoothTableView.delegate = self;
         _bluetoothTableView.dataSource = self;
@@ -319,6 +385,41 @@
     }
     return result;
     
+}
+- (UITextField *)my_textField{
+    if (!_my_textField) {
+        _my_textField = [[UITextField alloc]init];
+        _my_textField.center = CGPointMake([UIScreen mainScreen].bounds.size.width/2, 30);
+        _my_textField.bounds = CGRectMake(0, 0, 200, 50);
+        [_my_textField setBorderStyle:UITextBorderStyleLine];
+        
+    }
+    return _my_textField;
+    
+}
+
+- (UIButton *)senderButton{
+    if (!_senderButton) {
+        _senderButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _senderButton.center = CGPointMake(self.my_textField.center.x-80, CGRectGetMaxY(self.my_textField.frame)+50);
+        _senderButton.bounds = CGRectMake(0, 0, 100, 30);
+        [_senderButton setTitle:@"发送数据" forState:0];
+        [_senderButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [_senderButton addTarget:self action:@selector(sendAnithingWithDate) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _senderButton;
+}
+- (UIButton *)getDataButton{
+    if (!_getDataButton) {
+        _getDataButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _getDataButton.center = CGPointMake(self.my_textField.center.x+80, CGRectGetMaxY(self.my_textField.frame)+50);
+        _getDataButton.bounds = CGRectMake(0, 0, 100, 30);
+        [_getDataButton setTitle:@"读取数据" forState:0];
+        [_getDataButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [_getDataButton addTarget:self action:@selector(getAnithingWithDate) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    return _getDataButton;
 }
 
 
