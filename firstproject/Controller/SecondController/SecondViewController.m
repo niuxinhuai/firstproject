@@ -214,7 +214,7 @@
 
 -(NSArray *)titleArray{
     if (!_titleArray) {
-        _titleArray = [NSArray arrayWithObjects:@"科学",@"直播间",@"新闻资讯",@"视频播放",@"百度AI",@"蓝牙开发", nil];
+        _titleArray = [NSArray arrayWithObjects:@"科学",@"直播间",@"高德地图",@"视频播放",@"百度AI",@"蓝牙开发", nil];
     }
     
     return _titleArray;

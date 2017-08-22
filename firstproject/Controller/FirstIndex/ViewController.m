@@ -148,7 +148,7 @@ static sqlite3 * db = nil;
     UIImageView * imagev = [[UIImageView alloc]initWithImage:images];
     imagev.contentMode = UIViewContentModeScaleAspectFill;
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:images]];
-    [self.view addSubview:self.circleView];
+   // [self.view addSubview:self.circleView];
 
 }
 -(void)viewWillAppear:(BOOL)animated{

@@ -96,10 +96,12 @@ static sqlite3 * db = nil;
         [self bankCardOCROnline];
     }];
     UIAlertAction * confirmAction2 = [UIAlertAction actionWithTitle:@"机动车车牌识别" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.imagePickerType = UIImagePickerSourceTypeCamera;
         [self controllerButtonSelectSourceType:UIImagePickerSourceTypeCamera];
     }];
     
     UIAlertAction * confirmAction3 = [UIAlertAction actionWithTitle:@"用户头像审核" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        self.imagePickerType = UIImagePickerSourceTypePhotoLibrary;
         [self controllerButtonSelectSourceType:UIImagePickerSourceTypePhotoLibrary];
     }];
     UIAlertAction * cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -271,9 +273,11 @@ static sqlite3 * db = nil;
     NSString *title = nil;
     NSMutableString *message = [NSMutableString string];
     title = @"机动车车牌信息";
+    NSDictionary * dict = result[@"result"][0][@"data"][@"ocr"][@"words_result"][0];
+    NSLog(@"%@",dict);
     //    [message appendFormat:@"%@", result[@"result"]];
-    [message appendFormat:@"颜色：%@\n", result[@"words_result"][@"color"]];
-    [message appendFormat:@"车牌号：%@\n", result[@"words_result"][@"number"]];
+   // [message appendFormat:@"颜色：%@\n", result[@"result"][@"data"][@"words_result"][@"color"]];
+    [message appendFormat:@"车牌号：%@\n", dict[@"words"]];
     
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];

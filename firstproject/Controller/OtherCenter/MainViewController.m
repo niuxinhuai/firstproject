@@ -191,10 +191,10 @@
     return returnImage;
 }
 -(void)viewWillAppear:(BOOL)animated{
-//    self.verticalScroll.backgroundColor = [UIColor whiteColor];
-//
-//    _myTimer = [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(changeScrollContentOffSetY) userInfo:nil repeats:YES];
-//    [[NSRunLoop currentRunLoop] addTimer:_myTimer forMode:NSRunLoopCommonModes];
+    self.verticalScroll.backgroundColor = [UIColor whiteColor];
+
+    _myTimer = [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(changeScrollContentOffSetY) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:_myTimer forMode:NSRunLoopCommonModes];
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [_myTimer invalidate];
@@ -211,7 +211,7 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (IBAction)pushAnotherViewController:(id)sender {
-    LLView * vc = [[LLView alloc]init];
+    VideoViewController * vc = [[VideoViewController alloc]init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }

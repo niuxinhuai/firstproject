@@ -10,6 +10,9 @@
 		2D0169A61F46772F0022B232 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0169A51F46772F0022B232 /* CoreBluetooth.framework */; };
 		2D0169A91F467B530022B232 /* UIView+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0169A81F467B530022B232 /* UIView+HUD.m */; };
 		2D0169AC1F46808C0022B232 /* MBProgressHUD+GR.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0169AB1F46808C0022B232 /* MBProgressHUD+GR.m */; };
+		2D0169F11F4C11330022B232 /* XHTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0169F01F4C11330022B232 /* XHTabBar.m */; };
+		2D0169F41F4C18C60022B232 /* XHVisualEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0169F31F4C18C60022B232 /* XHVisualEffectView.m */; };
+		2D0169F81F4C1C760022B232 /* EffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0169F71F4C1C760022B232 /* EffectViewController.m */; };
 		2D1A688E1F3164C20079BFD4 /* SingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A688D1F3164C20079BFD4 /* SingButton.m */; };
 		2D1A68911F3168750079BFD4 /* VideoTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68901F3168750079BFD4 /* VideoTime.m */; };
 		2D1A68941F3177C10079BFD4 /* NbPurseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68931F3177C10079BFD4 /* NbPurseView.m */; };
@@ -232,6 +235,12 @@
 		2D0169A81F467B530022B232 /* UIView+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HUD.m"; sourceTree = "<group>"; };
 		2D0169AA1F4680840022B232 /* MBProgressHUD+GR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+GR.h"; sourceTree = "<group>"; };
 		2D0169AB1F46808C0022B232 /* MBProgressHUD+GR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+GR.m"; sourceTree = "<group>"; };
+		2D0169EF1F4C11330022B232 /* XHTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHTabBar.h; sourceTree = "<group>"; };
+		2D0169F01F4C11330022B232 /* XHTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHTabBar.m; sourceTree = "<group>"; };
+		2D0169F21F4C18C60022B232 /* XHVisualEffectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHVisualEffectView.h; sourceTree = "<group>"; };
+		2D0169F31F4C18C60022B232 /* XHVisualEffectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHVisualEffectView.m; sourceTree = "<group>"; };
+		2D0169F61F4C1C760022B232 /* EffectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EffectViewController.h; sourceTree = "<group>"; };
+		2D0169F71F4C1C760022B232 /* EffectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EffectViewController.m; sourceTree = "<group>"; };
 		2D1A688C1F3164C20079BFD4 /* SingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingButton.h; sourceTree = "<group>"; };
 		2D1A688D1F3164C20079BFD4 /* SingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingButton.m; sourceTree = "<group>"; };
 		2D1A688F1F3168750079BFD4 /* VideoTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTime.h; sourceTree = "<group>"; };
@@ -682,6 +691,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		2D0169F51F4C1C5C0022B232 /* CenterEffectController */ = {
+			isa = PBXGroup;
+			children = (
+				2D0169F61F4C1C760022B232 /* EffectViewController.h */,
+				2D0169F71F4C1C760022B232 /* EffectViewController.m */,
+			);
+			path = CenterEffectController;
+			sourceTree = "<group>";
+		};
 		2D1A688A1F3164920079BFD4 /* play_video_view */ = {
 			isa = PBXGroup;
 			children = (
@@ -864,6 +882,8 @@
 			children = (
 				2D211DB01ECACAD800DA4E6B /* CircleView.h */,
 				2D211DB11ECACAD800DA4E6B /* CircleView.m */,
+				2D0169F21F4C18C60022B232 /* XHVisualEffectView.h */,
+				2D0169F31F4C18C60022B232 /* XHVisualEffectView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1032,6 +1052,7 @@
 		2DFCB50F1ECBDC9E0040A60E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2D0169F51F4C1C5C0022B232 /* CenterEffectController */,
 				2DFCB5781ECE87840040A60E /* FirstIndex */,
 				2DFCB57B1ECE87840040A60E /* OtherCenter */,
 				2DFCB57F1ECE87840040A60E /* OwnerCenter */,
@@ -1070,6 +1091,8 @@
 				2DFCB52E1ECC13F30040A60E /* RootTableViewController.m */,
 				2DFDDF4D1F298EC100150B20 /* UITabBar+baseTabBar.h */,
 				2DFDDF4E1F298EC100150B20 /* UITabBar+baseTabBar.m */,
+				2D0169EF1F4C11330022B232 /* XHTabBar.h */,
+				2D0169F01F4C11330022B232 /* XHTabBar.m */,
 				2DFCB5B81ED01D2D0040A60E /* Category */,
 			);
 			path = basiViewController;
@@ -1802,10 +1825,12 @@
 				2DFDDF371F27266C00150B20 /* NSDataEx.m in Sources */,
 				2D53BB851EE7E2F20075058E /* HotsViewController.m in Sources */,
 				2DFCB5AF1ECF22350040A60E /* WebViewJavascriptBridge_JS.m in Sources */,
+				2D0169F81F4C1C760022B232 /* EffectViewController.m in Sources */,
 				2DFCB63B1ED6879A0040A60E /* BNTicker.m in Sources */,
 				2DA816A01EE2934B003AE3A4 /* EmojiLayout.m in Sources */,
 				2D1A69151F37FC040079BFD4 /* AipGeneralVC.m in Sources */,
 				2DA8160D1ED91D60003AE3A4 /* UIImage+ImageEffects.m in Sources */,
+				2D0169F11F4C11330022B232 /* XHTabBar.m in Sources */,
 				2DFCB5731ECD6F0D0040A60E /* UIColor+HexColor.m in Sources */,
 				2DA816A31EE298DC003AE3A4 /* EmojiModel.m in Sources */,
 				2DFCB6221ED5624A0040A60E /* YKExtra.m in Sources */,
@@ -1846,6 +1871,7 @@
 				2DFDDF361F27266C00150B20 /* MD5DataSigner.m in Sources */,
 				2DFCB52C1ECBEA7C0040A60E /* Tool.m in Sources */,
 				2D1A690E1F37FC040079BFD4 /* UIImage+AipCameraAddition.m in Sources */,
+				2D0169F41F4C18C60022B232 /* XHVisualEffectView.m in Sources */,
 				2DFCB5A01ECEDD2D0040A60E /* TFHpple.m in Sources */,
 				2D53BB821EE7E2E20075058E /* PictureViewController.m in Sources */,
 				2DFCB5901ECE87AB0040A60E /* TotalViewController.m in Sources */,

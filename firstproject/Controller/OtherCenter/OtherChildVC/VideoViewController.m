@@ -80,7 +80,7 @@
     [self.view addGestureRecognizer:swipe];
    // [self createTopView];
    //   self.myCollect.backgroundColor = [UIColor uiColorFromString:@"#f0f3f8"];
-   // [self.view addSubview:self.tabBarViews];
+    [self.view addSubview:self.tabBarViews];
    // [self.view addSubview:self.mainView];
  
   

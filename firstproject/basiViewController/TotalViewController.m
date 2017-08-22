@@ -17,11 +17,15 @@
 #import "RootNavViewController.h"
 #import "AppDelegate.h"
 #import "UITabBar+baseTabBar.h"
-@interface TotalViewController ()
+#import "XHTabBar.h"
+#import "XHVisualEffectView.h"
+#import "EffectViewController.h"
+@interface TotalViewController ()<XHTabBarDelegate>
 @property (nonatomic, strong) NSMutableArray<UIImage*>* nomalImageArray;
 @property (nonatomic, strong) NSMutableArray<UIImage*>* selectImageArray;
 @property (nonatomic, strong) NSMutableArray * titleArray;
 @property (nonatomic, strong) NSMutableArray * viewControllerArray;
+@property (nonatomic, strong) EffectViewController * effectView ;
 @end
 
 @implementation TotalViewController
@@ -31,19 +35,29 @@
     // Do any additional setup after loading the view.
     [self setUpUI];
     [self.tabBar showBadgeOnItmIndex:4];
+  
 }
 
 -(void)setUpUI{
+    
+    XHTabBar * tabbar = [[XHTabBar alloc]init];
+    tabbar.myDelegate = self;
+    
+    //kvc实质是修改了系统的_tabBar
+    [self setValue:tabbar forKeyPath:@"tabBar"];
     NSMutableArray * array = [[NSMutableArray alloc]init];
     for (int i=0; i<4; i++) {
-        UIViewController * vc = [self createNzvWithTag:i];
-        UINavigationController * nav = [[RootNavViewController alloc]initWithRootViewController:vc];
-        [array addObject:nav];
+        UINavigationController * nav = [self className:self.viewControllerArray[i] vcTitle:self.titleArray[i] tabTitle:self.titleArray[i] tabImage:self.nomalImageArray[i] tabSelectedImage:self.selectImageArray[i]];
+            [array addObject:nav];
+        
+      
     }
     self.viewControllers = array;
     self.tabBar.tintColor = [UIColor uiColorFromString:@"#00aaf5"];
-//    AppDelegate * app = [[AppDelegate alloc]init];
-//    app.window.rootViewController = self;
+    
+
+    
+
 
     
 }
@@ -90,39 +104,45 @@
     }
     return _viewControllerArray;
 }
--(UIViewController*)createNzvWithTag:(NSInteger)tag{
-    id class = self.viewControllerArray[tag];
+- (UINavigationController *)className:(NSString *)className
+                              vcTitle:(NSString *)vcTitle
+                             tabTitle:(NSString *)tabTitle
+                             tabImage:(UIImage *)image
+                     tabSelectedImage:(UIImage *)selectedImage
+{
+    UIViewController *vc = [[NSClassFromString(className) alloc] init];
+    vc.title = vcTitle;
+    vc.tabBarItem.title = tabTitle;
+    vc.tabBarItem.image =image;
+    vc.tabBarItem.selectedImage = selectedImage;
+    
+    UINavigationController *navgation = [[RootNavViewController alloc] initWithRootViewController:vc];
+    return navgation;
+}
+//点击中间按钮的代理方法
+- (void)tabBarPlusBtnClick:(XHTabBar *)tabBar withButton:(UIButton *)btn
+{
 
-    UIImage * nomalImage = self.nomalImageArray[tag];
-    UIImage * selectImage = self.selectImageArray[tag];
-    NSString * text = self.titleArray[tag];
-     NBasiViewController* childVC;
-    if ([class isEqualToString:@"ViewController"]) {
-        ViewController * vc = [[ViewController alloc]init];
+    btn.selected = !btn.selected;
+
+    _effectView = [[EffectViewController alloc]init];
+    //判断系统版本
+    if ([UIDevice currentDevice].systemVersion.floatValue>=8) {
         
-        childVC = vc;
-    }else if ([class isEqualToString:@"SecondViewController"]){
-        SecondViewController * vc = [[SecondViewController alloc]init];
-        childVC = vc;
-    }else if ([class isEqualToString:@"MainViewController"]){
-        MainViewController * vc = [[MainViewController alloc]init];
-        childVC = vc;
-        
-    }else if ([class isEqualToString:@"OwnerViewController"]){
-        OwnerViewController * vc = [[OwnerViewController alloc]init];
-        childVC = vc;
+        _effectView.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    }else{
+        _effectView.modalPresentationStyle = UIModalPresentationCurrentContext;
     }
-   // UINavigationController * nav = [[RootNavViewController alloc]initWithRootViewController:childVC];
-
-   childVC.title = text;
-    childVC.tabBarItem = [[UITabBarItem alloc]initWithTitle:text image:nomalImage selectedImage:selectImage];
     
     
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:_effectView animated:NO completion:nil];
     
-    
-    return childVC;
+    _effectView.dismissBlock = ^{
+         [[UIApplication sharedApplication].keyWindow.rootViewController dismissViewControllerAnimated:YES completion:nil];
+    };
     
 }
+
 /*
 #pragma mark - Navigation
 

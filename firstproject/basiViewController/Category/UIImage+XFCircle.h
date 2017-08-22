@@ -19,5 +19,6 @@
 +(UIImage *)resizeImage:(UIImage *)image;
 
 + (UIImage *)sapicamera_rotateImageEx:(CGImageRef)imgRef orientation:(UIImageOrientation) orient;
++ (UIImage *)imageWithColor:(UIColor *)color;
 
 @end

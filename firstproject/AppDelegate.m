@@ -16,7 +16,7 @@
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import "AipOcrService.h"
 
-@interface AppDelegate ()<WXApiDelegate>
+@interface AppDelegate ()<WXApiDelegate,UITabBarControllerDelegate>
 
 @end
 static const NSString * BaiduAppID = @"9966378";
@@ -35,6 +35,8 @@ static const NSString * BaiduSecretKey = @"WF2fWKb8lQ2bfGB5MAAsixIGXCUzWipX";
 
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     TotalViewController * totalVc = [[TotalViewController alloc]init];
+    totalVc.delegate = self;
+    
     self.window.rootViewController = totalVc;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -42,6 +44,12 @@ static const NSString * BaiduSecretKey = @"WF2fWKb8lQ2bfGB5MAAsixIGXCUzWipX";
     
     // Override point for customization after application launch.
     return YES;
+}
+
+//设置tabbar上第三个按钮为不可选中状态，其他的按钮为可选择状态
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
+{
+    return ![viewController isEqual:tabBarController.viewControllers[2]];
 }
 #pragma mark - 获取百度AIAccess Token。有效期为30天
 - (void)getBaiduAIAccessToken{
@@ -210,5 +218,7 @@ static const NSString * BaiduSecretKey = @"WF2fWKb8lQ2bfGB5MAAsixIGXCUzWipX";
 //        [alert show];
 
 }
+
+
 
 @end
