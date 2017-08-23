@@ -17,6 +17,7 @@
 #import <objc/runtime.h>
 #import <sqlite3.h>
 #import "TenCentProgressView.h"
+#import "CJKTZCodeViewController.h"
 @interface ViewController ()<AVSpeechSynthesizerDelegate,UIWebViewDelegate>{
     NSString * filePath;
     AVAudioRecorder * recorde;
@@ -132,6 +133,7 @@ static sqlite3 * db = nil;
     [self dispatchAllRequest];
     self.colorType = ButtonItemTitleColorTypeBlue;
 
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithItemTitle:@"扫一扫" target:self action:@selector(beginScanning)];
     //单独调用
     int sym = EMOJI_CODE_TO_SYMBOL(0x1F600);
     NSString *emoT = [[NSString alloc] initWithBytes:&sym length:sizeof(sym) encoding:NSUTF8StringEncoding];
@@ -150,6 +152,11 @@ static sqlite3 * db = nil;
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:images]];
    // [self.view addSubview:self.circleView];
 
+}
+- (void)beginScanning{
+    CJKTZCodeViewController * vc = [[CJKTZCodeViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

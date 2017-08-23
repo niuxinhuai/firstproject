@@ -13,6 +13,9 @@
 		2D0169F11F4C11330022B232 /* XHTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0169F01F4C11330022B232 /* XHTabBar.m */; };
 		2D0169F41F4C18C60022B232 /* XHVisualEffectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0169F31F4C18C60022B232 /* XHVisualEffectView.m */; };
 		2D0169F81F4C1C760022B232 /* EffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0169F71F4C1C760022B232 /* EffectViewController.m */; };
+		2D0169FE1F4D54F90022B232 /* LinkAgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0169FD1F4D54F90022B232 /* LinkAgeViewController.m */; };
+		2D016A041F4D5FBC0022B232 /* CJKTZCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D016A011F4D5FBC0022B232 /* CJKTZCodeViewController.m */; };
+		2D016A051F4D5FBC0022B232 /* QRView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D016A031F4D5FBC0022B232 /* QRView.m */; };
 		2D1A688E1F3164C20079BFD4 /* SingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A688D1F3164C20079BFD4 /* SingButton.m */; };
 		2D1A68911F3168750079BFD4 /* VideoTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68901F3168750079BFD4 /* VideoTime.m */; };
 		2D1A68941F3177C10079BFD4 /* NbPurseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68931F3177C10079BFD4 /* NbPurseView.m */; };
@@ -241,6 +244,12 @@
 		2D0169F31F4C18C60022B232 /* XHVisualEffectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHVisualEffectView.m; sourceTree = "<group>"; };
 		2D0169F61F4C1C760022B232 /* EffectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EffectViewController.h; sourceTree = "<group>"; };
 		2D0169F71F4C1C760022B232 /* EffectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EffectViewController.m; sourceTree = "<group>"; };
+		2D0169FC1F4D54F90022B232 /* LinkAgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkAgeViewController.h; sourceTree = "<group>"; };
+		2D0169FD1F4D54F90022B232 /* LinkAgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkAgeViewController.m; sourceTree = "<group>"; };
+		2D016A001F4D5FBC0022B232 /* CJKTZCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJKTZCodeViewController.h; sourceTree = "<group>"; };
+		2D016A011F4D5FBC0022B232 /* CJKTZCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJKTZCodeViewController.m; sourceTree = "<group>"; };
+		2D016A021F4D5FBC0022B232 /* QRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRView.h; sourceTree = "<group>"; };
+		2D016A031F4D5FBC0022B232 /* QRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRView.m; sourceTree = "<group>"; };
 		2D1A688C1F3164C20079BFD4 /* SingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingButton.h; sourceTree = "<group>"; };
 		2D1A688D1F3164C20079BFD4 /* SingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingButton.m; sourceTree = "<group>"; };
 		2D1A688F1F3168750079BFD4 /* VideoTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTime.h; sourceTree = "<group>"; };
@@ -694,10 +703,47 @@
 		2D0169F51F4C1C5C0022B232 /* CenterEffectController */ = {
 			isa = PBXGroup;
 			children = (
+				2D0169F91F4D54280022B232 /* Controller */,
+				2D0169FA1F4D54280022B232 /* Model */,
+				2D0169FB1F4D54280022B232 /* View */,
 				2D0169F61F4C1C760022B232 /* EffectViewController.h */,
 				2D0169F71F4C1C760022B232 /* EffectViewController.m */,
 			);
 			path = CenterEffectController;
+			sourceTree = "<group>";
+		};
+		2D0169F91F4D54280022B232 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2D0169FC1F4D54F90022B232 /* LinkAgeViewController.h */,
+				2D0169FD1F4D54F90022B232 /* LinkAgeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2D0169FA1F4D54280022B232 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2D0169FB1F4D54280022B232 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2D0169FF1F4D5FBC0022B232 /* scanViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2D016A001F4D5FBC0022B232 /* CJKTZCodeViewController.h */,
+				2D016A011F4D5FBC0022B232 /* CJKTZCodeViewController.m */,
+				2D016A021F4D5FBC0022B232 /* QRView.h */,
+				2D016A031F4D5FBC0022B232 /* QRView.m */,
+			);
+			path = scanViewController;
 			sourceTree = "<group>";
 		};
 		2D1A688A1F3164920079BFD4 /* play_video_view */ = {
@@ -1112,6 +1158,7 @@
 		2DFCB5781ECE87840040A60E /* FirstIndex */ = {
 			isa = PBXGroup;
 			children = (
+				2D0169FF1F4D5FBC0022B232 /* scanViewController */,
 				2DFCB5911ECE88810040A60E /* IndexChildVC */,
 				2DFCB5791ECE87840040A60E /* ViewController.h */,
 				2DFCB57A1ECE87840040A60E /* ViewController.m */,
@@ -1828,6 +1875,7 @@
 				2D0169F81F4C1C760022B232 /* EffectViewController.m in Sources */,
 				2DFCB63B1ED6879A0040A60E /* BNTicker.m in Sources */,
 				2DA816A01EE2934B003AE3A4 /* EmojiLayout.m in Sources */,
+				2D016A051F4D5FBC0022B232 /* QRView.m in Sources */,
 				2D1A69151F37FC040079BFD4 /* AipGeneralVC.m in Sources */,
 				2DA8160D1ED91D60003AE3A4 /* UIImage+ImageEffects.m in Sources */,
 				2D0169F11F4C11330022B232 /* XHTabBar.m in Sources */,
@@ -1881,6 +1929,7 @@
 				2D0169A91F467B530022B232 /* UIView+HUD.m in Sources */,
 				2DFCB5F21ED519320040A60E /* PracticesViewController.m in Sources */,
 				2DFCB6251ED5624A0040A60E /* YKLives.m in Sources */,
+				2D0169FE1F4D54F90022B232 /* LinkAgeViewController.m in Sources */,
 				2DFCB5B11ECF22350040A60E /* WKWebViewJavascriptBridge.m in Sources */,
 				2DFCB5871ECE87840040A60E /* ViewController.m in Sources */,
 				2DFCB5971ECE899B0040A60E /* UIBarButtonItem+CustomBarButtonItem.m in Sources */,
@@ -1888,6 +1937,7 @@
 				2D1A690A1F37FC040079BFD4 /* AipDisplayLink.m in Sources */,
 				2DFCB6231ED5624A0040A60E /* YKLabel.m in Sources */,
 				2DA816091ED818EA003AE3A4 /* ThumbAnimationView.m in Sources */,
+				2D016A041F4D5FBC0022B232 /* CJKTZCodeViewController.m in Sources */,
 				2D53BBB21EEB818C0075058E /* SpringTableViewCell.m in Sources */,
 				2DFCB5261ECBDE2A0040A60E /* NBasiViewController.m in Sources */,
 				2DFCB6241ED5624A0040A60E /* YKLike.m in Sources */,

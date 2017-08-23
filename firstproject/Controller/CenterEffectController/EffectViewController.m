@@ -7,7 +7,7 @@
 //
 
 #import "EffectViewController.h"
-
+#import "AppDelegate.h"
 #define TAG_ADD 100
 
 @interface EffectButton : UIButton
@@ -78,7 +78,7 @@
         //图片和文字,都有一个edge距上下左右的边距
         //图片的上左下是依据button的,右是依据label
         //label上右下是依据button的,左是依据imgView的
-        [btn setTitleEdgeInsets:UIEdgeInsetsMake(80, -81, -10, 0)];
+        [btn setTitleEdgeInsets:UIEdgeInsetsMake(80, -81, -20, 0)];
         
         //图片大小 71
         //还有文字,按钮的大小不能小于71
@@ -255,7 +255,7 @@
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 {
     EffectButton *btn = [self.view viewWithTag:_currentFlag];
-    
+    NSLog(@"%ld",btn.tag-TAG_ADD);
     CAAnimation *an =
     [btn.layer animationForKey:@"enlarge"];
     if (an == anim) {
@@ -263,10 +263,26 @@
         [self dismissViewControllerAnimated:NO completion:^{
             
 //            SendMessageViewController *sendCtr = [[SendMessageViewController alloc]init];
-//            UINavigationController *navCtr = [[UINavigationController alloc]initWithRootViewController:sendCtr];
+
 //            
-//            AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-//            [delegate.window.rootViewController presentViewController:navCtr animated:YES completion:nil];
+
+            NSString * className;
+            switch (btn.tag-TAG_ADD) {
+                case 0:
+                {
+                    className = @"LinkAgeViewController";
+                    break;
+                }
+                default:
+                    break;
+            }
+            Class class = NSClassFromString(className);
+            UIViewController * vc = [class new];
+            vc.hidesBottomBarWhenPushed = YES;
+            UINavigationController *navCtr = [[UINavigationController alloc]initWithRootViewController:vc];
+            AppDelegate *delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+            [delegate.window.rootViewController presentViewController:navCtr animated:YES completion:nil];
+            
         }];
     }
     
