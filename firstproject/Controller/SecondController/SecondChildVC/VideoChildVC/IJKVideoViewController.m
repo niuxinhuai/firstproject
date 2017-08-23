@@ -49,6 +49,7 @@
         [self.navigationController popViewControllerAnimated:YES];
         return;
     }
+    NSString * str = @"192.168.2.219:8080/app/supervise/lookPhoto/599bff4ed4aa3a27ecc33ecd";
     NSURL * url = [NSURL URLWithString:_videoStream_addr];
     IJKFFMoviePlayerController * playerVC = [[IJKFFMoviePlayerController alloc]initWithContentURL:url withOptions:nil];
     // 准备播放
@@ -70,6 +71,11 @@
     [_player stop];
     _player = nil;
 }
+//- (void)dealloc{
+//    [_player pause];
+//    [_player stop];
+//    _player = nil;
+//}
 
 -(void)setVideoLives:(YKLives *)videoLives{
     _videoLives = videoLives;
@@ -247,6 +253,9 @@
         case BottomButtonCenterThreeTag:
         {
             NSLog(@"点击了退出界面");
+   
+          
+          
             [self.navigationController popViewControllerAnimated:YES];
 
 
