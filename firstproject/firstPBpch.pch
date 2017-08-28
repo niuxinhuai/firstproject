@@ -35,6 +35,7 @@
 #import "NetWorkTool.h"
 #import <FMDB.h>
 #import "UIView+Fragmentation.h"
+#import "UPPaymentControl.h"
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)

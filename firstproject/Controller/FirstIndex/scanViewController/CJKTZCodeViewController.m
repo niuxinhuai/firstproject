@@ -287,6 +287,7 @@
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         [[[UIAlertView alloc] initWithTitle:@"识别信息" message:msg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
     }];
+    [_captureSession stopRunning];
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [self stopReading];

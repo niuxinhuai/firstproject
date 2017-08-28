@@ -117,6 +117,9 @@ static const NSString * BaiduSecretKey = @"WF2fWKb8lQ2bfGB5MAAsixIGXCUzWipX";
         [self alipayUrlAction:url];
         return YES;
         
+    }else if ([url.scheme isEqualToString:@"XHUPPaySigin"]){
+        [self UnionpayUrlAction:url];
+        return YES;
     }else{
         // 微信支付
         return [WXApi handleOpenURL:url delegate:self];
@@ -124,6 +127,53 @@ static const NSString * BaiduSecretKey = @"WF2fWKb8lQ2bfGB5MAAsixIGXCUzWipX";
     }
 
 }
+#pragma mark - 银联支付
+/*
+ @parameter返回示例
+ {
+ data = "pay_result=success&tn=889767731714282290900&cert_id=68759585097";
+ sign = "sXo/qtpebq97dOC24zot/z5JrmTRFYkgIXJMo/hefw5BYkW4lwbp/byxqXausUGWOowMlK8ffLNrWL9i8AeTjgRjyx2FfL0JyzjFM3+mjvvPKivEwO8aom42drNfYoTDFJim6S3M4NHJYQZCYuiNYO3ClA/etFTm2tKbVU01tIHFG7XIwIGz/eNvf0ZqD5qAj/rgQOrk7Kj7woPy0rv7mtBTeuFQs/shz0cubHyzTbMtRULNcy+y+28tjGRspSWp3LZHPKWa2De+J7iOLYiQ+pDDVLIOssiF8+ELa7PtX7RDBZ1wsGePXBHIaDF5BP+LGUMF/JMcrdcyA3yM2wIvJw==";
+ }
+ @parameter
+ @parameter
+ @parameter
+ 测试卡号信息：
+ 借记卡：6226090000000048
+ 手机号：18100000000
+ 密码：111101
+ 短信验证码：123456
+ （短信验证码记得点下获取验证码之后再输入）
+ 
+ 贷记卡：6226388000000095；
+ 手机号：18100000000；
+ cvn2：248；
+ 有效期：1219；
+ 短信验证码：123456
+ （短信验证码记得点下获取验证码之后再输入）
+ */
+- (void)UnionpayUrlAction:(NSURL *)url{
+    
+    [[UPPaymentControl defaultControl] handlePaymentResult:url completeBlock:^(NSString *code, NSDictionary *data) {
+        NSLog(@"%@",data);
+        if ([code isEqualToString:@"success"]) {
+            if (data ==nil) {
+                // 如果没有签名数据，建议商户app后台查询交易结果
+                return ;
+            }
+            NSData * signData = [NSJSONSerialization dataWithJSONObject:data options:0 error:nil];
+            NSString * sign = [[NSString alloc]initWithData:signData encoding:NSUTF8StringEncoding]
+            ;
+            // 此处验证verify ， 成功展示支付结果UI界面给用户，失败提示交易结果被篡改，商户app后台查询最后支付结果
+            
+        }else if ([code isEqualToString:@"fail"]){
+            NSLog(@"交易失败");
+        }else if ([code isEqualToString:@""]){
+            NSLog(@"交易取消");
+        }
+        
+    }];
+}
+#pragma mark - 支付宝
 -(void)alipayUrlAction:(NSURL *)url{
     [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
         int status = [[resultDic valueForKey:@"resultStatus"] intValue];

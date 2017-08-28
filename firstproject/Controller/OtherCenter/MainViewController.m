@@ -96,6 +96,7 @@
             CGFloat X=accelerometerData.acceleration.x;
             CGFloat Y=accelerometerData.acceleration.y;
             CGFloat Z=accelerometerData.acceleration.z;
+            NSLog(@"%.f\n%.f\n%.f",X,Y,Z);
            // NSLog(@"x轴:%f y轴:%f z轴:%f",X,Y,Z);
         }
     }];
@@ -113,7 +114,7 @@
     CGFloat X=data.acceleration.x;
     CGFloat Y=data.acceleration.y;
     CGFloat Z=data.acceleration.z;
-   // NSLog(@"x轴:%f y轴:%f z轴:%f",X,Y,Z);
+    NSLog(@"x轴:%f y轴:%f z轴:%f",X,Y,Z);
 }
 
 

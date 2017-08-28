@@ -85,6 +85,7 @@
      self.myCollect.backgroundColor = [UIColor uiColorFromString:@"#f0f3f8"];
     [self.view addSubview:self.tabBarViews];
     //[self.view addSubview:self.mainView];
+    self.view.backgroundColor = [UIColor whiteColor];
  
   
 }
@@ -300,7 +301,7 @@
     [self.navigationController popViewControllerAnimated:NO];
    
 
-    // self.backBlock(nil);
+   //  self.backBlock(nil);
     dispatch_time_t delayTimes = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC));
     dispatch_after(delayTimes, dispatch_get_main_queue(), ^{
       

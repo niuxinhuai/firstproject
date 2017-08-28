@@ -5,7 +5,24 @@
 //  Created by 牛新怀 on 2017/5/17.
 //  Copyright © 2017年 牛新怀. All rights reserved.
 //
+#define KBtn_width        200
+#define KBtn_height       80
+#define KXOffSet          (self.view.frame.size.width - KBtn_width) / 2
+#define KYOffSet          80
+#define kCellHeight_Normal  50
+#define kCellHeight_Manual  145
 
+#define kVCTitle          @"商户测试"
+#define kBtnFirstTitle    @"获取订单，开始测试"
+#define kWaiting          @"正在获取TN,请稍后..."
+#define kNote             @"提示"
+#define kConfirm          @"确定"
+#define kErrorNet         @"网络错误"
+#define kResult           @"支付结果：%@"
+
+#define kMode_Development             @"01"
+#define kURL_TN_Normal                @"http://101.231.204.84:8091/sim/getacptn"
+#define kURL_TN_Configure             @"http://101.231.204.84:8091/sim/app.jsp?user=123456789"
 #import "SecondViewController.h"
 #import "HYPageView.h"
 #import <GPUImage.h>
@@ -19,13 +36,19 @@
 
 @end
 @interface SecondViewController ()<ChouseAliPayDelegate>
+{
+    UIAlertView* _alertView;
+    NSMutableData* _responseData;
+}
 @property (nonatomic ,strong)HYPageView * HYview;
 @property (nonatomic, strong)UIImageView * barImageView;
 @property (nonatomic, strong)NSArray * titleArray;
-
+@property(nonatomic, copy)NSString *tnMode;
+- (void)startNetWithURL:(NSURL *)url;
 @end
 
 @implementation SecondViewController
+@synthesize tnMode;
 #pragma mark   ==============产生随机订单号==============
 
 
@@ -57,7 +80,7 @@
 -(void)setUpNavigationView{
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithItemTitle:@"支付宝" target:self action:@selector(leftTap)];
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithItemTitle:@"高德地图" target:self action:@selector(rightTap)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithItemTitle:@"银联支付" target:self action:@selector(rightTap)];
     // 设置导航条为透明
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     // 去除导航条底部黑线
@@ -191,9 +214,10 @@
 
 
 
-#pragma mark - 右侧点击  高德地图
+#pragma mark - 右侧点击  银联支付
 -(void)rightTap{
-    [self.navigationController.view fragmenttationAnimation];
+    self.tnMode = kMode_Development;
+    [self startNetWithURL:[NSURL URLWithString:kURL_TN_Normal]];
     
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -225,6 +249,108 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+/*
+ @parameter 增加银联支付测试功能
+
+ */
+
+- (void)startNetWithURL:(NSURL *)url
+{
+    [self showAlertWait];
+    
+    NSURLRequest * urlRequest=[NSURLRequest requestWithURL:url];
+    NSURLConnection* urlConn = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
+    [urlConn start];
+}
+
+
+#pragma mark - connection
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse*)response
+{
+    NSHTTPURLResponse* rsp = (NSHTTPURLResponse*)response;
+    NSInteger code = [rsp statusCode];
+    if (code != 200)
+    {
+        
+        [self showAlertMessage:kErrorNet];
+        [connection cancel];
+    }
+    else
+    {
+        
+        _responseData = [[NSMutableData alloc] init];
+    }
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [_responseData appendData:data];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    [self hideAlert];
+    NSString* tn = [[NSMutableString alloc] initWithData:_responseData encoding:NSUTF8StringEncoding];
+    if (tn != nil && tn.length > 0)
+    {
+        
+        NSLog(@"tn=%@",tn);
+        [[UPPaymentControl defaultControl] startPay:tn fromScheme:@"XHUPPaySigin" mode:self.tnMode viewController:self];
+        
+    }
+    
+    
+}
+
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    [self showAlertMessage:kErrorNet];
+}
+
+
+#pragma mark UPPayPluginResult
+- (void)UPPayPluginResult:(NSString *)result
+{
+    NSString* msg = [NSString stringWithFormat:kResult, result];
+    [self showAlertMessage:msg];
+}
+
+#pragma mark - Alert
+
+- (void)showAlertWait
+{
+    [self hideAlert];
+    _alertView = [[UIAlertView alloc] initWithTitle:kWaiting message:nil delegate:self cancelButtonTitle:nil otherButtonTitles: nil];
+    [_alertView show];
+    UIActivityIndicatorView* aiv = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    aiv.center = CGPointMake(_alertView.frame.size.width / 2.0f - 15, _alertView.frame.size.height / 2.0f + 10 );
+    [aiv startAnimating];
+    [_alertView addSubview:aiv];
+    
+}
+
+- (void)showAlertMessage:(NSString*)msg
+{
+    [self hideAlert];
+    _alertView = [[UIAlertView alloc] initWithTitle:kNote message:msg delegate:self cancelButtonTitle:kConfirm otherButtonTitles:nil, nil];
+    [_alertView show];
+    
+}
+- (void)hideAlert
+{
+    if (_alertView != nil)
+    {
+        [_alertView dismissWithClickedButtonIndex:0 animated:NO];
+        _alertView = nil;
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    _alertView = nil;
 }
 
 

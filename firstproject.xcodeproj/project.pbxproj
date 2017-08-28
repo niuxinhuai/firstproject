@@ -17,6 +17,8 @@
 		2D016A041F4D5FBC0022B232 /* CJKTZCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D016A011F4D5FBC0022B232 /* CJKTZCodeViewController.m */; };
 		2D016A051F4D5FBC0022B232 /* QRView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D016A031F4D5FBC0022B232 /* QRView.m */; };
 		2D016A081F4FFDA80022B232 /* UIView+Fragmentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D016A071F4FFDA80022B232 /* UIView+Fragmentation.m */; };
+		2D016A671F53F6EC0022B232 /* libPaymentControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D016A631F53F6EC0022B232 /* libPaymentControl.a */; };
+		2D016A691F53F8110022B232 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D016A681F53F8110022B232 /* LocalAuthentication.framework */; };
 		2D1A688E1F3164C20079BFD4 /* SingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A688D1F3164C20079BFD4 /* SingButton.m */; };
 		2D1A68911F3168750079BFD4 /* VideoTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68901F3168750079BFD4 /* VideoTime.m */; };
 		2D1A68941F3177C10079BFD4 /* NbPurseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68931F3177C10079BFD4 /* NbPurseView.m */; };
@@ -253,6 +255,11 @@
 		2D016A031F4D5FBC0022B232 /* QRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRView.m; sourceTree = "<group>"; };
 		2D016A061F4FFDA80022B232 /* UIView+Fragmentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Fragmentation.h"; sourceTree = "<group>"; };
 		2D016A071F4FFDA80022B232 /* UIView+Fragmentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Fragmentation.m"; sourceTree = "<group>"; };
+		2D016A631F53F6EC0022B232 /* libPaymentControl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPaymentControl.a; sourceTree = "<group>"; };
+		2D016A641F53F6EC0022B232 /* UPAPayPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPAPayPlugin.h; sourceTree = "<group>"; };
+		2D016A651F53F6EC0022B232 /* UPAPayPluginDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPAPayPluginDelegate.h; sourceTree = "<group>"; };
+		2D016A661F53F6EC0022B232 /* UPPaymentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPaymentControl.h; sourceTree = "<group>"; };
+		2D016A681F53F8110022B232 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		2D1A688C1F3164C20079BFD4 /* SingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingButton.h; sourceTree = "<group>"; };
 		2D1A688D1F3164C20079BFD4 /* SingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingButton.m; sourceTree = "<group>"; };
 		2D1A688F1F3168750079BFD4 /* VideoTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTime.h; sourceTree = "<group>"; };
@@ -644,10 +651,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D016A691F53F8110022B232 /* LocalAuthentication.framework in Frameworks */,
 				2D0169A61F46772F0022B232 /* CoreBluetooth.framework in Frameworks */,
 				2D1A68B01F37FB920079BFD4 /* IdcardQuality.framework in Frameworks */,
 				2D1A68A71F34519B0079BFD4 /* AipBase.framework in Frameworks */,
 				2DFDDF301F27266C00150B20 /* libcrypto.a in Frameworks */,
+				2D016A671F53F6EC0022B232 /* libPaymentControl.a in Frameworks */,
 				2DFDDF311F27266C00150B20 /* libssl.a in Frameworks */,
 				2DFDDF461F27271000150B20 /* CoreText.framework in Frameworks */,
 				2DFDDF441F2726FA00150B20 /* CoreTelephony.framework in Frameworks */,
@@ -747,6 +756,17 @@
 				2D016A031F4D5FBC0022B232 /* QRView.m */,
 			);
 			path = scanViewController;
+			sourceTree = "<group>";
+		};
+		2D016A621F53F6EC0022B232 /* UPPay */ = {
+			isa = PBXGroup;
+			children = (
+				2D016A631F53F6EC0022B232 /* libPaymentControl.a */,
+				2D016A641F53F6EC0022B232 /* UPAPayPlugin.h */,
+				2D016A651F53F6EC0022B232 /* UPAPayPluginDelegate.h */,
+				2D016A661F53F6EC0022B232 /* UPPaymentControl.h */,
+			);
+			path = UPPay;
 			sourceTree = "<group>";
 		};
 		2D1A688A1F3164920079BFD4 /* play_video_view */ = {
@@ -994,6 +1014,7 @@
 		2D8B0E871EC16716006953B5 /* firstproject */ = {
 			isa = PBXGroup;
 			children = (
+				2D016A621F53F6EC0022B232 /* UPPay */,
 				2DFDDF471F28297D00150B20 /* OpenSDK1.7.9 */,
 				2DFDDEC91F27266C00150B20 /* alipayFiles */,
 				2DFCB5231ECBDDE10040A60E /* basiViewController */,
@@ -1424,6 +1445,7 @@
 		2DFD44CC1EC30ED90087822A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2D016A681F53F8110022B232 /* LocalAuthentication.framework */,
 				2D0169A51F46772F0022B232 /* CoreBluetooth.framework */,
 				2DFDDF451F27271000150B20 /* CoreText.framework */,
 				2DFDDF431F2726FA00150B20 /* CoreTelephony.framework */,
@@ -2174,6 +2196,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/firstproject/alipayFiles",
 					"$(PROJECT_DIR)/firstproject/OpenSDK1.7.9",
+					"$(PROJECT_DIR)/firstproject/UPPay",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -2274,6 +2297,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/firstproject/alipayFiles",
 					"$(PROJECT_DIR)/firstproject/OpenSDK1.7.9",
+					"$(PROJECT_DIR)/firstproject/UPPay",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
