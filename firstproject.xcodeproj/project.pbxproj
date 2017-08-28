@@ -16,6 +16,7 @@
 		2D0169FE1F4D54F90022B232 /* LinkAgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0169FD1F4D54F90022B232 /* LinkAgeViewController.m */; };
 		2D016A041F4D5FBC0022B232 /* CJKTZCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D016A011F4D5FBC0022B232 /* CJKTZCodeViewController.m */; };
 		2D016A051F4D5FBC0022B232 /* QRView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D016A031F4D5FBC0022B232 /* QRView.m */; };
+		2D016A081F4FFDA80022B232 /* UIView+Fragmentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D016A071F4FFDA80022B232 /* UIView+Fragmentation.m */; };
 		2D1A688E1F3164C20079BFD4 /* SingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A688D1F3164C20079BFD4 /* SingButton.m */; };
 		2D1A68911F3168750079BFD4 /* VideoTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68901F3168750079BFD4 /* VideoTime.m */; };
 		2D1A68941F3177C10079BFD4 /* NbPurseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68931F3177C10079BFD4 /* NbPurseView.m */; };
@@ -250,6 +251,8 @@
 		2D016A011F4D5FBC0022B232 /* CJKTZCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJKTZCodeViewController.m; sourceTree = "<group>"; };
 		2D016A021F4D5FBC0022B232 /* QRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRView.h; sourceTree = "<group>"; };
 		2D016A031F4D5FBC0022B232 /* QRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRView.m; sourceTree = "<group>"; };
+		2D016A061F4FFDA80022B232 /* UIView+Fragmentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Fragmentation.h"; sourceTree = "<group>"; };
+		2D016A071F4FFDA80022B232 /* UIView+Fragmentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Fragmentation.m"; sourceTree = "<group>"; };
 		2D1A688C1F3164C20079BFD4 /* SingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingButton.h; sourceTree = "<group>"; };
 		2D1A688D1F3164C20079BFD4 /* SingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingButton.m; sourceTree = "<group>"; };
 		2D1A688F1F3168750079BFD4 /* VideoTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTime.h; sourceTree = "<group>"; };
@@ -1299,6 +1302,8 @@
 				2DFCB5C01ED01D2D0040A60E /* UIView+Extension.m */,
 				2D0169A71F467B530022B232 /* UIView+HUD.h */,
 				2D0169A81F467B530022B232 /* UIView+HUD.m */,
+				2D016A061F4FFDA80022B232 /* UIView+Fragmentation.h */,
+				2D016A071F4FFDA80022B232 /* UIView+Fragmentation.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1909,6 +1914,7 @@
 				2DFCB5EF1ED5190B0040A60E /* NewInformationsViewController.m in Sources */,
 				2D9240961F41778A004A62C4 /* POICustomTableViewCell.m in Sources */,
 				2D53BB7C1EE7E2A30075058E /* SpringViewController.m in Sources */,
+				2D016A081F4FFDA80022B232 /* UIView+Fragmentation.m in Sources */,
 				2D53BB7F1EE7E2BC0075058E /* CalcutViewController.m in Sources */,
 				2DFDDF321F27266C00150B20 /* Order.m in Sources */,
 				2DFCB63A1ED6879A0040A60E /* BNBasic.m in Sources */,

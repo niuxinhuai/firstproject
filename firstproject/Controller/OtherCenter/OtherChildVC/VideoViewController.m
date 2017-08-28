@@ -8,6 +8,8 @@
 
 #import "VideoViewController.h"
 #import "LLView.h"
+#import "UIView+Fragmentation.h"
+#import "UIImage+XFCircle.h"
 @interface TabBarView :UIView
 @property (nonatomic, strong)UIButton * btn;
 @end
@@ -67,6 +69,7 @@
 @property (nonatomic, strong) UITableView * customTableView;
 @property (nonatomic, strong) UIImageView * headerImageView;
 @property (nonatomic, strong) LLView * mainView;
+@property (nonatomic, strong) UIImageView * screenImageV;
 @end
 
 @implementation VideoViewController
@@ -78,10 +81,10 @@
     self.title = @"千与千寻";
     UISwipeGestureRecognizer * swipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(popViewAnimation)];
     [self.view addGestureRecognizer:swipe];
-   // [self createTopView];
-   //   self.myCollect.backgroundColor = [UIColor uiColorFromString:@"#f0f3f8"];
+    [self createTopView];
+     self.myCollect.backgroundColor = [UIColor uiColorFromString:@"#f0f3f8"];
     [self.view addSubview:self.tabBarViews];
-   // [self.view addSubview:self.mainView];
+    //[self.view addSubview:self.mainView];
  
   
 }
@@ -292,7 +295,80 @@
     return 100;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [[UIApplication sharedApplication].keyWindow addSubview:self.view];
+    [self.view fragmenttationAnimation];
+    [self.navigationController popViewControllerAnimated:NO];
+   
+
+    // self.backBlock(nil);
+    dispatch_time_t delayTimes = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC));
+    dispatch_after(delayTimes, dispatch_get_main_queue(), ^{
+      
+        
+        
+    });
     
+    
+}
+- (UIImageView *)screenImageV{
+    if (!_screenImageV) {
+        _screenImageV = [[UIImageView alloc]init];
+        [[UIApplication sharedApplication].keyWindow addSubview:_screenImageV];
+        _screenImageV.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    }
+    return _screenImageV;
+}
+
+//返回截取到的图片
+- (UIImage *)imageWithScreenshot
+{
+    NSData *imageData = [self dataWithScreenshotInPNGFormat];
+    return [UIImage imageWithData:imageData];
+}
+
+//截取当前屏幕
+- (NSData *)dataWithScreenshotInPNGFormat
+{
+    CGSize imageSize = CGSizeZero;
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    if (UIInterfaceOrientationIsPortrait(orientation))
+        imageSize = [UIScreen mainScreen].bounds.size;
+    else
+        imageSize = CGSizeMake([UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width);
+    UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    for (UIWindow *window in [[UIApplication sharedApplication] windows])
+    {
+        CGContextSaveGState(context);
+        CGContextTranslateCTM(context, window.center.x, window.center.y);
+        CGContextConcatCTM(context, window.transform);
+        CGContextTranslateCTM(context, -window.bounds.size.width * window.layer.anchorPoint.x, -window.bounds.size.height * window.layer.anchorPoint.y);
+        if (orientation == UIInterfaceOrientationLandscapeLeft)
+        {
+            CGContextRotateCTM(context, M_PI_2);
+            CGContextTranslateCTM(context, 0, -imageSize.width);
+        }
+        else if (orientation == UIInterfaceOrientationLandscapeRight)
+        {
+            CGContextRotateCTM(context, -M_PI_2);
+            CGContextTranslateCTM(context, -imageSize.height, 0);
+        } else if (orientation == UIInterfaceOrientationPortraitUpsideDown) {
+            CGContextRotateCTM(context, M_PI);
+            CGContextTranslateCTM(context, -imageSize.width, -imageSize.height);
+        }
+        if ([window respondsToSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)])
+        {
+            [window drawViewHierarchyInRect:window.bounds afterScreenUpdates:YES];
+        }
+        else
+        {
+            [window.layer renderInContext:context];
+        }
+        CGContextRestoreGState(context);
+    }
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return UIImagePNGRepresentation(image);
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat sourceIndex = 0 ;

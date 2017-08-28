@@ -47,10 +47,10 @@ static const NSString * BaiduSecretKey = @"WF2fWKb8lQ2bfGB5MAAsixIGXCUzWipX";
 }
 
 //设置tabbar上第三个按钮为不可选中状态，其他的按钮为可选择状态
-- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
-{
-    return ![viewController isEqual:tabBarController.viewControllers[2]];
-}
+//- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
+//{
+//   // return ![viewController isEqual:tabBarController.viewControllers[2]];
+//}
 #pragma mark - 获取百度AIAccess Token。有效期为30天
 - (void)getBaiduAIAccessToken{
     /*

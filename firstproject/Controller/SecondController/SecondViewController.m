@@ -13,6 +13,7 @@
 #import <AlipaySDK/AlipaySDK.h>
 #import "Order.h"
 #import "DataSigner.h"
+#import "UIView+Fragmentation.h"
 @implementation Product
 
 
@@ -192,6 +193,7 @@
 
 #pragma mark - 右侧点击  高德地图
 -(void)rightTap{
+    [self.navigationController.view fragmenttationAnimation];
     
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

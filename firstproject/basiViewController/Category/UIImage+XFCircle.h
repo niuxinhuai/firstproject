@@ -20,5 +20,7 @@
 
 + (UIImage *)sapicamera_rotateImageEx:(CGImageRef)imgRef orientation:(UIImageOrientation) orient;
 + (UIImage *)imageWithColor:(UIColor *)color;
+// 截取当前屏幕为图片
++ (UIImage *)imageWithScreenshot;
 
 @end

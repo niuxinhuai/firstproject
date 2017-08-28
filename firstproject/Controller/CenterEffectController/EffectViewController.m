@@ -39,6 +39,9 @@
     _menusArr = [[NSMutableArray alloc]init];
     [self blurEffectView];
     [self optionsEffectButton];
+    
+
+    
 }
 -(void)viewDidAppear:(BOOL)animated
 {

@@ -299,6 +299,27 @@
     vc.scrollArray = _model.lives;
     vc.videoStream_addr = model.streamAddr;
     [self.navigationController pushViewController:vc animated:YES];
+    vc.backBlock = ^{
+        // self.navigationController.view.alpha = 0.2;
+        //        [UIView beginAnimations:nil context:nil];
+        //        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        //        [UIView setAnimationDuration:1.0f];
+        //        self.navigationController.view.alpha = 1.0f;
+        //        [UIView commitAnimations];
+        CATransition *animation = [CATransition animation];
+        animation.duration = 2.0f;
+        animation.timingFunction = UIViewAnimationCurveEaseInOut;
+        animation.fillMode = kCAFillModeForwards;
+        //基本型
+        animation.type = kCATransitionFade;
+        //私有API，字符串型
+        animation.type = @"rippleEffect";
+        [self.navigationController.view.layer addAnimation:animation forKey:@"animation"];
+        
+        
+        
+    };
+
     
 }
 

@@ -19,6 +19,7 @@
 @property (strong, nonatomic) UILabel * countLabel;
 @property (strong, nonatomic) CMPedometer * step;// 计步器
 @property (strong, nonatomic) CMMotionManager * CMmanager;
+@property (strong, nonatomic) UIImageView * imageV;
 @end
 
 @implementation MainViewController
@@ -99,7 +100,10 @@
         }
     }];
 
+    _imageV = [[UIImageView alloc]init];
     
+    _imageV.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    [self.view addSubview:_imageV];
     
     
    
@@ -191,6 +195,7 @@
     return returnImage;
 }
 -(void)viewWillAppear:(BOOL)animated{
+    
     self.verticalScroll.backgroundColor = [UIColor whiteColor];
 
     _myTimer = [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(changeScrollContentOffSetY) userInfo:nil repeats:YES];
@@ -214,6 +219,119 @@
     VideoViewController * vc = [[VideoViewController alloc]init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
+//    vc.backBlock = ^(UIImage * image){
+//                CATransition *animation = [CATransition animation];
+//                animation.duration = 1.5f;
+//                animation.timingFunction = UIViewAnimationCurveEaseInOut;
+//                animation.fillMode = kCAFillModeForwards;
+//                //基本型
+//                animation.type = kCATransitionFade;
+//                //私有API，字符串型
+//                
+//               // animation.type = @"cameraIrisHollowOpen";
+//                [self.navigationController.view.layer addAnimation:animation forKey:@"animation"];
+//    };
+
+         
+        /*
+         以下是基本的四种效果
+         kCATransitionPush 推入效果
+         kCATransitionMoveIn 移入效果
+         kCATransitionReveal 截开效果
+         kCATransitionFade 渐入渐出效果
+         
+         以下API效果可以安全使用
+         cube 方块
+         suckEffect 三角
+         rippleEffect 水波抖动
+         pageCurl 上翻页
+         pageUnCurl 下翻页
+         oglFlip 上下翻转
+         cameraIrisHollowOpen 镜头快门开
+         cameraIrisHollowClose 镜头快门开
+         
+         以下API效果请慎用
+         spewEffect 新版面在屏幕下方中间位置被释放出来覆盖旧版面.
+         genieEffect 旧版面在屏幕左下方或右下方被吸走, 显示出下面的新版面
+         unGenieEffect 新版面在屏幕左下方或右下方被释放出来覆盖旧版面.
+         twist 版面以水平方向像龙卷风式转出来.
+         tubey 版面垂直附有弹性的转出来.
+         swirl 旧版面360度旋转并淡出, 显示出新版面.
+         charminUltra 旧版面淡出并显示新版面.
+         zoomyIn 新版面由小放大走到前面, 旧版面放大由前面消失.
+         zoomyOut 新版面屏幕外面缩放出现, 旧版面缩小消失.
+         oglApplicationSuspend 像按”home” 按钮的效果.
+
+         */
+        
+    
+    
+    
+    
+}
+- (void)fragmenttationAnimationWithView:(UIView *)views{
+    // 先截图
+    UIView *snapView = [views snapshotViewAfterScreenUpdates:YES];
+    
+    // 隐藏容器中的子控件
+    for (UIView *view in views.subviews) {
+        view.hidden = YES;
+        
+    }
+    //self.backgroundColor = [[UIColor purpleColor]colorWithAlphaComponent:0];
+    // 保存x坐标的数组
+    NSMutableArray *xArray = [[NSMutableArray alloc] init];
+    // 保存y坐标
+    NSMutableArray *yArray = [[NSMutableArray alloc] init];
+    
+    for (NSInteger i = 0; i < SCREEN_WIDTH; i = i + 10) {
+        [xArray addObject:@(i)];
+    }
+    for (NSInteger i = 0; i < SCREEN_HEIGHT; i = i + 10) {
+        [yArray addObject:@(i)];
+    }
+    
+    
+    //这个保存所有的碎片
+    NSMutableArray *snapshots = [[NSMutableArray alloc] init];
+    for (NSNumber *x in xArray) {
+        
+        for (NSNumber *y in yArray) {
+            CGRect snapshotRegion = CGRectMake([x doubleValue], [y doubleValue], 10, 10);
+            
+            // resizableSnapshotViewFromRect 这个方法就是根据frame 去截图
+            UIView *snapshot      = [snapView resizableSnapshotViewFromRect:snapshotRegion afterScreenUpdates:NO withCapInsets:UIEdgeInsetsZero];
+            snapshot.frame        = snapshotRegion;
+            [views addSubview:snapshot];
+            [snapshots         addObject:snapshot];
+        }
+    }
+    
+    
+    [UIView animateWithDuration:1
+                          delay:0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         //  self.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.05];
+                         for (UIView *view in snapshots) {
+                             view.frame = CGRectOffset(view.frame, [self randomRange:200 offset:-100], [self randomRange:200 offset:views.frame.size.height/2]);
+                         }
+                         
+                     }
+                     completion:^(BOOL finished) {
+                         for (UIView *view in snapshots) {
+                             [view removeFromSuperview];
+                         }
+                         //                         [self removeFromSuperview];
+                         //                         [self removeFromSuperview];
+                         
+                     }];
+    
+    
+}
+- (CGFloat)randomRange:(NSInteger)range offset:(NSInteger)offset{
+    
+    return (CGFloat)(arc4random()%range + offset);
 }
 -(void)pushViewControllers{
     LLView * vc = [[LLView alloc]init];

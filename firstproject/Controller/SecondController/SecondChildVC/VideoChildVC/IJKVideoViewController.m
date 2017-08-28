@@ -253,10 +253,17 @@
         case BottomButtonCenterThreeTag:
         {
             NSLog(@"点击了退出界面");
+            [self.view fragmenttationAnimation];
+            __weak typeof (self) weakSelf = self;
+            dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC));
+            dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+                weakSelf.backBlock();
+                [weakSelf.navigationController popViewControllerAnimated:NO];
+            });
    
           
           
-            [self.navigationController popViewControllerAnimated:YES];
+           // [self.navigationController popViewControllerAnimated:YES];
 
 
             break;
