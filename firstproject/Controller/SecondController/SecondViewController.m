@@ -35,7 +35,7 @@
 
 
 @end
-@interface SecondViewController ()<ChouseAliPayDelegate>
+@interface SecondViewController ()<ChouseAliPayDelegate,NSURLConnectionDataDelegate,NSURLSessionDelegate>
 {
     UIAlertView* _alertView;
     NSMutableData* _responseData;
@@ -263,7 +263,48 @@
     NSURLRequest * urlRequest=[NSURLRequest requestWithURL:url];
     NSURLConnection* urlConn = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
     [urlConn start];
+   // [self sessionDownloadTaskDelegate];
 }
+- (void)connection:(NSURLConnection *)connection   didSendBodyData:(NSInteger)bytesWritten
+                                        totalBytesWritten:(NSInteger)totalBytesWritten
+                                          totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite{
+    long long current = bytesWritten/1024;
+    long long totalB = totalBytesWritten/1024;
+    long long totalEnd = totalBytesExpectedToWrite/1024;
+    NSLog(@"bytesWritten: %.1lld\n totalBytesWritten: %.1lld\n totalBytesExpectedToWrite: %.1lld",current,totalB,totalEnd);
+    
+    
+}
+
+/**
+ *  NSURLSessionDownloadTask 代理
+ */
+- (void)sessionDownloadTaskDelegate
+{
+    // 创建带有代理方法的自定义 session
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+    
+    // 创建任务
+    NSURLSessionDownloadTask *task = [session downloadTaskWithURL:[NSURL URLWithString:kURL_TN_Normal]];
+    
+    // 启动任务
+    [task resume];
+}
+#pragma mark -
+#pragma mark -NSURLSessionDownloadDelegate
+/**
+ *  写入临时文件时调用
+ *  @param bytesWritten              本次写入大小
+ *  @param totalBytesWritten         已写入文件大小
+ *  @param totalBytesExpectedToWrite 请求的总文件的大小
+ */
+- (void)URLSession:(NSURLSession *)session downloadTask:(nonnull NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
+{
+    //可以监听下载的进度
+    CGFloat progress = 1.0 * totalBytesWritten / totalBytesExpectedToWrite;
+    NSLog(@"downloadTask %f",progress);
+}
+
 
 
 #pragma mark - connection

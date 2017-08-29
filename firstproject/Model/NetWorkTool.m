@@ -127,6 +127,9 @@
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"application/x-www-form-urlencoded",nil];
     [manager POST:url parameters:dictionary progress:^(NSProgress * _Nonnull uploadProgress) {
+        long long current = uploadProgress.completedUnitCount/1024;
+        long long total = uploadProgress.totalUnitCount/1024;
+        NSLog(@"当前的进度为：   %@", [NSString stringWithFormat:@"下载%.2lf%%", (current*1.0/total)*100]);
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
