@@ -82,6 +82,7 @@
 		2D53BB881EE7E48F0075058E /* LLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D53BB871EE7E48F0075058E /* LLView.m */; };
 		2D53BB8B1EE846BC0075058E /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D53BB8A1EE846BC0075058E /* MainTableViewController.m */; };
 		2D53BBB21EEB818C0075058E /* SpringTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D53BBB11EEB818C0075058E /* SpringTableViewCell.m */; };
+		2D62F56D1F5546CB00B029A0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2D62F56C1F5546CB00B029A0 /* Settings.bundle */; };
 		2D8883C31EF3B96400E90CBD /* UIView+ZYDraggable.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8883C21EF3B96400E90CBD /* UIView+ZYDraggable.m */; };
 		2D8B0E8A1EC16716006953B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8B0E891EC16716006953B5 /* main.m */; };
 		2D8B0E8D1EC16716006953B5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8B0E8C1EC16716006953B5 /* AppDelegate.m */; };
@@ -359,6 +360,7 @@
 		2D53BB8A1EE846BC0075058E /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		2D53BBB01EEB818C0075058E /* SpringTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringTableViewCell.h; sourceTree = "<group>"; };
 		2D53BBB11EEB818C0075058E /* SpringTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringTableViewCell.m; sourceTree = "<group>"; };
+		2D62F56C1F5546CB00B029A0 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		2D8883C11EF3B96400E90CBD /* UIView+ZYDraggable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZYDraggable.h"; sourceTree = "<group>"; };
 		2D8883C21EF3B96400E90CBD /* UIView+ZYDraggable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZYDraggable.m"; sourceTree = "<group>"; };
 		2D8B0E851EC16716006953B5 /* firstproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firstproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1030,6 +1032,7 @@
 				2D8B0E961EC16716006953B5 /* LaunchScreen.storyboard */,
 				2D8B0E991EC16716006953B5 /* Info.plist */,
 				2D8B0E881EC16716006953B5 /* Supporting Files */,
+				2D62F56C1F5546CB00B029A0 /* Settings.bundle */,
 			);
 			path = firstproject;
 			sourceTree = "<group>";
@@ -1756,6 +1759,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D62F56D1F5546CB00B029A0 /* Settings.bundle in Resources */,
 				2D1A68F71F37FC040079BFD4 /* xuanzhuan@2x.png in Resources */,
 				2D1A68FE1F37FC040079BFD4 /* guanbi@3x.png in Resources */,
 				2D1A68AE1F3462600079BFD4 /* aip.license in Resources */,
