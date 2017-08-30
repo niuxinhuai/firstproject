@@ -15,13 +15,14 @@
 #import "TotalViewController.h"
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import "AipOcrService.h"
-
+#import "AppDelegate+defaultSetting.h"
 @interface AppDelegate ()<WXApiDelegate,UITabBarControllerDelegate>
 
 @end
 static const NSString * BaiduAppID = @"9966378";
 static const NSString * BaiduApiKey = @"sLdWP9rGQ7iu63Pi4hvUP3qw";
 static const NSString * BaiduSecretKey = @"WF2fWKb8lQ2bfGB5MAAsixIGXCUzWipX";
+
 
 @implementation AppDelegate
 
@@ -41,7 +42,8 @@ static const NSString * BaiduSecretKey = @"WF2fWKb8lQ2bfGB5MAAsixIGXCUzWipX";
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     [self getBaiduAIAccessToken];
-    
+    [AppDelegate getSettings];
+    [AppDelegate getShareSDK];
     // Override point for customization after application launch.
     return YES;
 }

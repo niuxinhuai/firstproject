@@ -5,7 +5,7 @@
 //  Created by 牛新怀 on 2017/5/27.
 //  Copyright © 2017年 牛新怀. All rights reserved.
 //
-
+#import <ShareSDK/ShareSDK.h>
 #import "ShareView.h"
 #import "ButtonView.h"
 @interface ShareView()
@@ -79,8 +79,14 @@
             topView.imageNamed = self.topImageArray[i];
             topView.LabelTitle = self.topTitleArray[i];
             topView.backgroundColor = [UIColor clearColor];
+            topView.tag = i+10;
+            topView.userInteractionEnabled = YES;
+            UITapGestureRecognizer * tap  =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didSelectShareButtonCLick:)];
+            [topView addGestureRecognizer:tap];
+
             [_topScrollView addSubview:topView];
             _topScrollView.contentSize = CGSizeMake(topView.frame.origin.x+topView.frame.size.width, 0);
+            
         }
         
     }
@@ -106,6 +112,10 @@
             topView.imageNamed = self.bottomImageArray[i];
             topView.LabelTitle = self.bottomTitleArray[i];
             topView.backgroundColor = [UIColor clearColor];
+            topView.tag = i+20;
+            topView.userInteractionEnabled = YES;
+            UITapGestureRecognizer * tap  =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didSelectShareButtonCLick:)];
+            [topView addGestureRecognizer:tap];
             [_bottomScrollView addSubview:topView];
            // _topScrollView.contentSize = CGSizeMake(topView.frame.origin.x+topView.frame.size.width, 0);
         }
@@ -142,9 +152,97 @@
     return _bottomTitleArray;
 }
 
+- (void)didSelectShareButtonCLick:(UITapGestureRecognizer *)gesture{
+    NSLog(@"当前点击的按钮是： %ld",gesture.view.tag-10);
+    NSInteger selectTag = gesture.view.tag-10;
+    SSDKPlatformType type;
+    switch (selectTag) {
+        case 0:
+        {
+        type = SSDKPlatformSubTypeWechatTimeline;
+        break;
+        }
+        case 1:
+        {
+        type = SSDKPlatformSubTypeWechatSession;
+        break;
+        }
+        case 2:
+        {
+        type = SSDKPlatformSubTypeQZone;
+        break;
+        }
+        case 3:
+        {
+        type = SSDKPlatformTypeSinaWeibo;
+        break;
+        }
+        case 10:
+        {
+        type = SSDKPlatformSubTypeQQFriend;
+        break;
+        }
+        default:
+        break;
+    }
+    
+    [self createShareDataWithSSDKType:type];
 
+}
 
+- (void)createShareDataWithSSDKType:(SSDKPlatformType)types{
+    
+    
+    
+    
+    NSArray * imageArr = @[[UIImage imageNamed:@"m8.jpg"]];
+    NSMutableDictionary * shareParams = [[NSMutableDictionary alloc]init];
+    [shareParams SSDKSetupShareParamsByText:@"今日分享测试" images:imageArr
+                                        url:[NSURL URLWithString:@"www.cjkt.com"]
+                                        title:@"这是分享的标题"
+                                        type:SSDKContentTypeAuto];
 
+    [ShareSDK share:types parameters:shareParams onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
+        
+        
+        
+        switch (state) {
+            case SSDKResponseStateSuccess:
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享成功"
+                                                                message:nil
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"确定"
+                                                      otherButtonTitles:nil];
+                [alert show];
+                break;
+            }
+            case SSDKResponseStateFail:
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享失败"
+                                                                message:[NSString stringWithFormat:@"%@",error]
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil, nil];
+                [alert show];
+                break;
+            }
+            case SSDKResponseStateCancel:
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享取消"
+                                                                message:nil
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"确定"
+                                                      otherButtonTitles:nil];
+                [alert show];
+                
+            }
+            default:
+            break;
+        }
+
+    }];
+}
 
 
 

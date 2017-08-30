@@ -33,12 +33,13 @@
 @property (strong, nonatomic)          UILabel * timeLabel;
 @property (strong, nonatomic)          UIView * backView;
 @property (assign, nonatomic)          BOOL isHide;
-@property (strong,nonatomic)           UIButton * voiceButton;// 声音按钮
-@property (strong,nonatomic)           UIButton * allScreenButton;// 全屏按钮
+@property (strong, nonatomic)           UIButton * voiceButton;// 声音按钮
+@property (strong, nonatomic)           UIButton * allScreenButton;// 全屏按钮
 @property (strong, nonatomic)          NbPurseView * stop_beginButton; // 开始暂停按钮
 @property (strong, nonatomic)          UIView * purse_playView;
 @property (assign, nonatomic)          BOOL is_start;
 @property (strong, nonatomic)          UIImageView * videoFrameImageV;
+@property (strong, nonatomic)          UIButton * voiceClickBtn;// 扬声器
 
 @end
 
@@ -88,6 +89,7 @@
     [self.avSlider addTarget:self action:@selector(touchSliderWithAction) forControlEvents:UIControlEventTouchUpInside|
      UIControlEventTouchUpOutside|
      UIControlEventTouchCancel];
+    [self.view addSubview:self.voiceClickBtn];
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
@@ -99,6 +101,32 @@
     [super viewWillAppear:animated];
         [self.myPlayer pause];
 
+}
+#pragma mark - 扬声器
+- (UIButton *)voiceClickBtn{
+    if (!_voiceClickBtn) {
+        _voiceClickBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _voiceClickBtn.center = CGPointMake(SCREEN_WIDTH/2, CGRectGetMaxY(self.playerCustomView.frame)+20);
+        _voiceClickBtn.bounds = CGRectMake(0, 0, 120, 40);
+        [_voiceClickBtn setTitle:@"开启扬声器" forState:0];
+        [_voiceClickBtn setTitleColor:[UIColor redColor] forState:0];
+        _voiceClickBtn.selected = NO;
+        [_voiceClickBtn addTarget:self action:@selector(changeVoiceClick:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _voiceClickBtn;
+}
+- (void)changeVoiceClick:(UIButton *)sender{
+    sender.selected = ! sender.selected;
+    if (sender.selected) {
+        [sender setTitle:@"开启扬声器" forState:0];
+
+        //切换为扬声器播放
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    }else{
+        [sender setTitle:@"听筒模式" forState:0];
+        //切换为听筒播放
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    }
 }
 -(UIView *)playerCustomView{
     if (!_playerCustomView) {

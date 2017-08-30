@@ -38,11 +38,23 @@ PODS:
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
+  - MOBFoundation (3.0.0)
   - SDCycleScrollView (1.66):
     - SDWebImage (~> 4.0.0)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - ShareSDK3 (4.0.0.1):
+    - MOBFoundation
+    - ShareSDK3/ShareSDK (= 4.0.0.1)
+  - ShareSDK3/ShareSDK (4.0.0.1):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/QQ (4.0.0.1):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo (4.0.0.1):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/WeChat (4.0.0.1):
+    - MOBFoundation
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
@@ -58,8 +70,13 @@ DEPENDENCIES:
   - Masonry
   - MBProgressHUD
   - MJRefresh (~> 3.1.12)
+  - MOBFoundation
   - SDCycleScrollView (~> 1.66)
   - SDWebImage (~> 4.0.0)
+  - ShareSDK3
+  - ShareSDK3/ShareSDKPlatforms/QQ
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo
+  - ShareSDK3/ShareSDKPlatforms/WeChat
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -76,9 +93,11 @@ SPEC CHECKSUMS:
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  MOBFoundation: e6572a62983a44fa048c4038842ade1494c10059
   SDCycleScrollView: e3ade90e9b3159bec04330b208fbfd81c3f3b671
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  ShareSDK3: e0465c9ffdf806ab97c27f4397fd7deca600ede9
 
-PODFILE CHECKSUM: 101b51203e36b169e6b8796bdd8055d677f6361f
+PODFILE CHECKSUM: df66e12966273c5f27e9869912f9ad288f47ac53
 
 COCOAPODS: 1.2.1

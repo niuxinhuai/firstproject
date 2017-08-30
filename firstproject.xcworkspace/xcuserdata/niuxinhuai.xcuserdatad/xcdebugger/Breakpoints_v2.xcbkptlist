@@ -25,7 +25,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
             endingLineNumber = "115"
-            landmarkName = "-application:openURL:options:"
+            landmarkName = "-application:supportedInterfaceOrientationsForWindow:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -91,53 +91,38 @@
             endingLineNumber = "132"
             landmarkName = "+postNetWorkWithImage:types:withURL:paramaters:success:failure:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "+[NetWorkTool postNetWorkWithImage:types:withURL:paramaters:success:failure:]"
-                  moduleName = "firstproject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niuxinhuai/Desktop/myFirstObj/firstproject/Model/NetWorkTool.m"
-                  timestampString = "525666233.134194"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "131"
-                  endingLineNumber = "131"
-                  offsetFromSymbolStart = "1532">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__77+[NetWorkTool postNetWorkWithImage:types:withURL:paramaters:success:failure:]_block_invoke"
-                  moduleName = "firstproject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niuxinhuai/Desktop/myFirstObj/firstproject/Model/NetWorkTool.m"
-                  timestampString = "525666233.136422"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "131"
-                  endingLineNumber = "131"
-                  offsetFromSymbolStart = "56">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__77+[NetWorkTool postNetWorkWithImage:types:withURL:paramaters:success:failure:]_block_invoke_2"
-                  moduleName = "firstproject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/niuxinhuai/Desktop/myFirstObj/firstproject/Model/NetWorkTool.m"
-                  timestampString = "525666233.138265"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "131"
-                  endingLineNumber = "131"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "firstproject/Controller/SecondController/SecondChildVC/VideoChildVC/IJKview/ShareView.m"
+            timestampString = "525767699.737645"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "-didSelectShareButtonCLick:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "firstproject/Controller/SecondController/SecondChildVC/VideoChildVC/IJKview/ShareView.m"
+            timestampString = "525767699.737645"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "-didSelectShareButtonCLick:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

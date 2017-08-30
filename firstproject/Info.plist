@@ -41,7 +41,7 @@
 			<string>weixin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wx519424286509f4aa</string>
+				<string>wxe52dbd332cc60316</string>
 			</array>
 		</dict>
 		<dict>
@@ -50,6 +50,26 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>XHUPPaySigin</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>weibo</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>2573116776</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>qq</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>100477688</string>
 			</array>
 		</dict>
 	</array>
@@ -69,6 +89,10 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>MOBAppSecret</key>
+	<string>91d0deb55119eb201cd7b722a417160c</string>
+	<key>MOBAppkey</key>
+	<string>208f02dc99aa0</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

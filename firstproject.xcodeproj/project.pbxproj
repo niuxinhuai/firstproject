@@ -83,6 +83,7 @@
 		2D53BB8B1EE846BC0075058E /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D53BB8A1EE846BC0075058E /* MainTableViewController.m */; };
 		2D53BBB21EEB818C0075058E /* SpringTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D53BBB11EEB818C0075058E /* SpringTableViewCell.m */; };
 		2D62F56D1F5546CB00B029A0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2D62F56C1F5546CB00B029A0 /* Settings.bundle */; };
+		2D62F5701F554E5800B029A0 /* AppDelegate+defaultSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D62F56F1F554E5800B029A0 /* AppDelegate+defaultSetting.m */; };
 		2D8883C31EF3B96400E90CBD /* UIView+ZYDraggable.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8883C21EF3B96400E90CBD /* UIView+ZYDraggable.m */; };
 		2D8B0E8A1EC16716006953B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8B0E891EC16716006953B5 /* main.m */; };
 		2D8B0E8D1EC16716006953B5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8B0E8C1EC16716006953B5 /* AppDelegate.m */; };
@@ -361,6 +362,8 @@
 		2D53BBB01EEB818C0075058E /* SpringTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringTableViewCell.h; sourceTree = "<group>"; };
 		2D53BBB11EEB818C0075058E /* SpringTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringTableViewCell.m; sourceTree = "<group>"; };
 		2D62F56C1F5546CB00B029A0 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		2D62F56E1F554E5800B029A0 /* AppDelegate+defaultSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+defaultSetting.h"; sourceTree = "<group>"; };
+		2D62F56F1F554E5800B029A0 /* AppDelegate+defaultSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+defaultSetting.m"; sourceTree = "<group>"; };
 		2D8883C11EF3B96400E90CBD /* UIView+ZYDraggable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZYDraggable.h"; sourceTree = "<group>"; };
 		2D8883C21EF3B96400E90CBD /* UIView+ZYDraggable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZYDraggable.m"; sourceTree = "<group>"; };
 		2D8B0E851EC16716006953B5 /* firstproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firstproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1022,6 +1025,8 @@
 				2DFCB5231ECBDDE10040A60E /* basiViewController */,
 				2D8B0E8B1EC16716006953B5 /* AppDelegate.h */,
 				2D8B0E8C1EC16716006953B5 /* AppDelegate.m */,
+				2D62F56E1F554E5800B029A0 /* AppDelegate+defaultSetting.h */,
+				2D62F56F1F554E5800B029A0 /* AppDelegate+defaultSetting.m */,
 				2DFCB5981ECEC4F20040A60E /* firstPBpch.pch */,
 				2D211DAF1ECACABA00DA4E6B /* View */,
 				2DFCB50F1ECBDC9E0040A60E /* Controller */,
@@ -1904,6 +1909,7 @@
 				2D53BB851EE7E2F20075058E /* HotsViewController.m in Sources */,
 				2DFCB5AF1ECF22350040A60E /* WebViewJavascriptBridge_JS.m in Sources */,
 				2D0169F81F4C1C760022B232 /* EffectViewController.m in Sources */,
+				2D62F5701F554E5800B029A0 /* AppDelegate+defaultSetting.m in Sources */,
 				2DFCB63B1ED6879A0040A60E /* BNTicker.m in Sources */,
 				2DA816A01EE2934B003AE3A4 /* EmojiLayout.m in Sources */,
 				2D016A051F4D5FBC0022B232 /* QRView.m in Sources */,
