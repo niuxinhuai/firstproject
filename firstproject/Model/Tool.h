@@ -18,8 +18,9 @@ typedef NS_ENUM(NSInteger, CJKTCheckingType) {
 @interface Tool : NSObject
 +(instancetype)shareTool;
 + (UIImage *)imageViewWithName:(NSString *)imageName;
-+(void)getNetWorkWithUrl:(NSString *)url WithParamaters:(NSString *)paramater success:(void (^)(id response))success
-                         failure:( void (^)(NSError *error))failure;
++(void)getNetWorkWithUrl:(NSString *)url WithParamaters:(NSString *)paramater
+                                                success:(void (^)(id response))success
+                                                failure:( void (^)(NSError *error))failure;
 //文本自适应宽度
 + (CGSize)widthWithText:(NSString *)text Font:(UIFont *)font;
 //验证手机号

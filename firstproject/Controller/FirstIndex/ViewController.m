@@ -18,7 +18,8 @@
 #import <sqlite3.h>
 #import "TenCentProgressView.h"
 #import "CJKTZCodeViewController.h"
-@interface ViewController ()<AVSpeechSynthesizerDelegate,UIWebViewDelegate>{
+@import MessageUI;
+@interface ViewController ()<AVSpeechSynthesizerDelegate,UIWebViewDelegate,MFMessageComposeViewControllerDelegate>{
     NSString * filePath;
     AVAudioRecorder * recorde;
     NSString * textTitle;
@@ -134,6 +135,7 @@ static sqlite3 * db = nil;
     self.colorType = ButtonItemTitleColorTypeBlue;
 
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithItemTitle:@"扫一扫" target:self action:@selector(beginScanning)];
+     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithItemTitle:@"Active" target:self action:@selector(beginShowActive)];
     //单独调用
     int sym = EMOJI_CODE_TO_SYMBOL(0x1F600);
     NSString *emoT = [[NSString alloc] initWithBytes:&sym length:sizeof(sym) encoding:NSUTF8StringEncoding];
@@ -151,6 +153,39 @@ static sqlite3 * db = nil;
     imagev.contentMode = UIViewContentModeScaleAspectFill;
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:images]];
    // [self.view addSubview:self.circleView];
+
+}
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
+    NSLog(@"\n%ld",(long)result);
+    
+}
+- (void)beginShowActive{
+    
+    MFMessageComposeViewController *messageViewController = [[MFMessageComposeViewController alloc]init];
+    messageViewController.messageComposeDelegate =self;
+    NSString *body = [NSString stringWithFormat:@"使用邀请码\"首次购买课程可直接获得100超级币。兴趣产生时，教育自然开始，立即下载应用程序"];
+    messageViewController.body = body;
+    [self presentViewController:messageViewController animated:YES completion:nil];
+    
+//    NSString *textToShare = @"要分享的文本内容";
+//    UIImage *imageToShare = [UIImage imageNamed:@"m8.jpg"];
+//    NSURL *urlToShare = [NSURL URLWithString:@"http://www.baidu.com"];
+//    
+//    NSArray *activityItems = @[textToShare, imageToShare, urlToShare];
+//    UIActivityViewController *activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems applicationActivities:nil];
+//    
+//    [self presentViewController:activityVC animated:YES completion:nil];
+//    UIActivityViewControllerCompletionWithItemsHandler myBlock = ^(UIActivityType __nullable activityType, BOOL completed, NSArray * __nullable returnedItems, NSError * __nullable activityError) {
+//        
+//        if (completed){
+//            NSLog(@"completed");
+//        }
+//    };
+//    
+//    activityVC.completionWithItemsHandler = myBlock;
+    
+
+    
 
 }
 - (void)beginScanning{
