@@ -131,9 +131,15 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     [self isShow:NO];
-    [self performSelector:@selector(dismissViewControllerAnimated:completion:) withObject:nil afterDelay:0.5];
+   // [self performSelector:@selector(dismissViewControllerAnimated:completion:) withObject:nil afterDelay:0.5];
     //    [self dismissViewControllerAnimated:NO completion:nil];
+    [self performSelector:@selector(disMissBackVC) withObject:nil afterDelay:0.5];
 }
+- (void)disMissBackVC{
+    [self dismissViewControllerAnimated:NO completion:nil];
+
+}
+
 
 -(void)menuButtonAction:(EffectButton*)sender
 {
