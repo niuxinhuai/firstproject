@@ -84,6 +84,8 @@
 		2D53BBB21EEB818C0075058E /* SpringTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D53BBB11EEB818C0075058E /* SpringTableViewCell.m */; };
 		2D62F56D1F5546CB00B029A0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2D62F56C1F5546CB00B029A0 /* Settings.bundle */; };
 		2D62F5701F554E5800B029A0 /* AppDelegate+defaultSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D62F56F1F554E5800B029A0 /* AppDelegate+defaultSetting.m */; };
+		2D62F5921F5BE9B700B029A0 /* XHTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D62F5911F5BE9B700B029A0 /* XHTextView.m */; };
+		2D62F5951F5BF9D100B029A0 /* XHPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D62F5941F5BF9D100B029A0 /* XHPhotoBrowser.m */; };
 		2D8883C31EF3B96400E90CBD /* UIView+ZYDraggable.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8883C21EF3B96400E90CBD /* UIView+ZYDraggable.m */; };
 		2D8B0E8A1EC16716006953B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8B0E891EC16716006953B5 /* main.m */; };
 		2D8B0E8D1EC16716006953B5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8B0E8C1EC16716006953B5 /* AppDelegate.m */; };
@@ -364,6 +366,10 @@
 		2D62F56C1F5546CB00B029A0 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		2D62F56E1F554E5800B029A0 /* AppDelegate+defaultSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+defaultSetting.h"; sourceTree = "<group>"; };
 		2D62F56F1F554E5800B029A0 /* AppDelegate+defaultSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+defaultSetting.m"; sourceTree = "<group>"; };
+		2D62F5901F5BE9B700B029A0 /* XHTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHTextView.h; sourceTree = "<group>"; };
+		2D62F5911F5BE9B700B029A0 /* XHTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHTextView.m; sourceTree = "<group>"; };
+		2D62F5931F5BF9D100B029A0 /* XHPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPhotoBrowser.h; sourceTree = "<group>"; };
+		2D62F5941F5BF9D100B029A0 /* XHPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPhotoBrowser.m; sourceTree = "<group>"; };
 		2D8883C11EF3B96400E90CBD /* UIView+ZYDraggable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZYDraggable.h"; sourceTree = "<group>"; };
 		2D8883C21EF3B96400E90CBD /* UIView+ZYDraggable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZYDraggable.m"; sourceTree = "<group>"; };
 		2D8B0E851EC16716006953B5 /* firstproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = firstproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -748,6 +754,10 @@
 		2D0169FB1F4D54280022B232 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2D62F5901F5BE9B700B029A0 /* XHTextView.h */,
+				2D62F5911F5BE9B700B029A0 /* XHTextView.m */,
+				2D62F5931F5BF9D100B029A0 /* XHPhotoBrowser.h */,
+				2D62F5941F5BF9D100B029A0 /* XHPhotoBrowser.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1884,6 +1894,7 @@
 				2DFDDF391F27266C00150B20 /* RSADataSigner.m in Sources */,
 				2DFCB5F81ED519590040A60E /* CustomViewController.m in Sources */,
 				2DA816061ED8040A003AE3A4 /* VideoBottomView.m in Sources */,
+				2D62F5921F5BE9B700B029A0 /* XHTextView.m in Sources */,
 				2DFCB5CC1ED01D2D0040A60E /* UIImage+XFCircle.m in Sources */,
 				2D53BB8B1EE846BC0075058E /* MainTableViewController.m in Sources */,
 				2DFCB5F51ED519430040A60E /* HaveFunViewController.m in Sources */,
@@ -1894,6 +1905,7 @@
 				2DFCB5AE1ECF22350040A60E /* WebViewJavascriptBridge.m in Sources */,
 				2DFCB5EC1ED518CD0040A60E /* ScienceViewController.m in Sources */,
 				2D8883C31EF3B96400E90CBD /* UIView+ZYDraggable.m in Sources */,
+				2D62F5951F5BF9D100B029A0 /* XHPhotoBrowser.m in Sources */,
 				2DFDDF3A1F27266C00150B20 /* RSADataVerifier.m in Sources */,
 				2D1A69141F37FC040079BFD4 /* AipCaptureCardVC.mm in Sources */,
 				2DA815F91ED6C083003AE3A4 /* NSString+Project.m in Sources */,

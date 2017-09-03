@@ -28,7 +28,10 @@ static Tool* tool = nil;
     return indexPicT;
 }
 
-+(void)getNetWorkWithUrl:(NSString *)url WithParamaters:(NSString *)paramater success:(void (^)(id))success failure:(void (^)(NSError *))failure{
++(void)getNetWorkWithUrl:(NSString *)url
+          WithParamaters:(NSString *)paramater
+                 success:(void (^)(id))success
+                 failure:(void (^)(NSError *))failure{
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];;
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
@@ -47,7 +50,8 @@ static Tool* tool = nil;
     
     
 }
-+ (CGSize)widthWithText:(NSString *)text Font:(UIFont *)font
++ (CGSize)widthWithText:(NSString *)text
+                   Font:(UIFont *)font
 {
     
     CGSize size = [text sizeWithAttributes:@{NSFontAttributeName : font}];

@@ -9,7 +9,10 @@
 #import "NetWorkTool.h"
 #import <AFNetworking.h>
 @implementation NetWorkTool
-+ (void)postNetWorkWithURL:(NSString *)url paramaters:(NSMutableDictionary *)paramatersDictionary success:(void(^)(id object))success failure:(void(^)(id failure))failure{
++ (void)postNetWorkWithURL:(NSString *)url
+                paramaters:(NSMutableDictionary *)paramatersDictionary
+                   success:(void(^)(id object))success
+                   failure:(void(^)(id failure))failure{
     AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
     manager.requestSerializer.timeoutInterval = 30;
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -40,7 +43,12 @@
 }
 
 
-+ (void)postNetWorkWithImage:(UIImage *)image types:(CardType)types withURL:(NSString *)url paramaters:(NSMutableDictionary *)paramaters success:(void(^)(id object))success failure:(void(^)(id failure))failure{
++ (void)postNetWorkWithImage:(UIImage *)image
+                       types:(CardType)types
+                     withURL:(NSString *)url
+                  paramaters:(NSMutableDictionary *)paramaters
+                     success:(void(^)(id object))success
+                     failure:(void(^)(id failure))failure{
 
     /*
      NSDataBase64Encoding64CharacterLineLength其作用是将生成的Base64字符串按照64个字符长度进行等分换行

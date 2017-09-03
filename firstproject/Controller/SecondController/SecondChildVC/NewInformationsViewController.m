@@ -98,6 +98,8 @@
     }
     _mapView.userLocation.title = str;// 定位标注点要显示的标注信息
     _mapView.userLocation.subtitle = response.regeocode.formattedAddress;// 子标题
+    [[NSUserDefaults standardUserDefaults] setObject:_mapView.userLocation.subtitle forKey:SubTitleKey];
+    [[NSUserDefaults standardUserDefaults]synchronize];
 }
 /* POI 搜索回调. */
 - (void)onPOISearchDone:(AMapPOISearchBaseRequest *)request response:(AMapPOISearchResponse *)response
