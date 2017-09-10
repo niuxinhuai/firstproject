@@ -9,4 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UIViewController (custom)
+- (instancetype)initWithUrl:(NSString *)url;
 @end

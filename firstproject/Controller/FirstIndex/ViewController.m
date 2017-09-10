@@ -40,7 +40,12 @@
 @end
 static sqlite3 * db = nil;
 @implementation ViewController
-
+- (instancetype)initWithUrl:(NSString *)url{
+    self  = [super init];
+    if (self) {
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     isSelect = NO;

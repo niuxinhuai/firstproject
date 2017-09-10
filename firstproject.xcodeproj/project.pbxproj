@@ -19,6 +19,11 @@
 		2D016A081F4FFDA80022B232 /* UIView+Fragmentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D016A071F4FFDA80022B232 /* UIView+Fragmentation.m */; };
 		2D016A671F53F6EC0022B232 /* libPaymentControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D016A631F53F6EC0022B232 /* libPaymentControl.a */; };
 		2D016A691F53F8110022B232 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D016A681F53F8110022B232 /* LocalAuthentication.framework */; };
+		2D02BBBF1F63D63E00997ED8 /* PictureBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02BBBE1F63D63E00997ED8 /* PictureBrowserViewController.m */; };
+		2D02BBC31F63D98900997ED8 /* PhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02BBC21F63D98900997ED8 /* PhotoBrowser.m */; };
+		2D02BBC71F63DD4D00997ED8 /* PhotoCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02BBC61F63DD4D00997ED8 /* PhotoCollectionView.m */; };
+		2D02BBCA1F64E60D00997ED8 /* PhotoBrowserCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02BBC91F64E60D00997ED8 /* PhotoBrowserCollectionViewCell.m */; };
+		2D02BBCD1F64E81700997ED8 /* XHPhotoImageBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02BBCC1F64E81700997ED8 /* XHPhotoImageBrowser.m */; };
 		2D1A688E1F3164C20079BFD4 /* SingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A688D1F3164C20079BFD4 /* SingButton.m */; };
 		2D1A68911F3168750079BFD4 /* VideoTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68901F3168750079BFD4 /* VideoTime.m */; };
 		2D1A68941F3177C10079BFD4 /* NbPurseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68931F3177C10079BFD4 /* NbPurseView.m */; };
@@ -264,6 +269,16 @@
 		2D016A651F53F6EC0022B232 /* UPAPayPluginDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPAPayPluginDelegate.h; sourceTree = "<group>"; };
 		2D016A661F53F6EC0022B232 /* UPPaymentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPaymentControl.h; sourceTree = "<group>"; };
 		2D016A681F53F8110022B232 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		2D02BBBD1F63D63E00997ED8 /* PictureBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureBrowserViewController.h; sourceTree = "<group>"; };
+		2D02BBBE1F63D63E00997ED8 /* PictureBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureBrowserViewController.m; sourceTree = "<group>"; };
+		2D02BBC11F63D98900997ED8 /* PhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoBrowser.h; sourceTree = "<group>"; };
+		2D02BBC21F63D98900997ED8 /* PhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoBrowser.m; sourceTree = "<group>"; };
+		2D02BBC51F63DD4D00997ED8 /* PhotoCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionView.h; sourceTree = "<group>"; };
+		2D02BBC61F63DD4D00997ED8 /* PhotoCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionView.m; sourceTree = "<group>"; };
+		2D02BBC81F64E60D00997ED8 /* PhotoBrowserCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoBrowserCollectionViewCell.h; sourceTree = "<group>"; };
+		2D02BBC91F64E60D00997ED8 /* PhotoBrowserCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoBrowserCollectionViewCell.m; sourceTree = "<group>"; };
+		2D02BBCB1F64E81700997ED8 /* XHPhotoImageBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPhotoImageBrowser.h; sourceTree = "<group>"; };
+		2D02BBCC1F64E81700997ED8 /* XHPhotoImageBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPhotoImageBrowser.m; sourceTree = "<group>"; };
 		2D1A688C1F3164C20079BFD4 /* SingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingButton.h; sourceTree = "<group>"; };
 		2D1A688D1F3164C20079BFD4 /* SingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingButton.m; sourceTree = "<group>"; };
 		2D1A688F1F3168750079BFD4 /* VideoTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTime.h; sourceTree = "<group>"; };
@@ -784,6 +799,28 @@
 			path = UPPay;
 			sourceTree = "<group>";
 		};
+		2D02BBC01F63D96E00997ED8 /* PhotoModel */ = {
+			isa = PBXGroup;
+			children = (
+				2D02BBC11F63D98900997ED8 /* PhotoBrowser.h */,
+				2D02BBC21F63D98900997ED8 /* PhotoBrowser.m */,
+			);
+			path = PhotoModel;
+			sourceTree = "<group>";
+		};
+		2D02BBC41F63DD2E00997ED8 /* PhotoView */ = {
+			isa = PBXGroup;
+			children = (
+				2D02BBC51F63DD4D00997ED8 /* PhotoCollectionView.h */,
+				2D02BBC61F63DD4D00997ED8 /* PhotoCollectionView.m */,
+				2D02BBC81F64E60D00997ED8 /* PhotoBrowserCollectionViewCell.h */,
+				2D02BBC91F64E60D00997ED8 /* PhotoBrowserCollectionViewCell.m */,
+				2D02BBCB1F64E81700997ED8 /* XHPhotoImageBrowser.h */,
+				2D02BBCC1F64E81700997ED8 /* XHPhotoImageBrowser.m */,
+			);
+			path = PhotoView;
+			sourceTree = "<group>";
+		};
 		2D1A688A1F3164920079BFD4 /* play_video_view */ = {
 			isa = PBXGroup;
 			children = (
@@ -1291,6 +1328,8 @@
 				2DFCB5F41ED519430040A60E /* HaveFunViewController.m */,
 				2DFCB5F61ED519590040A60E /* CustomViewController.h */,
 				2DFCB5F71ED519590040A60E /* CustomViewController.m */,
+				2D02BBBD1F63D63E00997ED8 /* PictureBrowserViewController.h */,
+				2D02BBBE1F63D63E00997ED8 /* PictureBrowserViewController.m */,
 			);
 			path = SecondChildVC;
 			sourceTree = "<group>";
@@ -1372,6 +1411,7 @@
 		2DFCB6111ED5622A0040A60E /* model */ = {
 			isa = PBXGroup;
 			children = (
+				2D02BBC01F63D96E00997ED8 /* PhotoModel */,
 				2D1A688B1F31649E0079BFD4 /* play_video_model */,
 				2DA815FA1ED7BA51003AE3A4 /* videoScrollData */,
 				2DFCB6351ED6879A0040A60E /* Banner */,
@@ -1404,6 +1444,7 @@
 		2DFCB6261ED568ED0040A60E /* view */ = {
 			isa = PBXGroup;
 			children = (
+				2D02BBC41F63DD2E00997ED8 /* PhotoView */,
 				2D1A6A111F3D9F190079BFD4 /* XHMapView */,
 				2D1A68A21F3406940079BFD4 /* BaiduAIView */,
 				2D1A688A1F3164920079BFD4 /* play_video_view */,
@@ -1908,6 +1949,7 @@
 				2D62F5951F5BF9D100B029A0 /* XHPhotoBrowser.m in Sources */,
 				2DFDDF3A1F27266C00150B20 /* RSADataVerifier.m in Sources */,
 				2D1A69141F37FC040079BFD4 /* AipCaptureCardVC.mm in Sources */,
+				2D02BBCA1F64E60D00997ED8 /* PhotoBrowserCollectionViewCell.m in Sources */,
 				2DA815F91ED6C083003AE3A4 /* NSString+Project.m in Sources */,
 				2DFCB58C1ECE87840040A60E /* SecondViewController.m in Sources */,
 				2DA816131ED96A3F003AE3A4 /* ButtonView.m in Sources */,
@@ -1927,6 +1969,7 @@
 				2D016A051F4D5FBC0022B232 /* QRView.m in Sources */,
 				2D1A69151F37FC040079BFD4 /* AipGeneralVC.m in Sources */,
 				2DA8160D1ED91D60003AE3A4 /* UIImage+ImageEffects.m in Sources */,
+				2D02BBCD1F64E81700997ED8 /* XHPhotoImageBrowser.m in Sources */,
 				2D0169F11F4C11330022B232 /* XHTabBar.m in Sources */,
 				2DFCB5731ECD6F0D0040A60E /* UIColor+HexColor.m in Sources */,
 				2DA816A31EE298DC003AE3A4 /* EmojiModel.m in Sources */,
@@ -1939,7 +1982,9 @@
 				2DFDDF341F27266C00150B20 /* DataSigner.m in Sources */,
 				2DFDDF621F300FAC00150B20 /* TenCentProgressView.m in Sources */,
 				2D1A69131F37FC040079BFD4 /* AipCameraController.m in Sources */,
+				2D02BBC31F63D98900997ED8 /* PhotoBrowser.m in Sources */,
 				2DFCB5DE1ED28E400040A60E /* RTRootNavigationController.m in Sources */,
+				2D02BBBF1F63D63E00997ED8 /* PictureBrowserViewController.m in Sources */,
 				2D53BB791EE7E2950075058E /* CircleViewController.m in Sources */,
 				2D1A69091F37FC040079BFD4 /* AipOcrService.m in Sources */,
 				2D1A69111F37FC040079BFD4 /* AipCutImageView.m in Sources */,
@@ -1986,6 +2031,7 @@
 				2DFCB5D71ED28AF80040A60E /* VideoViewController.m in Sources */,
 				2D1A690A1F37FC040079BFD4 /* AipDisplayLink.m in Sources */,
 				2DFCB6231ED5624A0040A60E /* YKLabel.m in Sources */,
+				2D02BBC71F63DD4D00997ED8 /* PhotoCollectionView.m in Sources */,
 				2DA816091ED818EA003AE3A4 /* ThumbAnimationView.m in Sources */,
 				2D016A041F4D5FBC0022B232 /* CJKTZCodeViewController.m in Sources */,
 				2D53BBB21EEB818C0075058E /* SpringTableViewCell.m in Sources */,

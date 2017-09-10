@@ -50,7 +50,12 @@
 @implementation SecondViewController
 @synthesize tnMode;
 #pragma mark   ==============产生随机订单号==============
-
+- (instancetype)initWithUrl:(NSString *)url{
+    self  = [super init];
+    if (self) {
+    }
+    return self;
+}
 
 - (NSString *)generateTradeNO
 {
@@ -229,7 +234,7 @@
 }
 -(HYPageView *)HYview{
     if (!_HYview) {
-        _HYview = [[HYPageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) withTitles:self.titleArray withViewControllers:@[@"ScienceViewController",@"VideoShowViewController",@"NewInformationsViewController",@"PracticesViewController",@"HaveFunViewController",@"CustomViewController"] withParameters:nil];
+        _HYview = [[HYPageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) withTitles:self.titleArray withViewControllers:@[@"ScienceViewController",@"VideoShowViewController",@"NewInformationsViewController",@"PracticesViewController",@"HaveFunViewController",@"CustomViewController",@"PictureBrowserViewController"] withParameters:nil];
         _HYview.defaultSubscript = 0;
         _HYview.selectedColor = [UIColor uiColorFromString:@"#1997eb"];
     }
@@ -240,7 +245,7 @@
 
 -(NSArray *)titleArray{
     if (!_titleArray) {
-        _titleArray = [NSArray arrayWithObjects:@"科学",@"直播间",@"高德地图",@"视频播放",@"百度AI",@"蓝牙开发", nil];
+        _titleArray = [NSArray arrayWithObjects:@"科学",@"直播间",@"高德地图",@"视频播放",@"百度AI",@"蓝牙开发",@"图片浏览", nil];
     }
     
     return _titleArray;

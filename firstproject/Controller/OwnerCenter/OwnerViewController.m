@@ -5,7 +5,6 @@
 //  Created by 牛新怀 on 2017/5/17.
 //  Copyright © 2017年 牛新怀. All rights reserved.
 //
-
 #import "OwnerViewController.h"
 #import "EmojiLayout.h"
 #import "EmojiCollectionViewCell.h"
@@ -14,43 +13,67 @@
 #import "UIView+ZYDraggable.h"
 #import "WXApi.h"
 #import "WXApiObject.h"
-@interface OwnerViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+#import "UIViewController+custom.h"
+@import WebKit;
+@interface OwnerViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,WKNavigationDelegate>
 {
     UIPageControl * control;
+    NSString * urls;
 }
 @property (nonatomic, strong)UICollectionView * emojiCollection;
 @property (nonatomic, strong)NSMutableArray * emojiMArr;
+@property (nonatomic, strong)WKWebView * sourceWebView;
 
 @end
 static NSString * const  cellID = @"CellIdentifiers";
 
 @implementation OwnerViewController
+- (instancetype)initWithUrl:(NSString *)url{
+    self  = [super init];
+    if (self) {
+        dispatch_queue_t q_concurrent = dispatch_queue_create("my_concurrent_queue", DISPATCH_QUEUE_CONCURRENT);
+        dispatch_async(q_concurrent, ^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                urls = url;
+                NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:urls]];
+                [self.sourceWebView loadRequest:request];
+                
+            });
+            
+        });
 
+
+
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"%@",urls);
+  
     // Do any additional setup after loading the view from its nib.
-    _emojiMArr = [NSMutableArray arrayWithArray:[EmojiModel getImageArray]];
-    [self.view addSubview:self.emojiCollection];
-    
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithItemTitle:@"微信支付" target:self action:@selector(weixinpay)];
-    control = [[UIPageControl alloc]init];
-
-    control.center = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT-65);
-    control.bounds = CGRectMake(0, 0, 5, 5);
-    control.numberOfPages = 6;
-    control.currentPageIndicatorTintColor = [UIColor cyanColor];
-    control.pageIndicatorTintColor = [UIColor redColor];
-    [self.view addSubview:control];
-    UIImageView * animationImageView = [[UIImageView alloc]init];
-    animationImageView.center = CGPointMake(SCREEN_WIDTH/2, 100);
-    animationImageView.bounds = CGRectMake(0, 0, 40, 40);
-    animationImageView.layer.cornerRadius = 20;
-    animationImageView.clipsToBounds = YES;
-    animationImageView.userInteractionEnabled = YES;
-    animationImageView.contentMode = UIViewContentModeScaleAspectFill;
-    animationImageView.image = [UIImage imageNamed:@"lionAnimo"];
-    [self.view addSubview:animationImageView];
-    [animationImageView makeDraggable];
+//    _emojiMArr = [NSMutableArray arrayWithArray:[EmojiModel getImageArray]];
+//    [self.view addSubview:self.emojiCollection];
+//    
+//    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithItemTitle:@"微信支付" target:self action:@selector(weixinpay)];
+//    control = [[UIPageControl alloc]init];
+//
+//    control.center = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT-65);
+//    control.bounds = CGRectMake(0, 0, 5, 5);
+//    control.numberOfPages = 6;
+//    control.currentPageIndicatorTintColor = [UIColor cyanColor];
+//    control.pageIndicatorTintColor = [UIColor redColor];
+//    [self.view addSubview:control];
+//    UIImageView * animationImageView = [[UIImageView alloc]init];
+//    animationImageView.center = CGPointMake(SCREEN_WIDTH/2, 100);
+//    animationImageView.bounds = CGRectMake(0, 0, 40, 40);
+//    animationImageView.layer.cornerRadius = 20;
+//    animationImageView.clipsToBounds = YES;
+//    animationImageView.userInteractionEnabled = YES;
+//    animationImageView.contentMode = UIViewContentModeScaleAspectFill;
+//    animationImageView.image = [UIImage imageNamed:@"lionAnimo"];
+//    [self.view addSubview:animationImageView];
+//    [animationImageView makeDraggable];
 
 }
 - (void)weixinpay{
@@ -196,5 +219,98 @@ static NSString * const  cellID = @"CellIdentifiers";
     // Pass the selected object to the new view controller.
 }
 */
+
+- (WKWebView *)sourceWebView{
+    if (!_sourceWebView) {
+        _sourceWebView = [[WKWebView alloc]initWithFrame:self.view.bounds];
+        _sourceWebView.navigationDelegate = self;
+        [_sourceWebView sizeToFit];
+        [self.view addSubview:_sourceWebView];
+
+    }
+    return _sourceWebView;
+}
+
+// 页面开始加载时调用
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
+    NSLog(@"2.WKWebView开始加载页面");
+}
+// 当内容开始返回时调用
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{
+    NSLog(@"4.WKWebView开始返回内容");
+}
+// 页面加载完成之后调用
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
+    NSLog(@"5.WKWebView加载内容结束");
+}
+// 页面加载失败时调用
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation{
+    NSLog(@"WKWebView加载内容失败");
+}
+
+// 接收到服务器跳转请求之后调用
+- (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation{
+    NSLog(@"WKWebView接收到服务器跳转请求");
+}
+// 在收到响应后，决定是否跳转
+- (void)webView:(WKWebView *)webView
+decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse
+decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
+    NSLog(@"3.7.WKWebView收到响应，决定是否跳转");
+    NSLog(@"响应请求为 : %@",navigationResponse.response.URL.absoluteString);
+    //允许跳转
+    decisionHandler(WKNavigationResponsePolicyAllow);
+    //不允许跳转
+    //decisionHandler(WKNavigationResponsePolicyCancel);
+    
+
+}
+// 在发送请求之前，决定是否跳转
+- (void)webView:(WKWebView *)webView
+decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction
+decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
+    NSLog(@"1.6.WKWebView在发送请求之前，决定是否跳转");
+    NSLog(@"发送请求为 : %@",navigationAction.request.URL.absoluteString);
+    //允许跳转
+    decisionHandler(WKNavigationActionPolicyAllow);
+    //不允许跳转
+    //decisionHandler(WKNavigationActionPolicyCancel);
+
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self deleteWebCache];
+}
+
+- (void)deleteWebCache {
+    
+    if([[UIDevice currentDevice].systemVersion floatValue] >=9.0) {
+        
+        NSSet*websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes];
+        
+        NSDate*dateFrom = [NSDate dateWithTimeIntervalSince1970:0];
+        
+        [[WKWebsiteDataStore defaultDataStore]removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{
+            
+        }];
+     
+        
+    }else{
+        
+        NSString*libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory,NSUserDomainMask,YES)objectAtIndex:0];
+        
+        NSString*cookiesFolderPath = [libraryPath stringByAppendingString:@"/Cookies"];
+        
+        NSError*errors;
+        
+        [[NSFileManager defaultManager]removeItemAtPath:cookiesFolderPath error:&errors];
+        
+    }
+    NSLog(@"已经清理完了");
+    
+}
+
+
+
 
 @end
