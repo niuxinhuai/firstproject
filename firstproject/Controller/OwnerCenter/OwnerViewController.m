@@ -31,16 +31,16 @@ static NSString * const  cellID = @"CellIdentifiers";
 - (instancetype)initWithUrl:(NSString *)url{
     self  = [super init];
     if (self) {
-        dispatch_queue_t q_concurrent = dispatch_queue_create("my_concurrent_queue", DISPATCH_QUEUE_CONCURRENT);
-        dispatch_async(q_concurrent, ^{
-            dispatch_async(dispatch_get_main_queue(), ^{
-                urls = url;
-                NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:urls]];
-                [self.sourceWebView loadRequest:request];
-                
-            });
-            
-        });
+//        dispatch_queue_t q_concurrent = dispatch_queue_create("my_concurrent_queue", DISPATCH_QUEUE_CONCURRENT);
+//        dispatch_async(q_concurrent, ^{
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                urls = url;
+//                NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:urls]];
+//                [self.sourceWebView loadRequest:request];
+//                
+//            });
+//            
+//        });
 
 
 

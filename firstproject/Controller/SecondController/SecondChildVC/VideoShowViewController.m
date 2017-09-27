@@ -11,6 +11,7 @@
 #import "IJKVideoViewController.h"
 #import <SDCycleScrollView.h>
 #import "BannerWebViewController.h"
+#import "XHDataBaseHandler.h"
 @interface VideoShowViewController ()<UITableViewDelegate,UITableViewDataSource,VideoTableViewCellDelegate,SDCycleScrollViewDelegate>
 @property (strong, nonatomic) UITableView * videoTableView;
 @property (strong, nonatomic) UICollectionView * videoCollectionView;
@@ -36,6 +37,8 @@
     [self getNetWork];
    // [self dispatchAllRequest];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(change:) name:@"changeSelectButtonLive" object:nil];
+    [[XHDataBaseHandler shareInstance] delectAllList];
+    [[XHDataBaseHandler shareInstance] readCacheList];
 
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -138,6 +141,7 @@
         NSDictionary *responseJSON = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:nil];
         
         NSMutableDictionary *dic=[NSMutableDictionary dictionaryWithDictionary:responseJSON];
+        [[XHDataBaseHandler shareInstance] saveItemDic:dic className:NSStringFromClass([self class])];
         _model  =[YKBasic modelObjectWithDictionary:dic];
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -234,6 +238,11 @@
     [self getNetWork];
      [self.videoTableView.mj_header endRefreshing];
 }
+// 上拉加载
+- (void)loadMoreData{
+    
+}
+
 -(UITableView *)videoTableView{
     if (!_videoTableView) {
         _videoTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-135) style:UITableViewStylePlain];
@@ -255,7 +264,13 @@
        // [header setImages:self.refreshImages forState:MJRefreshStatePulling];
         header.lastUpdatedTimeLabel.hidden = NO;
         header.stateLabel.hidden = NO;
+        _videoTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+        
+        
         _videoTableView.mj_header = header;
+        
+        
+        
         _videoTableView.tableHeaderView = self.bannerScrollView;
         
     }

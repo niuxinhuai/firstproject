@@ -114,6 +114,7 @@
 		2DA816A01EE2934B003AE3A4 /* EmojiLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8169F1EE2934A003AE3A4 /* EmojiLayout.m */; };
 		2DA816A31EE298DC003AE3A4 /* EmojiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA816A21EE298DC003AE3A4 /* EmojiModel.m */; };
 		2DA816A61EE29C4C003AE3A4 /* EmojiCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA816A51EE29C4C003AE3A4 /* EmojiCollectionViewCell.m */; };
+		2DF5AC9E1F79212600FC0F6B /* XHDataBaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF5AC9D1F79212600FC0F6B /* XHDataBaseHandler.m */; };
 		2DFCB5261ECBDE2A0040A60E /* NBasiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFCB5251ECBDE2A0040A60E /* NBasiViewController.m */; };
 		2DFCB5291ECBE9940040A60E /* RootNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFCB5281ECBE9940040A60E /* RootNavViewController.m */; };
 		2DFCB52C1ECBEA7C0040A60E /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFCB52B1ECBEA7C0040A60E /* Tool.m */; };
@@ -430,6 +431,8 @@
 		2DA816A21EE298DC003AE3A4 /* EmojiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmojiModel.m; sourceTree = "<group>"; };
 		2DA816A41EE29C4C003AE3A4 /* EmojiCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmojiCollectionViewCell.h; sourceTree = "<group>"; };
 		2DA816A51EE29C4C003AE3A4 /* EmojiCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmojiCollectionViewCell.m; sourceTree = "<group>"; };
+		2DF5AC9C1F79212600FC0F6B /* XHDataBaseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHDataBaseHandler.h; sourceTree = "<group>"; };
+		2DF5AC9D1F79212600FC0F6B /* XHDataBaseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHDataBaseHandler.m; sourceTree = "<group>"; };
 		2DFCB5241ECBDE2A0040A60E /* NBasiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBasiViewController.h; sourceTree = "<group>"; };
 		2DFCB5251ECBDE2A0040A60E /* NBasiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBasiViewController.m; sourceTree = "<group>"; };
 		2DFCB5271ECBE9940040A60E /* RootNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootNavViewController.h; sourceTree = "<group>"; };
@@ -1196,6 +1199,8 @@
 				2DFDDF551F2B121A00150B20 /* NSObject+DebugDescription.m */,
 				2D1A689F1F331B570079BFD4 /* NetWorkTool.h */,
 				2D1A68A01F331B570079BFD4 /* NetWorkTool.m */,
+				2DF5AC9C1F79212600FC0F6B /* XHDataBaseHandler.h */,
+				2DF5AC9D1F79212600FC0F6B /* XHDataBaseHandler.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1944,6 +1949,7 @@
 				2D1A690B1F37FC040079BFD4 /* IOSpeScaleLayoutButton.m in Sources */,
 				2D1A688E1F3164C20079BFD4 /* SingButton.m in Sources */,
 				2DFCB5AE1ECF22350040A60E /* WebViewJavascriptBridge.m in Sources */,
+				2DF5AC9E1F79212600FC0F6B /* XHDataBaseHandler.m in Sources */,
 				2DFCB5EC1ED518CD0040A60E /* ScienceViewController.m in Sources */,
 				2D8883C31EF3B96400E90CBD /* UIView+ZYDraggable.m in Sources */,
 				2D62F5951F5BF9D100B029A0 /* XHPhotoBrowser.m in Sources */,
