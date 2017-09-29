@@ -102,6 +102,7 @@
 #import "XHVisualEffectView.h"
 #import "EffectViewController.h"
 #import "UIViewController+custom.h"
+#import "NXUserCenterViewController.h"
 @interface TotalViewController ()<XHTabBarDelegate>
 @property (nonatomic, strong) NSMutableArray<UIImage*>* nomalImageArray;
 @property (nonatomic, strong) NSMutableArray<UIImage*>* selectImageArray;
@@ -181,7 +182,7 @@
 }
 -(NSMutableArray *)viewControllerArray{
     if (!_viewControllerArray) {
-        _viewControllerArray = [NSMutableArray arrayWithObjects:@"ViewController",@"SecondViewController",@"MainViewController",@"OwnerViewController", nil];
+        _viewControllerArray = [NSMutableArray arrayWithObjects:@"ViewController",@"SecondViewController",@"MainViewController",@"NXUserCenterViewController", nil];
         
     }
     return _viewControllerArray;

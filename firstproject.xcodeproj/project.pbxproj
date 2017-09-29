@@ -24,6 +24,14 @@
 		2D02BBC71F63DD4D00997ED8 /* PhotoCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02BBC61F63DD4D00997ED8 /* PhotoCollectionView.m */; };
 		2D02BBCA1F64E60D00997ED8 /* PhotoBrowserCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02BBC91F64E60D00997ED8 /* PhotoBrowserCollectionViewCell.m */; };
 		2D02BBCD1F64E81700997ED8 /* XHPhotoImageBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02BBCC1F64E81700997ED8 /* XHPhotoImageBrowser.m */; };
+		2D02EC361F7E972B003ED03D /* NXHomePageClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02EC351F7E972B003ED03D /* NXHomePageClassViewController.m */; };
+		2D02EC391F7E9860003ED03D /* NXSegmentClassView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02EC381F7E9860003ED03D /* NXSegmentClassView.m */; };
+		2D02EC3D1F7E99CC003ED03D /* NXSegmentTopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02EC3C1F7E99CC003ED03D /* NXSegmentTopScrollView.m */; };
+		2D02EC401F7E9DDD003ED03D /* NXTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02EC3F1F7E9DDD003ED03D /* NXTableView.m */; };
+		2D02EC441F7E9ED8003ED03D /* NXUserCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02EC431F7E9ED8003ED03D /* NXUserCenterViewController.m */; };
+		2D02EC471F7E9F2A003ED03D /* NXHottestPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02EC461F7E9F2A003ED03D /* NXHottestPostsViewController.m */; };
+		2D02EC4A1F7E9F40003ED03D /* NXMemberListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02EC491F7E9F40003ED03D /* NXMemberListViewController.m */; };
+		2D02EC4D1F7E9F69003ED03D /* NXEssentialPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D02EC4C1F7E9F69003ED03D /* NXEssentialPostViewController.m */; };
 		2D1A688E1F3164C20079BFD4 /* SingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A688D1F3164C20079BFD4 /* SingButton.m */; };
 		2D1A68911F3168750079BFD4 /* VideoTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68901F3168750079BFD4 /* VideoTime.m */; };
 		2D1A68941F3177C10079BFD4 /* NbPurseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A68931F3177C10079BFD4 /* NbPurseView.m */; };
@@ -280,6 +288,23 @@
 		2D02BBC91F64E60D00997ED8 /* PhotoBrowserCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoBrowserCollectionViewCell.m; sourceTree = "<group>"; };
 		2D02BBCB1F64E81700997ED8 /* XHPhotoImageBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPhotoImageBrowser.h; sourceTree = "<group>"; };
 		2D02BBCC1F64E81700997ED8 /* XHPhotoImageBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPhotoImageBrowser.m; sourceTree = "<group>"; };
+		2D02EC341F7E972B003ED03D /* NXHomePageClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHomePageClassViewController.h; sourceTree = "<group>"; };
+		2D02EC351F7E972B003ED03D /* NXHomePageClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHomePageClassViewController.m; sourceTree = "<group>"; };
+		2D02EC371F7E9860003ED03D /* NXSegmentClassView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXSegmentClassView.h; sourceTree = "<group>"; };
+		2D02EC381F7E9860003ED03D /* NXSegmentClassView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXSegmentClassView.m; sourceTree = "<group>"; };
+		2D02EC3A1F7E989C003ED03D /* NXSegmentDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NXSegmentDelegate.h; path = firstproject/Controller/OwnerCenter/NXUserCenter/NXSegmentDelegate.h; sourceTree = SOURCE_ROOT; };
+		2D02EC3B1F7E99CC003ED03D /* NXSegmentTopScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXSegmentTopScrollView.h; sourceTree = "<group>"; };
+		2D02EC3C1F7E99CC003ED03D /* NXSegmentTopScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXSegmentTopScrollView.m; sourceTree = "<group>"; };
+		2D02EC3E1F7E9DDD003ED03D /* NXTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXTableView.h; sourceTree = "<group>"; };
+		2D02EC3F1F7E9DDD003ED03D /* NXTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXTableView.m; sourceTree = "<group>"; };
+		2D02EC421F7E9ED8003ED03D /* NXUserCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXUserCenterViewController.h; sourceTree = "<group>"; };
+		2D02EC431F7E9ED8003ED03D /* NXUserCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXUserCenterViewController.m; sourceTree = "<group>"; };
+		2D02EC451F7E9F2A003ED03D /* NXHottestPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NXHottestPostsViewController.h; path = firstproject/Controller/OwnerCenter/NXUserCenterVC/NXHottestPostsViewController.h; sourceTree = SOURCE_ROOT; };
+		2D02EC461F7E9F2A003ED03D /* NXHottestPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NXHottestPostsViewController.m; path = firstproject/Controller/OwnerCenter/NXUserCenterVC/NXHottestPostsViewController.m; sourceTree = SOURCE_ROOT; };
+		2D02EC481F7E9F40003ED03D /* NXMemberListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NXMemberListViewController.h; path = firstproject/Controller/OwnerCenter/NXUserCenterVC/NXMemberListViewController.h; sourceTree = SOURCE_ROOT; };
+		2D02EC491F7E9F40003ED03D /* NXMemberListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NXMemberListViewController.m; path = firstproject/Controller/OwnerCenter/NXUserCenterVC/NXMemberListViewController.m; sourceTree = SOURCE_ROOT; };
+		2D02EC4B1F7E9F69003ED03D /* NXEssentialPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NXEssentialPostViewController.h; path = firstproject/Controller/OwnerCenter/NXUserCenterVC/NXEssentialPostViewController.h; sourceTree = SOURCE_ROOT; };
+		2D02EC4C1F7E9F69003ED03D /* NXEssentialPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NXEssentialPostViewController.m; path = firstproject/Controller/OwnerCenter/NXUserCenterVC/NXEssentialPostViewController.m; sourceTree = SOURCE_ROOT; };
 		2D1A688C1F3164C20079BFD4 /* SingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingButton.h; sourceTree = "<group>"; };
 		2D1A688D1F3164C20079BFD4 /* SingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingButton.m; sourceTree = "<group>"; };
 		2D1A688F1F3168750079BFD4 /* VideoTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTime.h; sourceTree = "<group>"; };
@@ -824,6 +849,31 @@
 			path = PhotoView;
 			sourceTree = "<group>";
 		};
+		2D02EC331F7E96EA003ED03D /* NXUserCenter */ = {
+			isa = PBXGroup;
+			children = (
+				2D02EC341F7E972B003ED03D /* NXHomePageClassViewController.h */,
+				2D02EC351F7E972B003ED03D /* NXHomePageClassViewController.m */,
+				2D02EC371F7E9860003ED03D /* NXSegmentClassView.h */,
+				2D02EC381F7E9860003ED03D /* NXSegmentClassView.m */,
+				2D02EC3B1F7E99CC003ED03D /* NXSegmentTopScrollView.h */,
+				2D02EC3C1F7E99CC003ED03D /* NXSegmentTopScrollView.m */,
+				2D02EC3E1F7E9DDD003ED03D /* NXTableView.h */,
+				2D02EC3F1F7E9DDD003ED03D /* NXTableView.m */,
+			);
+			path = NXUserCenter;
+			sourceTree = "<group>";
+		};
+		2D02EC411F7E9EA0003ED03D /* NXUserCenterVC */ = {
+			isa = PBXGroup;
+			children = (
+				2D02EC3A1F7E989C003ED03D /* NXSegmentDelegate.h */,
+				2D02EC421F7E9ED8003ED03D /* NXUserCenterViewController.h */,
+				2D02EC431F7E9ED8003ED03D /* NXUserCenterViewController.m */,
+			);
+			path = NXUserCenterVC;
+			sourceTree = "<group>";
+		};
 		2D1A688A1F3164920079BFD4 /* play_video_view */ = {
 			isa = PBXGroup;
 			children = (
@@ -1264,6 +1314,8 @@
 		2DFCB57F1ECE87840040A60E /* OwnerCenter */ = {
 			isa = PBXGroup;
 			children = (
+				2D02EC411F7E9EA0003ED03D /* NXUserCenterVC */,
+				2D02EC331F7E96EA003ED03D /* NXUserCenter */,
 				2D8883C01EF3B96400E90CBD /* ZYDraggableView */,
 				2DFCB5931ECE889A0040A60E /* OwnerChildVC */,
 				2DFCB5801ECE87840040A60E /* OwnerViewController.h */,
@@ -1313,6 +1365,12 @@
 		2DFCB5931ECE889A0040A60E /* OwnerChildVC */ = {
 			isa = PBXGroup;
 			children = (
+				2D02EC451F7E9F2A003ED03D /* NXHottestPostsViewController.h */,
+				2D02EC461F7E9F2A003ED03D /* NXHottestPostsViewController.m */,
+				2D02EC481F7E9F40003ED03D /* NXMemberListViewController.h */,
+				2D02EC491F7E9F40003ED03D /* NXMemberListViewController.m */,
+				2D02EC4B1F7E9F69003ED03D /* NXEssentialPostViewController.h */,
+				2D02EC4C1F7E9F69003ED03D /* NXEssentialPostViewController.m */,
 			);
 			path = OwnerChildVC;
 			sourceTree = "<group>";
@@ -1944,6 +2002,7 @@
 				2DFCB5CC1ED01D2D0040A60E /* UIImage+XFCircle.m in Sources */,
 				2D53BB8B1EE846BC0075058E /* MainTableViewController.m in Sources */,
 				2DFCB5F51ED519430040A60E /* HaveFunViewController.m in Sources */,
+				2D02EC471F7E9F2A003ED03D /* NXHottestPostsViewController.m in Sources */,
 				2DFCB6301ED5911A0040A60E /* IJKVideoViewController.m in Sources */,
 				2DFCB5CE1ED01D2D0040A60E /* UIView+Extension.m in Sources */,
 				2D1A690B1F37FC040079BFD4 /* IOSpeScaleLayoutButton.m in Sources */,
@@ -1951,6 +2010,7 @@
 				2DFCB5AE1ECF22350040A60E /* WebViewJavascriptBridge.m in Sources */,
 				2DF5AC9E1F79212600FC0F6B /* XHDataBaseHandler.m in Sources */,
 				2DFCB5EC1ED518CD0040A60E /* ScienceViewController.m in Sources */,
+				2D02EC4A1F7E9F40003ED03D /* NXMemberListViewController.m in Sources */,
 				2D8883C31EF3B96400E90CBD /* UIView+ZYDraggable.m in Sources */,
 				2D62F5951F5BF9D100B029A0 /* XHPhotoBrowser.m in Sources */,
 				2DFDDF3A1F27266C00150B20 /* RSADataVerifier.m in Sources */,
@@ -1972,6 +2032,8 @@
 				2D62F5701F554E5800B029A0 /* AppDelegate+defaultSetting.m in Sources */,
 				2DFCB63B1ED6879A0040A60E /* BNTicker.m in Sources */,
 				2DA816A01EE2934B003AE3A4 /* EmojiLayout.m in Sources */,
+				2D02EC3D1F7E99CC003ED03D /* NXSegmentTopScrollView.m in Sources */,
+				2D02EC4D1F7E9F69003ED03D /* NXEssentialPostViewController.m in Sources */,
 				2D016A051F4D5FBC0022B232 /* QRView.m in Sources */,
 				2D1A69151F37FC040079BFD4 /* AipGeneralVC.m in Sources */,
 				2DA8160D1ED91D60003AE3A4 /* UIImage+ImageEffects.m in Sources */,
@@ -1982,6 +2044,7 @@
 				2DFCB6221ED5624A0040A60E /* YKExtra.m in Sources */,
 				2D1A6A141F3D9F470079BFD4 /* XHPOIMapView.m in Sources */,
 				2DFDDF381F27266C00150B20 /* openssl_wrapper.m in Sources */,
+				2D02EC361F7E972B003ED03D /* NXHomePageClassViewController.m in Sources */,
 				2D1A690D1F37FC040079BFD4 /* IOSpeScaleLayoutLabel.m in Sources */,
 				2D53BB761EE7E2690075058E /* VideoRootViewController.m in Sources */,
 				2DA816101ED95CF2003AE3A4 /* ShareView.m in Sources */,
@@ -1990,6 +2053,7 @@
 				2D1A69131F37FC040079BFD4 /* AipCameraController.m in Sources */,
 				2D02BBC31F63D98900997ED8 /* PhotoBrowser.m in Sources */,
 				2DFCB5DE1ED28E400040A60E /* RTRootNavigationController.m in Sources */,
+				2D02EC391F7E9860003ED03D /* NXSegmentClassView.m in Sources */,
 				2D02BBBF1F63D63E00997ED8 /* PictureBrowserViewController.m in Sources */,
 				2D53BB791EE7E2950075058E /* CircleViewController.m in Sources */,
 				2D1A69091F37FC040079BFD4 /* AipOcrService.m in Sources */,
@@ -2025,6 +2089,7 @@
 				2D53BB821EE7E2E20075058E /* PictureViewController.m in Sources */,
 				2DFCB5901ECE87AB0040A60E /* TotalViewController.m in Sources */,
 				2DFCB5291ECBE9940040A60E /* RootNavViewController.m in Sources */,
+				2D02EC441F7E9ED8003ED03D /* NXUserCenterViewController.m in Sources */,
 				2D1A68911F3168750079BFD4 /* VideoTime.m in Sources */,
 				2D1A69121F37FC040079BFD4 /* AipImageView.m in Sources */,
 				2D0169A91F467B530022B232 /* UIView+HUD.m in Sources */,
@@ -2038,6 +2103,7 @@
 				2D1A690A1F37FC040079BFD4 /* AipDisplayLink.m in Sources */,
 				2DFCB6231ED5624A0040A60E /* YKLabel.m in Sources */,
 				2D02BBC71F63DD4D00997ED8 /* PhotoCollectionView.m in Sources */,
+				2D02EC401F7E9DDD003ED03D /* NXTableView.m in Sources */,
 				2DA816091ED818EA003AE3A4 /* ThumbAnimationView.m in Sources */,
 				2D016A041F4D5FBC0022B232 /* CJKTZCodeViewController.m in Sources */,
 				2D53BBB21EEB818C0075058E /* SpringTableViewCell.m in Sources */,

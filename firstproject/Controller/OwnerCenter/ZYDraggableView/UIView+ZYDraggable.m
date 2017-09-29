@@ -30,6 +30,18 @@
     [self zy_addPanGesture];
 }
 
+- (UIViewController *)findViewController:(UIView *)sourceView
+{
+    id target = sourceView;
+    while (target) {
+        target = ((UIResponder *)target).nextResponder;
+        if ([target isKindOfClass:[UIViewController class]]) {
+            break;
+        }
+    }
+    return target;
+}
+
 - (void)removeDraggable
 {
     [self removeGestureRecognizer:self.zy_panGesture];
@@ -68,6 +80,7 @@
     
     if (pan.state == UIGestureRecognizerStateBegan)
     {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"enableScrollView" object:nil];
         [self updateSnapPoint];
         
         UIOffset offset = UIOffsetMake(panLocation.x - self.zy_centerPoint.x, panLocation.y - self.zy_centerPoint.y);
@@ -79,12 +92,14 @@
     }
     else if (pan.state == UIGestureRecognizerStateChanged)
     {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"enableScrollView" object:nil];
         [self.zy_attachmentBehavior setAnchorPoint:panLocation];
     }
     else if (pan.state == UIGestureRecognizerStateEnded ||
              pan.state == UIGestureRecognizerStateCancelled ||
              pan.state == UIGestureRecognizerStateFailed)
     {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"canScrollView" object:nil];
         [self.zy_animator addBehavior:self.zy_snapBehavior];
         [self.zy_animator removeBehavior:self.zy_attachmentBehavior];
     }

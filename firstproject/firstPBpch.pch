@@ -11,6 +11,9 @@
 #define WeakSelf(type)  __weak typeof(type) weak##type = type; // weak
 #define StrongSelf(type)  __strong typeof(type) type = weak##type; // strong
 #define DegreesToRadian(x) (M_PI * (x) / 180.0) // 角度转换成弧度
+#define IPHONE5 SCREEN_HEIGHT-SCREEN_HEIGHT_START> 460
+#define IPHONE6 SCREEN_WIDTH >= 375
+#define IPHONE6Plus SCREEN_WIDTH >= 414
 #define PathDocument [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] // 获取沙盒Document
 #define PathCache [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]// 获取沙盒Cache
 #ifdef DEBUG
