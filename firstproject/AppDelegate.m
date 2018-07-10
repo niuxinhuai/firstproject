@@ -44,6 +44,7 @@ static const NSString * BaiduSecretKey = @"WF2fWKb8lQ2bfGB5MAAsixIGXCUzWipX";
     [self getBaiduAIAccessToken];
     [AppDelegate getSettings];
     [AppDelegate getShareSDK];
+    [AppDelegate getZhugeioWithDictionary:launchOptions];
     // Override point for customization after application launch.
     return YES;
 }

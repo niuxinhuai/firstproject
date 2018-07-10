@@ -11,4 +11,5 @@
 @interface AppDelegate (defaultSetting)
 + (void)getSettings;
 + (void)getShareSDK;
++ (void)getZhugeioWithDictionary:(NSDictionary *)launchOptions;
 @end

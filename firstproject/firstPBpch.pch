@@ -39,6 +39,8 @@
 #import <FMDB.h>
 #import "UIView+Fragmentation.h"
 #import "UPPaymentControl.h"
+//诸葛io埋点接入
+#import <Zhuge.h>
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)

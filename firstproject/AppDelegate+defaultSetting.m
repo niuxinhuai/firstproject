@@ -17,8 +17,10 @@
 #import <WeiboSDK.h>
 //新浪微博SDK需要在项目Build Settings中的Other Linker Flags添加”-ObjC”
 #import "AppDelegate+defaultSetting.h"
+
 static const NSString * ShareAppKey    = @"208f02dc99aa0";
 static const NSString * ShareAppSecret = @"91d0deb55119eb201cd7b722a417160c";
+static NSString * ZhugeiosAppKey = @"257fd96e6ee54319a0ec385b47410539";
 @implementation AppDelegate (defaultSetting)
 /*
  @parameter 获取系统设置中setting.bundle中的个人设置
@@ -126,5 +128,10 @@ static const NSString * ShareAppSecret = @"91d0deb55119eb201cd7b722a417160c";
                }];
     //      [appInfo SSDKSetupWeChatByAppId:@"wx519424286509f4aa"
 //appSecret:@"279e4df1b2c3352abb992dc6a759a6b7"];
+}
+
++ (void)getZhugeioWithDictionary:(NSDictionary *)launchOptions{
+    [[Zhuge sharedInstance].config setDebug:YES];
+    [[Zhuge sharedInstance] startWithAppKey:ZhugeiosAppKey launchOptions:launchOptions];
 }
 @end

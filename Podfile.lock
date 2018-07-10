@@ -55,6 +55,9 @@ PODS:
     - MOBFoundation
   - ShareSDK3/ShareSDKPlatforms/WeChat (4.0.0.1):
     - MOBFoundation
+  - Zhugeio (3.1.4):
+    - Zhugeio/Zhugeio (= 3.1.4)
+  - Zhugeio/Zhugeio (3.1.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
@@ -77,6 +80,7 @@ DEPENDENCIES:
   - ShareSDK3/ShareSDKPlatforms/QQ
   - ShareSDK3/ShareSDKPlatforms/SinaWeibo
   - ShareSDK3/ShareSDKPlatforms/WeChat
+  - Zhugeio
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -97,7 +101,8 @@ SPEC CHECKSUMS:
   SDCycleScrollView: e3ade90e9b3159bec04330b208fbfd81c3f3b671
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   ShareSDK3: e0465c9ffdf806ab97c27f4397fd7deca600ede9
+  Zhugeio: 8a39beffc199fb32aa44d65290feded995f6e59e
 
-PODFILE CHECKSUM: df66e12966273c5f27e9869912f9ad288f47ac53
+PODFILE CHECKSUM: 749d65ea6f8a77d43f269779562887bdb5d9f076
 
 COCOAPODS: 1.2.1
