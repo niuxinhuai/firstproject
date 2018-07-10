@@ -202,6 +202,10 @@ static sqlite3 * db = nil;
     [super viewWillAppear:animated];
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+}
+
 -(void)createSqlite{
     NSString * path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
     NSString * fileName = [path stringByAppendingPathComponent:@"Sqlite.sqlite"];

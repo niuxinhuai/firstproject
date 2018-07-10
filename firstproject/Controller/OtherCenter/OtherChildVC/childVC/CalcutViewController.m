@@ -14,6 +14,7 @@
 }
 @property (nonatomic, strong) UIPickerView * pickerViews;
 @property (nonatomic, assign) NSInteger maxCount;
+@property (nonatomic, strong) UILabel * detailLabel;
 
 
 @end
@@ -35,7 +36,17 @@ static const NSInteger minT = 1000;
     label.textAlignment = NSTextAlignmentCenter;
     label.text = NSStringFromClass([self class]);
     [self.view addSubview:label];
+    
+    [self.view addSubview:self.detailLabel];
+    self.detailLabel.center = CGPointMake(self.pickerViews.centerX + 65, self.pickerViews.centerY);
+    self.detailLabel.bounds = CGRectMake(0, 0, 60, 20);
+    [self.view bringSubviewToFront:self.detailLabel];
+    
+
+    
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -85,4 +96,16 @@ static const NSInteger minT = 1000;
 }
 */
 
+
+- (UILabel *)detailLabel{
+    if(!_detailLabel){
+        _detailLabel = ({
+            UILabel * object = [[UILabel alloc]init];
+            object.textColor = [UIColor blackColor];
+            object.text = @"个单词";
+            object;
+       });
+    }
+    return _detailLabel;
+}
 @end

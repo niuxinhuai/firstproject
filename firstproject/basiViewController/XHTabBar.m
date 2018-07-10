@@ -9,7 +9,7 @@
 #import "UIImage+XFCircle.h"
 #import "XHTabBar.h"
 @interface XHTabBar()
-
+@property (nonatomic, strong) UILabel * plusLabel;
 @end
 @implementation XHTabBar
 
@@ -48,9 +48,31 @@
     return self;
 }
 
+- (void)tabBarButtonClick:(UIControl *)tabBarButton
+{
+    for (UIView *imageView in tabBarButton.subviews) {
+        if ([imageView isKindOfClass:NSClassFromString(@"UITabBarSwappableImageView")]) {
+            //需要实现的帧动画,这里根据需求自定义
+            CAKeyframeAnimation *animation = [CAKeyframeAnimation animation];
+            animation.keyPath = @"transform.scale";
+            animation.values = @[@1.0,@1.3,@0.9,@1.15,@0.95,@1.02,@1.0];
+            animation.duration = 1;
+            animation.calculationMode = kCAAnimationCubic;
+            //把动画添加上去就OK了
+            [imageView.layer addAnimation:animation forKey:nil];
+        }
+    }
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    for (UIControl *tabBarButton in self.subviews) {
+        if ([tabBarButton isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
+            [tabBarButton addTarget:self action:@selector(tabBarButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        }
+    }
+    
     //系统自带的按钮类型是UITabBarButton，找出这些类型的按钮，然后重新排布位置，空出中间的位置
     Class class = NSClassFromString(@"UITabBarButton");
     
@@ -58,17 +80,11 @@
     //调整发布按钮的中线点Y值
     self.plusBtn.centerY = self.height * 0.5 - 2*LBMagin ;
     
-    self.plusBtn.size = CGSizeMake(self.height-LBMagin, self.height-LBMagin);
+    self.plusBtn.size = CGSizeMake(40, 40);
     
-    
-    UILabel *label = [[UILabel alloc] init];
-    label.text = @"发布";
-    label.font = [UIFont systemFontOfSize:11];
-    [label sizeToFit];
-    label.textColor = [UIColor grayColor];
-    [self addSubview:label];
-    label.centerX = self.plusBtn.centerX;
-    label.centerY = CGRectGetMaxY(self.plusBtn.frame) + 13 ;
+    [self addSubview:self.plusLabel];
+    self.plusLabel.centerX = self.plusBtn.centerX;
+    self.plusLabel.centerY = CGRectGetMaxY(self.plusBtn.frame) + 18 ;
     
     
     
@@ -134,5 +150,20 @@
     // Drawing code
 }
 */
+
+
+- (UILabel *)plusLabel{
+    if(!_plusLabel){
+        _plusLabel = ({
+            UILabel * object = [[UILabel alloc]init];
+            object.text = @"发布";
+            object.font = [UIFont systemFontOfSize:11];
+            [object sizeToFit];
+            object.textColor = [UIColor grayColor];
+            object;
+       });
+    }
+    return _plusLabel;
+}
 
 @end
