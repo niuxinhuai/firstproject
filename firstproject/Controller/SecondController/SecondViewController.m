@@ -5,6 +5,19 @@
 //  Created by 牛新怀 on 2017/5/17.
 //  Copyright © 2017年 牛新怀. All rights reserved.
 //
+
+#define  adjustsScrollViewInsets_NO(scrollView,vc)\
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+if ([UIScrollView instancesRespondToSelector:NSSelectorFromString(@"setContentInsetAdjustmentBehavior:")]) {\
+[scrollView   performSelector:NSSelectorFromString(@"setContentInsetAdjustmentBehavior:") withObject:@(2)];\
+} else {\
+vc.automaticallyAdjustsScrollViewInsets = NO;\
+}\
+_Pragma("clang diagnostic pop") \
+} while (0)
+
 #define KBtn_width        200
 #define KBtn_height       80
 #define KXOffSet          (self.view.frame.size.width - KBtn_width) / 2
@@ -74,10 +87,21 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //adjustsScrollViewInsets_NO(, self);
     // Do any additional setup after loading the view from its nib.
+
     [self setUpUI];
     [self setUpNavigationView];
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+}
+
 -(void)setUpUI{
     [self.view addSubview:self.HYview];
     

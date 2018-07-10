@@ -47,6 +47,15 @@ static NSString * const  cellID = @"CellIdentifiers";
     }
     return self;
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"%@",urls);

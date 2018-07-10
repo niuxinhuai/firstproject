@@ -294,7 +294,9 @@
         [(UIView*)[cell.contentView.subviews lastObject] removeFromSuperview];
     }
 
-    cell.videoLives = _model.lives[indexPath.row];
+    if (_model.lives.count != 0) {
+        cell.videoLives = _model.lives[indexPath.row];
+    }
     cell.delegate = self;
     return cell;
     

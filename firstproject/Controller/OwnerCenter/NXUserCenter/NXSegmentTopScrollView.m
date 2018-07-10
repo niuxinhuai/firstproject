@@ -20,6 +20,7 @@
 @property (nonatomic,assign) CGFloat itemTabW;//tab宽度
 @property (nonatomic,assign) CGFloat lrMargin;//左右间隔
 @property (nonatomic,strong) UIView * bottomLineView;
+@property (nonatomic,strong) UILabel * bottomScreenLabel;
 
 @end
 
@@ -51,6 +52,7 @@ static const CGFloat lineViewHeight  = 4;
     _unselectedColor       = [UIColor uiColorFromString:@"#7e7e7e"];
     _isAnimated            = NO;
     _lrMargin              = 20;
+    [self addSubview:self.bottomScreenLabel];
     
 }
 
@@ -134,5 +136,14 @@ static const CGFloat lineViewHeight  = 4;
     return w;
 }
 
+- (UILabel *)bottomScreenLabel{
+    if (!_bottomScreenLabel) {
+        _bottomScreenLabel = [[UILabel alloc]init];
+        _bottomScreenLabel.frame = CGRectMake(0, self.height-0.5, SCREEN_WIDTH, 0.5);
+        _bottomScreenLabel.backgroundColor = _unselectedColor;
+        
+    }
+    return _bottomScreenLabel;
+}
 
 @end

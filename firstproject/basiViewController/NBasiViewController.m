@@ -25,6 +25,12 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [[Zhuge sharedInstance] startTrack:NSStringFromClass([self class])];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[Zhuge sharedInstance] endTrack:NSStringFromClass([self class]) properties:@{}];
 }
 
 - (void)didReceiveMemoryWarning {

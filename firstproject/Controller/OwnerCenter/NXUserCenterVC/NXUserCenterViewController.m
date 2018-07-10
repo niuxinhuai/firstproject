@@ -25,8 +25,8 @@
     if (!_imageView) {
         _imageView = [[UIImageView alloc]init];
         _imageView.center = CGPointMake(SCREEN_WIDTH/2, self.height/2);
-        _imageView.bounds = CGRectMake(0, 0, 40, 40);
-        _imageView.layer.cornerRadius = 20;
+        _imageView.bounds = CGRectMake(0, 0, 80, 80);
+        _imageView.layer.cornerRadius = 40;
         _imageView.clipsToBounds = YES;
         _imageView.image = [UIImage imageNamed:@"lionAnimo"];
         _imageView.contentMode = UIViewContentModeScaleToFill;
@@ -64,11 +64,26 @@ static NSString *const cellID = @"cellIdentifier";
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    // 去除导航条黑线
+    self.navigationController.navigationBar.subviews[0].subviews[1].hidden = YES;
+    //设置导航 半透明
+    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init]
+            forBarMetrics:UIBarMetricsDefault];
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+//    if (@available(iOS 11.0, *)) {
+//        UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//    }else{
+//        self.automaticallyAdjustsScrollViewInsets = NO;
+//    }
     [self.view addSubview:self.mainTableView];
-    self.navColorType = NavigationTitleColorTypeWhite;
+    self.navColorType = NavigationTitleColorTypeBlue;
     self.colorType = ButtonItemTitleColorTypeBlue;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptMsg:) name:@"leaveTop" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scrollCannotScroll) name:@"enableScrollView" object:nil];
@@ -92,7 +107,7 @@ static NSString *const cellID = @"cellIdentifier";
 
 - (NXTableView *)mainTableView{
     if (!_mainTableView) {
-        _mainTableView = [[NXTableView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64) style:UITableViewStylePlain];
+        _mainTableView = [[NXTableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
         _mainTableView.backgroundColor = [UIColor whiteColor];

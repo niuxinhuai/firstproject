@@ -253,7 +253,7 @@
         
         _scrollView.frame = CGRectMake(0, y, _selfFrame.size.width, _selfFrame.size.height);
         _scrollView.delegate = self;
-        _scrollView.backgroundColor = [UIColor cyanColor];
+       // _scrollView.backgroundColor = [UIColor cyanColor];
         _scrollView.contentSize = CGSizeMake(_selfFrame.size.width * _titles.count, 0);
         _scrollView.pagingEnabled = YES;
         _scrollView.showsHorizontalScrollIndicator = YES;
